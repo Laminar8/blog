@@ -3,11 +3,17 @@
 </script>
 
 <main>
+	<section>
+		<div class="header">
+			print
+		</div>
+	</section>
 	<slot />
 </main>
 
 <style>
-	main {
+	.header {
+		height: 15rem;
 		background-color: blue;
 	}
 </style>

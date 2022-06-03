@@ -3,12 +3,22 @@
 
 :root {
 	font-family: 'Fira Sans', sans-serif;
+	font-size: 10px;
 	--font-code: 'Fira Code', 'Fira Sans', sans-serif;
 	--font-size-default: 14px;
 	--font-weight-default: 400;
+
+	// Color
+	--color-dark: #312c2f
+	--color-white: #312c2f
+	--color-split-complementary-1: #8480A6
+	--color-split-complementary-2: #B6AEF2
+	--color-split-complementary-3: #E0F2A2
+	--color-split-complementary-4: #A65E8B
+	--color-split-complementary-5: #F296D0
 }
 
-// Initialize
+//Initialize
 * {
 	margin: 0;
 	padding: 0;
