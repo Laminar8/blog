@@ -1,32 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap');
 
 :root {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Indie Flower', 'Permanent Marker', 'Fira Sans', sans-serif;
 	font-size: 10px;
+	--font-header: 'Permanent Marker', 'Indie Flower', 'Fira Sans', sans-serif;
 	--font-code: 'Fira Code', 'Fira Sans', sans-serif;
-	--font-size-default: 14px;
 	--font-weight-default: 400;
 
 	// Color
-	--color-dark: #312c2f
-	--color-white: #312c2f
-	--color-split-complementary-1: #8480A6
-	--color-split-complementary-2: #B6AEF2
-	--color-split-complementary-3: #E0F2A2
-	--color-split-complementary-4: #A65E8B
-	--color-split-complementary-5: #F296D0
+	--color-dark: #1f1f1f;
+	--color-white: #f1f1f1;
+	--color-white-border: #e4e4e4;
+	--color-split-complementary-1: #8480a6;
+	--color-split-complementary-2: #b6aef2;
+	--color-split-complementary-3: #e0f2a2;
+	--color-split-complementary-4: #a65e8b;
+	--color-split-complementary-5: #f296d0;
 }
 
-//Initialize
+// Initialize
 * {
 	margin: 0;
 	padding: 0;
 }
 
+body {
+	width: 100vw;
+	height: 100vh;
+	// overflow: hidden;
+}
+
 // Code
 code {
+	font-size: 1.4rem;
 	font-family: var(--font-code);
-	font-size: var(--font-size-default);
 	font-weight: var(--font-weight-default);
 }
