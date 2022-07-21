@@ -2,12 +2,4 @@
 	import '../app.scss';
 </script>
 
-<main>
-	<slot />
-</main>
-
-<style>
-	main {
-		background-color: yellow;
-	}
-</style>
+<slot />

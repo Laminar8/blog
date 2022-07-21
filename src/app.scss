@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Fira+Code&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fira+Sans&family=Fira+Code&display=swap');
 
 :root {
-	font-family: 'Indie Flower', 'Permanent Marker', 'Fira Sans', sans-serif;
+	font-family: 'Fredoka One', 'Fira Sans', sans-serif;
 	font-size: 10px;
-	--font-header: 'Permanent Marker', 'Indie Flower', 'Fira Sans', sans-serif;
 	--font-code: 'Fira Code', 'Fira Sans', sans-serif;
 	--font-weight-default: 400;
 
@@ -28,7 +26,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	// overflow: hidden;
+	overflow: hidden;
 }
 
 // Code

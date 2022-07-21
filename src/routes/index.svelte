@@ -3,7 +3,6 @@
 </script>
 
 <script lang="ts">
-
 </script>
 
 <svelte:head>
@@ -16,5 +15,4 @@
 </section>
 
 <style>
-
 </style>
