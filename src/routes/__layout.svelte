@@ -1,10 +1,8 @@
 <script lang="ts">
 	import '../app.scss';
-	import Cursor from '$lib/cursor/cursor.svelte';
 </script>
 
 <main>
-	<Cursor />
 	<div class="onboard">
 		<slot />
 	</div>
@@ -12,9 +10,6 @@
 
 <style lang="scss">
 	main {
-		/* 시스템 커서 안 보이게 숨기기 */
-		cursor: none;
-
 		height: 100%;
 		width: 100%;
 

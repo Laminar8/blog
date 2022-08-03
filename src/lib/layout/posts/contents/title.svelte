@@ -13,14 +13,14 @@
 <style lang="scss">
 	.tag {
 		// Shape
-		background-color: var(--color-dark);
+		background-color: var(--color-4);
 		border-radius: 1rem;
 		color: var(--color-white);
 
 		// Position
 		margin: auto;
-		padding: 1rem;
-		width: fit-content;
+		padding: 1rem 1.5rem;
+		width: max-content;
 
 		// Font
 		font-size: 1.5rem;
@@ -33,5 +33,6 @@
 		// Font
 		font-size: 5rem;
 		text-align: center;
+		color: var(--color-dark);
 	}
 </style>

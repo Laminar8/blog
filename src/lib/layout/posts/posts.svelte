@@ -1,19 +1,27 @@
 <script lang="ts">
+	const dots = ['#DF7861', '#FFB562', '#ADCF9F'];
+
+	// Init
+	let height: number;
+
+	// Assign
+	$: width = height;
 </script>
 
 <div class="header">
-	<div class="left">
-		<div class="logo">Blog</div>
-		<div class="nav">
-			<div>Previous</div>
-			<div>Home</div>
-			<div>Next</div>
+	<div class="left" bind:offsetHeight={height}>
+		<div class="logo" style="height: {width}px;">
+			{#each dots as dot}
+				<div class="dot" style="width: {width}px; background-color: {dot};" />
+			{/each}
 		</div>
 	</div>
 	<div class="center">
 		<slot name="header">Loading header</slot>
 	</div>
-	<div class="right">To be defined</div>
+	<div class="right">
+		<!-- To be defined -->
+	</div>
 </div>
 <div class="content">
 	<div class="left" />
@@ -40,26 +48,14 @@
 			padding-left: 1rem;
 			box-sizing: border-box;
 
-			// Split sections
-			display: grid;
-			grid-template-columns: 1fr 3fr;
-
 			.logo {
 				margin-left: 2rem;
-			}
 
-			.nav {
-				div {
-					display: inline;
-
-					padding: 0 0.5rem;
-					box-sizing: border-box;
-				}
-
-				div:nth-child(2) {
-					padding: 0 1.5rem;
-					border-left: 0.3rem solid var(--color-white);
-					border-right: 0.3rem solid var(--color-white);
+				.dot {
+					height: 100%;
+					display: inline-flex;
+					margin-left: 1.7%;
+					border-radius: 1rem;
 				}
 			}
 		}

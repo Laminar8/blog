@@ -8,7 +8,7 @@
 <style lang="scss">
 	.subtitle {
 		// Position
-		margin-top: 8rem;
+		margin-top: 10rem;
 
 		// Font
 		font-size: 4rem;
