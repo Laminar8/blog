@@ -6,12 +6,17 @@
 	import Subtitle from '$lib/layout/posts/contents/subtitle.svelte';
 	import Content from '$lib/layout/posts/contents/content.svelte';
 	import Image from '$lib/layout/posts/contents/image.svelte';
+	import Tag from '$lib/layout/posts/contents/items/tag.svelte';
+	import Information from '$lib/layout/posts/contents/items/information.svelte';
 	// Module
 	import { index } from '$lib/contents/index';
+	import { information } from '$lib/contents/items/information';
+
 	// Init
 	export const prerender = true;
 	// Main
 	const { title, lastUpdate, group, tag } = index._2022._07._14;
+	const { color, name, content } = information;
 </script>
 
 <svelte:head>
@@ -25,7 +30,10 @@
 	</div>
 	<div slot="content">
 		<Title>
-			<div slot="tag">{group} > {tag}</div>
+			<div slot="tag">
+				<Tag tag={group} />
+				<Tag {tag} />
+			</div>
 			<div slot="title">{title}</div>
 		</Title>
 		<Image>
@@ -37,6 +45,7 @@
 			/>
 			<div slot="caption">Running to my goals</div>
 		</Image>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>Loves to try new things</Subtitle>
 		<Content>
 			Someone who loves to try new things is most commonly referred to as adventurous. There are

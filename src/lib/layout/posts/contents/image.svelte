@@ -1,14 +1,11 @@
 <script lang="ts">
+	import Hanbok from '$lib/assets/character/hanbok.png';
 </script>
 
 <div class="container">
 	<figure>
 		<slot name="image">Loading image...</slot>
 		<figcaption>
-			<div class="box">
-				<div class="header">Details</div>
-				<div class="source" />
-			</div>
 			<slot name="caption">Loading caption...</slot>
 		</figcaption>
 	</figure>
@@ -17,19 +14,12 @@
 <style lang="scss">
 	.container {
 		// Position
-		margin-top: 10rem;
+		margin: 10rem 0;
 		text-align: center;
 
 		figcaption {
-			// Default
+			color: var(--color-dark-bright);
 			font-size: 1.5rem;
-			width: 100%;
-
-			margin-top: 2.5rem;
-			padding: 1.5rem 0;
-
-			// Background
-			background: var(--color-4);
 		}
 	}
 </style>
