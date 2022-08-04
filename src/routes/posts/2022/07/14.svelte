@@ -1,13 +1,23 @@
 <script context="module" lang="ts">
 	// Layout
 	import Posts from '$lib/layout/posts/posts.svelte';
-	import Header from '$lib/layout/posts/header/header.svelte';
-	import Title from '$lib/layout/posts/contents/title.svelte';
-	import Subtitle from '$lib/layout/posts/contents/subtitle.svelte';
-	import Content from '$lib/layout/posts/contents/content.svelte';
-	import Image from '$lib/layout/posts/contents/image.svelte';
-	import Tag from '$lib/layout/posts/contents/items/tag.svelte';
-	import Information from '$lib/layout/posts/contents/items/information.svelte';
+
+	// Props/Header
+	import Header from '$lib/layout/posts/props/header/header.svelte';
+
+	// Props/Contents/Center
+	import Title from '$lib/layout/posts/props/contents/center/title.svelte';
+	import Information from '$lib/layout/posts/props/contents/center/information.svelte';
+
+	// Slots/Contents/Center
+	import Subtitle from '$lib/layout/posts/slots/contents/center/subtitle.svelte';
+	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
+	import Image from '$lib/layout/posts/slots/contents/center/image.svelte';
+
+	// Slots/Contents/Right
+	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
+	import Tag from '$lib/layout/posts/slots/contents/right/tag.svelte';
+
 	// Module
 	import { index } from '$lib/contents/index';
 	import { information } from '$lib/contents/items/information';
@@ -26,16 +36,10 @@
 
 <Posts>
 	<div slot="header">
-		<Header>{title}</Header>
+		<Header {title} />
 	</div>
-	<div slot="content">
-		<Title>
-			<div slot="tag">
-				<Tag tag={group} />
-				<Tag {tag} />
-			</div>
-			<div slot="title">{title}</div>
-		</Title>
+	<div slot="center">
+		<Title {title} />
 		<Image>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/182406328-5d654b45-fbe2-4203-8afb-d10a51a8705f.png"
@@ -74,6 +78,11 @@
 			“audacious.” “Adventurous” is the closest related word meaning loving to try new things,
 			though.
 		</Content>
+	</div>
+	<div slot="right">
+		<Date {lastUpdate} />
+		<!-- <Tag tag={group} /> -->
+		<!-- <Tag {tag} /> -->
 	</div>
 </Posts>
 

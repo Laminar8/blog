@@ -1,8 +1,5 @@
-<script lang="ts">
-</script>
-
 <div class="content">
-	<slot>Loading content...</slot>
+	<slot />
 </div>
 
 <style lang="scss">

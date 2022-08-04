@@ -1,7 +1,3 @@
-<script lang="ts">
-	import Hanbok from '$lib/assets/character/hanbok.png';
-</script>
-
 <div class="container">
 	<figure>
 		<slot name="image">Loading image...</slot>

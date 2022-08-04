@@ -1,11 +1,9 @@
 <script lang="ts">
+	export let title: string;
 </script>
 
-<div class="container">
-	<slot name="tag">Loading tag...</slot>
-	<div class="title">
-		<slot name="title">Loading title...</slot>
-	</div>
+<div class="title">
+	{title}
 </div>
 
 <style lang="scss">

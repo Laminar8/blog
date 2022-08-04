@@ -15,7 +15,7 @@
 		{/each}
 	</div>
 	<div class="center">
-		<slot name="header">Loading header</slot>
+		<div class="title"><slot name="header" /></div>
 	</div>
 	<div class="right">
 		<!-- To be defined -->
@@ -23,20 +23,38 @@
 </div>
 <div class="content">
 	<div class="left" />
-	<div class="center"><slot name="content" /></div>
-	<div class="right" />
+	<div class="center"><slot name="center" /></div>
+	<div class="right"><slot name="right" /></div>
 </div>
 
 <style lang="scss">
+	@media screen and (min-width: 480px) {
+		.header {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 3fr 1fr;
+		}
+	}
+
+	@media screen and (min-width: 800px) {
+		.header {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 60rem 1fr;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		.header {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 100rem 1fr;
+		}
+	}
+
 	.header {
 		background-color: var(--color-dark);
-
 		color: var(--color-white);
-		font-size: 1.5rem;
-
-		// Split sections
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
 		height: 100%;
 
 		.left {
@@ -48,8 +66,8 @@
 			.dot {
 				height: 100%;
 				display: inline-flex;
-				margin-left: 1.7%;
-				border-radius: 1rem;
+				margin-left: 1rem;
+				border-radius: 2.5rem;
 			}
 		}
 
@@ -61,6 +79,38 @@
 			overflow: hidden;
 			white-space: nowrap;
 			word-break: break-all;
+
+			margin: 0 2.5rem;
+			padding: 0 2.5rem;
+			box-sizing: border-box;
+
+			.title {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	@media screen and (min-width: 480px) {
+		.content {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 3fr 1fr;
+		}
+	}
+
+	@media screen and (min-width: 800px) {
+		.content {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 60rem 1fr;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		.content {
+			// Split sections
+			display: grid;
+			grid-template-columns: 1fr 100rem 1fr;
 		}
 	}
 
@@ -69,16 +119,16 @@
 		border-bottom-right-radius: 1rem;
 		background-color: var(--color-white);
 		padding: 2.5rem;
+		max-height: 100%;
 
 		// Scroll
 		overflow-y: scroll;
 
-		// Split sections
-		display: grid;
-		grid-template-columns: 1fr 3fr 1fr;
-		max-height: 100%;
-
 		.center {
+			padding: 2.5rem;
+		}
+
+		.right {
 			padding: 2.5rem;
 		}
 	}

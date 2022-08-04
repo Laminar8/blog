@@ -20,6 +20,6 @@
 
 		// Split sections
 		display: grid;
-		grid-template-rows: 1fr 25fr;
+		grid-template-rows: 5rem 25fr;
 	}
 </style>
