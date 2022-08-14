@@ -9,6 +9,7 @@
 <style lang="scss">
 	.header {
 		text-align: center;
+		font-weight: 700;
 		padding: 0.5rem 5rem;
 
 		// Word Break
@@ -19,7 +20,7 @@
 
 		// Background
 		color: var(--color-dark);
-		background-color: var(--color-white);
+		background-color: var(--color-white-dark);
 
 		border-radius: 0.5rem;
 	}

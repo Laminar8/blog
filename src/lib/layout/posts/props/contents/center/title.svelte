@@ -13,6 +13,7 @@
 
 		// Font
 		font-size: 5rem;
+		font-weight: 700;
 		text-align: center;
 	}
 </style>

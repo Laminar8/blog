@@ -9,5 +9,6 @@
 
 		// Font
 		font-size: 2rem;
+		line-height: 3rem;
 	}
 </style>

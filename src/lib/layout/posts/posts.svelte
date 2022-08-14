@@ -58,7 +58,7 @@
 		height: 100%;
 
 		.left {
-			height: 50%;
+			height: 35%;
 			padding-left: 2rem;
 			box-sizing: border-box;
 			align-self: center;
@@ -67,7 +67,7 @@
 				height: 100%;
 				display: inline-flex;
 				margin-left: 1rem;
-				border-radius: 2.5rem;
+				border-radius: 1.5rem;
 			}
 		}
 
@@ -129,6 +129,7 @@
 		}
 
 		.right {
+			margin-left: 2.5rem;
 			padding: 2.5rem;
 		}
 	}

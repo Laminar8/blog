@@ -38,6 +38,7 @@
 
 			.name {
 				font-size: 3rem;
+				font-weight: 700;
 				padding-bottom: 1rem;
 			}
 

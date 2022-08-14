@@ -13,7 +13,7 @@ export const information = {
 		image: {
 			red: '',
 			yellow:
-				"This blog uses copyright free images. If you're the owner of the image and want to protect the copyright, please contact me."
+				'This blog uses non-copyright images. If you are the owner of the image and want to protect the copyright, please contact me.'
 		}
 	}
 };

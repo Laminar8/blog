@@ -9,5 +9,6 @@
 
 		// Font
 		font-size: 4rem;
+		font-weight: 700;
 	}
 </style>
