@@ -16,18 +16,18 @@
 <style lang="scss">
 	.container {
 		// Position
-		margin-top: 3rem;
 		padding: 2rem;
 		background-clip: padding-box;
 
-		border-left: 1rem solid var(--color-green-dark);
-		background-color: var(--color-white-dark);
+		border-bottom: 0.1rem solid var(--color-white-dark);
 
 		.message {
 			// Font
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: var(--color-dark);
+
+			padding-left: 1rem;
 		}
 
 		.status {

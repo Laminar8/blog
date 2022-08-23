@@ -1,8 +1,6 @@
 <script context="module" lang="ts">
+	// Init
 	export const prerender = true;
-</script>
-
-<script lang="ts">
 </script>
 
 <svelte:head>
@@ -13,6 +11,3 @@
 <section>
 	<div><p>Hello</p></div>
 </section>
-
-<style>
-</style>

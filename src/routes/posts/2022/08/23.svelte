@@ -32,7 +32,7 @@
 	// Init
 	export const prerender = true;
 	// Main
-	const { title, lastUpdate, tag, status, image } = index._2022._07._14;
+	const { title, lastUpdate, tag, status, image } = index._2022._08._23;
 	const { color, name, content } = information;
 </script>
 
@@ -51,8 +51,11 @@
 		<Image>
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />
 			<div slot="caption">
-				@Photo by RF._.studio from
-				<Href href="https://www.pexels.com/photo/woman-jogging-3623180/" name="Pexels" />
+				@Photo by Jefferson Santal from
+				<Href
+					href="https://www.pexels.com/photo/a-traffic-light-with-green-light-11093631/"
+					name="Pexels"
+				/>
 			</div>
 		</Image>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />

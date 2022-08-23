@@ -12,14 +12,14 @@
 	<div class="left" bind:offsetHeight={height}>
 		{#each dots as dot, index}
 			{#if index == 0}
-				<a href="/posts"><div class="dot" style="width: {width}px; background-color: {dot};" /></a>
+				<a href="/"><div class="dot" style="width: {width}px; background-color: {dot};" /></a>
 			{:else}
 				<div class="dot" style="width: {width}px; background-color: {dot};" />
 			{/if}
 		{/each}
 	</div>
 	<div class="center">
-		<div class="title"><slot name="header" /></div>
+		<!-- To be defined -->
 	</div>
 	<div class="right">
 		<!-- To be defined -->
@@ -28,7 +28,7 @@
 <div class="content">
 	<div class="left" />
 	<div class="center"><slot name="center" /></div>
-	<div class="right"><slot name="right" /></div>
+	<div class="right" />
 </div>
 
 <style lang="scss">
@@ -99,10 +99,6 @@
 			margin: 0 2.5rem;
 			padding: 0 2.5rem;
 			box-sizing: border-box;
-
-			.title {
-				font-size: 1.5rem;
-			}
 		}
 	}
 
