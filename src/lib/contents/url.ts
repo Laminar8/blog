@@ -1,1 +1,1 @@
-export const url = '/blog';
+export const url = '';
