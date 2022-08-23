@@ -1,4 +1,7 @@
 <script lang="ts">
+	// Import module
+	import { url } from '$lib/contents/url';
+
 	const dots = ['#DF7861', '#FFB562', '#ADCF9F'];
 
 	// Init
@@ -12,7 +15,15 @@
 	<div class="left" bind:offsetHeight={height}>
 		{#each dots as dot, index}
 			{#if index == 0}
-				<a href="/"><div class="dot" style="width: {width}px; background-color: {dot};" /></a>
+				{#if url == ''}
+					<a href="/">
+						<div class="dot" style="width: {width}px; background-color: {dot};" />
+					</a>
+				{:else}
+					<a href={url}>
+						<div class="dot" style="width: {width}px; background-color: {dot};" />
+					</a>
+				{/if}
 			{:else}
 				<div class="dot" style="width: {width}px; background-color: {dot};" />
 			{/if}

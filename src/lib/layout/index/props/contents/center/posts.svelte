@@ -1,5 +1,6 @@
 <script lang="ts">
 	// Import module
+	import { url } from '$lib/contents/url';
 	import { compareDate } from '$lib/module/compareDate';
 	import type { posts } from '$lib/interface/posts';
 
@@ -24,7 +25,7 @@
 <div class="posts">
 	{#each postAll as post}
 		<div class="post">
-			<a href="/posts/{post.url}">
+			<a href="{url}/posts/{post.url}">
 				<div class="image">
 					<img src={post.attribute.image.src} alt={post.attribute.image.alt} />
 				</div>

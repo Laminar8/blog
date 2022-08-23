@@ -24,38 +24,6 @@ export const index = {
 					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
 					alt: 'SP, Brasil'
 				}
-			},
-			_30: {
-				tag: ['Blog', 'Information'],
-				title: capitalize('Time spent completing the first post: 1 Month'),
-				lastUpdate: '2022/08/24',
-				status: ['In progress'],
-				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
-					alt: 'Woman Jogging'
-				}
-			}
-		},
-		_09: {
-			_23: {
-				tag: ['Blog', 'Information'],
-				title: capitalize('Time spent completing the first post: 1 Month'),
-				lastUpdate: '2022/08/24',
-				status: ['In progress'],
-				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
-					alt: 'Woman Jogging'
-				}
-			},
-			_30: {
-				tag: ['Blog', 'Information'],
-				title: capitalize('Time spent completing the first post: 1 Month'),
-				lastUpdate: '2022/08/24',
-				status: ['In progress'],
-				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
-					alt: 'Woman Jogging'
-				}
 			}
 		}
 	}
