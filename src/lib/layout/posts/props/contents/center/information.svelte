@@ -26,6 +26,7 @@
 		// Split sections
 		display: grid;
 		grid-template-columns: 1fr 9fr;
+		align-items: center;
 
 		.logo {
 			img {
@@ -44,6 +45,7 @@
 
 			.content {
 				font-size: 1.5rem;
+				line-height: 3rem;
 			}
 		}
 	}

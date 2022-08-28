@@ -47,6 +47,7 @@
 	</div>
 	<div slot="center">
 		<Title {title} />
+
 		<!-- Chapter 1 -->
 		<Image>
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />

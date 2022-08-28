@@ -19,6 +19,7 @@
 	--color-green-dark: #94b49f;
 	--color-blue: #607eaa;
 	--color-blue-dark: #06113c;
+	--color-purple: #a66cff;
 }
 
 // Initialize
@@ -43,7 +44,28 @@ a {
 
 // Code
 code {
-	font-size: 1.4rem;
+	font-size: 1.5rem;
 	font-family: var(--font-code);
 	font-weight: var(--font-weight-default);
+	line-height: 3rem;
+}
+
+pre {
+	// Scroll bar
+	code::-webkit-scrollbar {
+		width: 2rem;
+	}
+
+	code::-webkit-scrollbar-thumb {
+		height: 20%;
+		background-color: var(--color-dark);
+		background-clip: padding-box;
+		border: 0.5rem solid transparent;
+		border-radius: 1rem;
+	}
+
+	code::-webkit-scrollbar-track {
+		margin: 1rem 0;
+		background-color: var(--color-white);
+	}
 }

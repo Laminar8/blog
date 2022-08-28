@@ -19,7 +19,7 @@
 		text-align: center;
 
 		.color {
-			padding: 0.5rem;
+			padding: 0 0.5rem;
 			color: var(--color-red);
 		}
 	}

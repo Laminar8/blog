@@ -1,8 +1,8 @@
 <div class="container">
 	<figure>
-		<slot name="image">Loading image...</slot>
+		<slot name="image" />
 		<figcaption>
-			<slot name="caption">Loading caption...</slot>
+			<slot name="caption" />
 		</figcaption>
 	</figure>
 </div>

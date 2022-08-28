@@ -5,16 +5,21 @@
 </script>
 
 <!-- Blue: Annotation -->
+<!-- Purple: Code -->
 <div class="content">
 	{#if number != '-1'}
-		<span class="blue">
+		<span class={color}>
 			{content}
 		</span>
-		<span class="blue number">
+		<span class="{color} number">
 			{number}
 		</span>
 	{:else if color == 'red'}
-		<span class="red">
+		<span class={color}>
+			{content}
+		</span>
+	{:else if color == 'purple'}
+		<span class={color}>
 			{content}
 		</span>
 	{:else}
@@ -35,6 +40,12 @@
 
 		.blue {
 			color: var(--color-blue);
+		}
+
+		.purple {
+			padding: 0 1rem;
+			color: var(--color-purple);
+			background-color: var(--color-white-dark);
 		}
 
 		.white {

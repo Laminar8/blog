@@ -13,7 +13,10 @@ export const information = {
 		image: {
 			red: '',
 			yellow:
-				'This blog uses non-copyright images. If you are the owner of the image and want to protect the copyright, please contact me.'
+				'This blog uses non-copyright images. If you are the owner of the image and want to protect the copyright, please contact me.',
+			green: {
+				_01: `This blog owner has a copyright of this image. If you don't think so, please contact me.`
+			}
 		}
 	}
 };

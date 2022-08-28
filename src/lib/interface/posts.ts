@@ -10,6 +10,9 @@ export interface posts {
 					src: string;
 					alt: string;
 				};
+				codeHighlight?: {
+					[language: string]: [{ filename: string; body: string }];
+				};
 			};
 		};
 	};
