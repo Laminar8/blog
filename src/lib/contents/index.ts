@@ -17,10 +17,10 @@ export const index = {
 		},
 		_08: {
 			_23: {
-				tag: ['Blog', 'Information', 'Svelte', 'HTML', 'CSS'],
+				tag: ['Blog', 'Information', 'Svelte', 'SCSS'],
 				title: capitalize('Time spent completing the first post: 1 Month'),
-				lastUpdate: '2022/08/24',
-				status: ['In progress'],
+				lastUpdate: '2022/08/31',
+				status: ['Published'],
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
 					alt: 'SP, Brasil'
@@ -62,6 +62,18 @@ export const index = {
 							)
 						}
 					]
+				}
+			}
+		},
+		_09: {
+			_01: {
+				tag: ['Slack', 'AWS', 'RDS'],
+				title: capitalize('Subscribe to Amazon RDS notification with Slack'),
+				lastUpdate: '2022/09/01',
+				status: ['In progress'],
+				image: {
+					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
+					alt: 'SP, Brasil'
 				}
 			}
 		}

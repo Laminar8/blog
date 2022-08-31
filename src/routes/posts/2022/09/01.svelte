@@ -30,22 +30,16 @@
 	import { index } from '$lib/contents/index';
 	import { information } from '$lib/contents/items/information';
 
-	// Highlight syntax
-	import Highlight from 'svelte-highlight';
-	import scss from 'svelte-highlight/languages/scss';
-	import github from 'svelte-highlight/styles/github';
-
 	// Init
 	export const prerender = true;
 	// Main
-	const { title, lastUpdate, tag, status, image, codeHighlight } = index._2022._08._23;
+	const { title, lastUpdate, tag, status, image } = index._2022._09._01;
 	const { color, name, content } = information;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={title} />
-	{@html github}
 </svelte:head>
 
 <Posts>
@@ -80,14 +74,6 @@
 			principal texts and images with bright colors. On the other hand fundamental contents should
 			be colored with dark. Let me show you my colors which I used on my blog.
 		</Content>
-		<Code>
-			<div slot="file">
-				{codeHighlight.scss[0].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={scss} code={codeHighlight.scss[0].body} />
-			</div>
-		</Code>
 		<Content>
 			All colors using on this blog are defined to variables in a
 			<Color color="red" content="app.scss" number="-1" /> file.
@@ -96,14 +82,6 @@
 			is a very difficult task. All colors in the svelte files need to be re-defined. But with a variable,
 			the task will be done very easy.
 		</Content>
-		<Code>
-			<div slot="file">
-				{codeHighlight.scss[1].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={scss} code={codeHighlight.scss[1].body} />
-			</div>
-		</Code>
 		<Content>
 			In a <Color color="red" content="tag.svelte" number="-1" /> file, for example, two properties like
 			<Color color="purple" content="color" number="-1" /> and
@@ -123,71 +101,6 @@
 			The colors used in this blog are very diverse. But there are not many groups of colors. I
 			prepared some tonal colors that are less intense for relieving eye fatigue and comfort. Also
 			these colors give us feeling soft. I hope my intention will be properly provided to you.
-		</Content>
-
-		<!-- Chapter 2 -->
-		<Image>
-			<img
-				src="https://user-images.githubusercontent.com/52372569/186466478-c45ee3c0-dd72-4fc9-b590-63242e6354b8.png"
-				alt="Creative Quote Lettering Text on Black Background"
-				style="max-width: 100%;"
-				slot="image"
-			/>
-			<div slot="caption">
-				@Photo by Anna Tarazevich from
-				<Href
-					href="https://www.pexels.com/photo/creative-quote-lettering-text-on-black-background-5598309/"
-					name="Pexels"
-				/>
-			</div>
-		</Image>
-		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Expression in a second language</Subtitle>
-		<Content>
-			I have felt that communication to ask other people for something about technologies was not
-			easy when I have used a foreign language. Fortunately I could share my intentions with others.
-			Although it could be done successfully, I haven't thought that the communication was clear.
-		</Content>
-		<Content>
-			Another reason why I write my post in english is that to translate some words into a first
-			language is difficult and unnatural in expression. I try to say the words in a way that many
-			people call it as it is.
-		</Content>
-		<Content>
-			One of my high priority is to express my idea freely in writing. I expect that writing some
-			posts can be helpful to learn typical casual English phrases. For showing my think as possible
-			as I intend, expressions in the first language might be translated into the second with less
-			changes. It takes long time to translate into english. I have to check my progress regularly
-			and possibility to keep going this way.
-		</Content>
-
-		<!-- Chapter 3 -->
-		<Image>
-			<img
-				src="https://user-images.githubusercontent.com/52372569/187686151-4481cf2e-5b54-48b0-87b4-a4265ccb3d4a.png"
-				alt="Pavel Danilyuk"
-				style="max-width: 100%;"
-				slot="image"
-			/>
-			<div slot="caption">
-				@Photo by Pavel Danilyuk from
-				<Href href="https://www.pexels.com/photo/7404649/" name="Pexels" />
-			</div>
-		</Image>
-		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Balance between free and concentration</Subtitle>
-		<Content>
-			As closer to the fall, the day is getting shorter and the night is longer. Even though it is
-			more efficient to write a post at night, sometimes I can be swayed by temptation and sometimes
-			I have been it. One day, I had a dinner with my colleagues and came back home too late. And
-			another day, I couldn't come back home to look at beautiful stars in the sky and to feel the
-			deep night.
-		</Content>
-		<Content>
-			As a result, this second post in my blog was started to write after one month that the first
-			one was published. As the interval between the start time of the last post and the start time
-			of the new post increases, it is not easy to write posts steadily. I hope my next posts would
-			be posted earlier than this second one and keep the balance between free and concentration.
 		</Content>
 		<Footer />
 	</div>
