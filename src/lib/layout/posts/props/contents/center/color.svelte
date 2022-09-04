@@ -6,6 +6,7 @@
 
 <!-- Blue: Annotation -->
 <!-- Purple: Code -->
+<!-- Red: File Name / Instructions -->
 <div class="content">
 	{#if number != '-1'}
 		<span class={color}>

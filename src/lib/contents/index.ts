@@ -68,12 +68,39 @@ export const index = {
 		_09: {
 			_01: {
 				tag: ['Slack', 'AWS', 'RDS'],
-				title: capitalize('Subscribe to Amazon RDS notification with Slack'),
+				title: capitalize('Subscribe Amazon RDS notification and Get notifications from Slack'),
 				lastUpdate: '2022/09/01',
 				status: ['In progress'],
 				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
-					alt: 'SP, Brasil'
+					src: 'https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png',
+					alt: 'Slack'
+				},
+				codeHighlight: {
+					json: [
+						{
+							fileName: 'cloudwatch.json',
+							body: codeIndent(
+								`{
+									"Records": [
+									  {
+										"EventSource": "aws:sns",
+										"EventVersion": "1.0",
+										"EventSubscriptionArn": "arn:aws:sns:ap-southeast-1:123456789012:laminar:a6ea4892-f3e6-499c-a854-f53f544eef04",
+										"Sns": {
+										  "Type": "Notification",
+										  "MessageId": "57977499-a9d2-5e38-8b55-2f1bed8777af",
+										  "TopicArn": "arn:aws:sns:ap-southeast-1:123456789012:laminar",
+										  "Subject": "OK: "my-alarm" in Asia Pacific (Singapore)",
+										  "Message": "{"AlarmName":"my-alarm","AlarmDescription":null,"AWSAccountId":"123456789012","AlarmConfigurationUpdatedTimestamp":"2022-08-26T03:45:34.563+0000","NewStateValue":"OK","NewStateReason":"Threshold Crossed: 1 out of the last 1 datapoints [3.6266666666666665 (26/08/22 03:40:00)] was not less than the threshold (1.0) (minimum 1 datapoint for ALARM -> OK transition).","StateChangeTime":"2022-08-26T03:46:29.897+0000","Region":"Asia Pacific (Singapore)","AlarmArn":"arn:aws:cloudwatch:ap-southeast-1:123456789012:alarm:my-alarm","OldStateValue":"ALARM","OKActions":["arn:aws:sns:ap-southeast-1:123456789012:laminar"],"AlarmActions":["arn:aws:sns:ap-southeast-1:123456789012:laminar"],"InsufficientDataActions":[],"Trigger":{"MetricName":"CPUUtilization","Namespace":"AWS/RDS","StatisticType":"Statistic","Statistic":"AVERAGE","Unit":null,"Dimensions":[{"value":"database-1","name":"DBInstanceIdentifier"}],"Period":300,"EvaluationPeriods":1,"DatapointsToAlarm":1,"ComparisonOperator":"LessThanThreshold","Threshold":1.0,"TreatMissingData":"missing","EvaluateLowSampleCountPercentile":""}}",
+										  "Timestamp": "2022-08-26T03:46:29.953Z",
+										}
+									  }
+									]
+								  }`,
+								8
+							)
+						}
+					]
 				}
 			}
 		}

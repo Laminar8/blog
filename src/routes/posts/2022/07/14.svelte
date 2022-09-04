@@ -15,7 +15,7 @@
 	import Annotation from '$lib/layout/posts/slots/contents/center/annotation.svelte';
 	import Subtitle from '$lib/layout/posts/slots/contents/center/subtitle.svelte';
 	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
-	import Image from '$lib/layout/posts/slots/contents/center/image.svelte';
+	import Image from '$lib/layout/posts/slots/contents/center/image_v1.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';

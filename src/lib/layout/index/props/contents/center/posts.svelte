@@ -63,9 +63,11 @@
 
 			.image {
 				img {
+					object-fit: cover;
 					border-top-left-radius: 1rem;
 					border-top-right-radius: 1rem;
-					max-width: 100%;
+					height: 20rem;
+					width: 100%;
 				}
 			}
 
