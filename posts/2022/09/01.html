@@ -4,17 +4,29 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/blog/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content=""><title>Subscribe To Amazon RDS Notification With Slack</title><meta name="description" content="Subscribe To Amazon RDS Notification With Slack" data-svelte="svelte-ne90p9">
+		<meta http-equiv="content-security-policy" content=""><title>Subscribe Amazon RDS Notification And Get Notifications From Slack</title><meta name="description" content="Subscribe Amazon RDS Notification And Get Notifications From Slack" data-svelte="svelte-1x9odug"><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END -->
 	<link rel="stylesheet" href="/blog/_app/assets/pages/__layout.svelte-8e26d482.css">
-	<link rel="stylesheet" href="/blog/_app/assets/code.svelte_svelte_type_style_lang-ad8de04b.css">
+	<link rel="stylesheet" href="/blog/_app/assets/pages/posts/2022/09/01.svelte-07b029e5.css">
+	<link rel="stylesheet" href="/blog/_app/assets/code-b1a8dfc9.css">
 	<link rel="stylesheet" href="/blog/_app/assets/posts-afc2ffa1.css">
 	<link rel="stylesheet" href="/blog/_app/assets/url-92fc559d.css">
-	<link rel="modulepreload" href="/blog/_app/start-a615b74a.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/index-ec910556.js">
-	<link rel="modulepreload" href="/blog/_app/pages/__layout.svelte-751cba87.js">
-	<link rel="modulepreload" href="/blog/_app/pages/posts/2022/09/01.svelte-e0adc818.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/posts-50318373.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/url-bee46e5c.js">
+	<link rel="modulepreload" href="/blog/_app/start-69526d7c.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/index-b86b2985.js">
+	<link rel="modulepreload" href="/blog/_app/pages/__layout.svelte-2eefbcb7.js">
+	<link rel="modulepreload" href="/blog/_app/pages/posts/2022/09/01.svelte-856c6d9e.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/code-4e203955.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/posts-06bb5a10.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/url-67439a56.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/annotation-8c44a74d.js">
 	</head>
 	<body>
 		
@@ -24,78 +36,243 @@
 
 <div class="header svelte-1my2263"><div class="left svelte-1my2263"><a href="/blog/posts"><div class="dot svelte-1my2263" style="width: undefinedpx; background-color: #DF7861;"></div>
 				</a><div class="dot svelte-1my2263" style="width: undefinedpx; background-color: #FFB562;"></div><div class="dot svelte-1my2263" style="width: undefinedpx; background-color: #ADCF9F;"></div></div>
-	<div class="center svelte-1my2263"><div class="title svelte-1my2263"><div slot="header"><div class="header svelte-1diewu8">Subscribe To Amazon RDS Notification With Slack
+	<div class="center svelte-1my2263"><div class="title svelte-1my2263"><div slot="header"><div class="header svelte-1diewu8">Subscribe Amazon RDS Notification And Get Notifications From Slack
 </div></div></div></div>
 	<div class="right"></div></div>
 <div class="content svelte-1my2263"><div class="left svelte-1my2263"></div>
-	<div class="center svelte-1my2263"><div slot="center"><div class="title svelte-1ulewd">Subscribe To Amazon RDS Notification With Slack
+	<div class="center svelte-1my2263"><div slot="center"><div class="title svelte-1ulewd">Subscribe Amazon RDS Notification And Get Notifications From Slack
 </div>
 
 		
-		<div class="container svelte-iku5xz"><figure><img src="https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png" alt="SP, Brasil" style="max-width: 100%;" slot="image">
-		<figcaption class="svelte-iku5xz"><div slot="caption">@Photo by Jefferson Santal from
-				<div class="href svelte-jsfa02"><a href="https://www.pexels.com/photo/a-traffic-light-with-green-light-11093631/" class="svelte-jsfa02">Pexels</a>
+		<div class="container svelte-iku5xz"><figure><img src="https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png" alt="Slack" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-iku5xz"><div slot="caption">@Image from
+				<div class="href svelte-jsfa02"><a href="https://slack.com/features" class="svelte-jsfa02">Slack</a>
 </div></div></figcaption></figure>
 </div>
 		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #ffb562;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
 	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Caution</div>
 		<div class="content svelte-1nl2eag">This blog uses non-copyright images. If you are the owner of the image and want to protect the copyright, please contact me.</div></div>
 </div>
-		<div class="subtitle svelte-oo9etd">Design my blog
+		<div class="subtitle svelte-oo9etd">Before start
 </div>
-		<div class="content svelte-1nb29p1">My blog is ready to display posts on the Index page and two posts on the Post page. All the
-			pages prepared so far are satisfactory. Each page has a header, content, and footer. A post
-			page provides readers with additional information about the post. I think every page should
-			provide intuitive information visually to the user without a tortion of content. Therefore I
-			have been preparing contents for my blog as simple as possible.
+		<div class="content svelte-1nb29p1">A few days ago, I heard about two incidents causing a failure event that has a business
+			impact. Each of them were that a minor update for RDS database engine had been done during the
+			periodic maintenance period. While updating engines, the database server had been rebooted.
+			The task was done after just five minutes. However some transactions have not been processed
+			because of this update. This transactions have to be processed by administrators after update.
 		
 </div>
-		<div class="content svelte-1nb29p1">Choosing the right color for my content is a very important task. A blog should highlight
-			principal texts and images with bright colors. On the other hand fundamental contents should
-			be colored with dark. Let me show you my colors which I used on my blog.
+		<div class="content svelte-1nb29p1">I am monitoring many servers with 
+
+
+<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon CloudWatch</span>
+		<span class="blue number svelte-13fzk28">1</span>
+</div> service. The servers which were created from 
+
+
+<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon EC2</span>
+		<span class="blue number svelte-13fzk28">2</span>
+</div> are running on the AWS. Default metrics like CPU utilization, network bandwidth are provided
+			from Amazon Cloudwatch for free. With Amazon Cloudwatch service, you can configure your alarm which
+			notify you when one of the metrics are met a condition of pre-defined rules.
+			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">1</span></div>
+	<div class="annotation"><span slot="annotation">CloudWatch provides you with data and actionable insights to monitor your applications,
+					respond to system-wide performance changes, and optimize resource utilization. CloudWatch
+					collects monitoring and operational data in the form of logs, metrics, and events.
+				</span></div>
+</div>
+			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">2</span></div>
+	<div class="annotation"><span slot="annotation">Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute
+					platform, with over 500 instances and choice of the latest processor, storage, networking,
+					operating system, and purchase model to help you best match the needs of your workload.
+				</span></div>
+</div>
+</div>
+		<div class="content svelte-1nb29p1">Following <div class="href svelte-jsfa02"><a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html" class="svelte-jsfa02">Amazon Cloudwatch document</a>
+</div> which says composite alarms can send 
+
+
+<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon SNS</span>
+		<span class="blue number svelte-13fzk28">1</span>
+</div>
+			notifications when they change state, I have configured a alarm process which notify to administrators
+			when changing the alarm state. After sending an alarm state to Amazon SNS, the service send to
+			subscriptions like e-mail, 
+
+
+<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">AWS Lambda</span>
+		<span class="blue number svelte-13fzk28">2</span>
+</div> and etc.
+			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">1</span></div>
+	<div class="annotation"><span slot="annotation">Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for
+					both application-to-application (A2A) and application-to-person (A2P) communication.
+				</span></div>
+</div>
+			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">2</span></div>
+	<div class="annotation"><span slot="annotation">AWS Lambda is a serverless, event-driven compute service that lets you run code for
+					virtually any type of application or backend service without provisioning or managing
+					servers.
+				</span></div>
+</div>
+</div>
+		<div class="content svelte-1nb29p1">This process was also applied to RDS event notification. When events occur, each event are
+			sent to Amazon SNS. The service receives messages and sends to AWS Lambda in my case.
 		
 </div>
-		<div class="content svelte-1nb29p1">All colors using on this blog are defined to variables in a
-			
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">app.scss</span>
-</div> file.
-			
-
-<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">:root</span>
-</div> element in the file can affect all of our
-			blog html elements with declaring global CSS variables. To change colors without a global variable
-			is a very difficult task. All colors in the svelte files need to be re-defined. But with a variable,
-			the task will be done very easy.
+		<div class="content svelte-1nb29p1">With AWS Lambda service, you can create a lambda function which runs your code without a
+			server. I have wrote a code that was running on the NODEJS14 runtime to send the message from
+			Amazon SNS to Slack. The message is a JSON format and raw text. To understand the message fast
+			and concisely, it has to be parsed properly.
 		
 </div>
-		<div class="content svelte-1nb29p1">In a 
+		<div class="content svelte-18aohhk"><div class="file svelte-18aohhk"><div slot="file">cloudwatch.json</div></div>
+	<div class="code"><div slot="code">
+  
+  <pre data-language="json" class=" svelte-1xjucv4"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-punctuation">{</span>
+	<span class="hljs-attr">&quot;Records&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+	  <span class="hljs-punctuation">{</span>
+		<span class="hljs-attr">&quot;EventSource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;aws:sns&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;EventVersion&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1.0&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;EventSubscriptionArn&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arn:aws:sns:ap-southeast-1:123456789012:laminar:a6ea4892-f3e6-499c-a854-f53f544eef04&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;Sns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+		  <span class="hljs-attr">&quot;Type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Notification&quot;</span><span class="hljs-punctuation">,</span>
+		  <span class="hljs-attr">&quot;MessageId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;57977499-a9d2-5e38-8b55-2f1bed8777af&quot;</span><span class="hljs-punctuation">,</span>
+		  <span class="hljs-attr">&quot;TopicArn&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arn:aws:sns:ap-southeast-1:123456789012:laminar&quot;</span><span class="hljs-punctuation">,</span>
+		  <span class="hljs-attr">&quot;Subject&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;OK: &quot;</span>my-alarm<span class="hljs-string">&quot; in Asia Pacific (Singapore)&quot;</span><span class="hljs-punctuation">,</span>
+		  <span class="hljs-attr">&quot;Message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;{&quot;</span>AlarmName<span class="hljs-string">&quot;:&quot;</span>my-alarm<span class="hljs-string">&quot;,&quot;</span>AlarmDescription<span class="hljs-string">&quot;:null,&quot;</span>AWSAccountId<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">123456789012</span><span class="hljs-string">&quot;,&quot;</span>AlarmConfigurationUpdatedTimestamp<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2022</span><span class="hljs-number">-08</span><span class="hljs-number">-26</span>T03<span class="hljs-punctuation">:</span><span class="hljs-number">45</span><span class="hljs-punctuation">:</span><span class="hljs-number">34.563</span>+<span class="hljs-number">0000</span><span class="hljs-string">&quot;,&quot;</span>NewStateValue<span class="hljs-string">&quot;:&quot;</span>OK<span class="hljs-string">&quot;,&quot;</span>NewStateReason<span class="hljs-string">&quot;:&quot;</span>Threshold Crossed<span class="hljs-punctuation">:</span> <span class="hljs-number">1</span> out of the last <span class="hljs-number">1</span> datapoints <span class="hljs-punctuation">[</span><span class="hljs-number">3.6266666666666665</span> (<span class="hljs-number">26</span>/<span class="hljs-number">08</span>/<span class="hljs-number">22</span> <span class="hljs-number">03</span><span class="hljs-punctuation">:</span><span class="hljs-number">40</span><span class="hljs-punctuation">:</span><span class="hljs-number">00</span>)<span class="hljs-punctuation">]</span> was not less than the threshold (<span class="hljs-number">1.0</span>) (minimum <span class="hljs-number">1</span> datapoint for ALARM -&gt; OK transition).<span class="hljs-string">&quot;,&quot;</span>StateChangeTime<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2022</span><span class="hljs-number">-08</span><span class="hljs-number">-26</span>T03<span class="hljs-punctuation">:</span><span class="hljs-number">46</span><span class="hljs-punctuation">:</span><span class="hljs-number">29.897</span>+<span class="hljs-number">0000</span><span class="hljs-string">&quot;,&quot;</span>Region<span class="hljs-string">&quot;:&quot;</span>Asia Pacific (Singapore)<span class="hljs-string">&quot;,&quot;</span>AlarmArn<span class="hljs-string">&quot;:&quot;</span>arn<span class="hljs-punctuation">:</span>aws<span class="hljs-punctuation">:</span>cloudwatch<span class="hljs-punctuation">:</span>ap-southeast<span class="hljs-number">-1</span><span class="hljs-punctuation">:</span><span class="hljs-number">123456789012</span><span class="hljs-punctuation">:</span>alarm<span class="hljs-punctuation">:</span>my-alarm<span class="hljs-string">&quot;,&quot;</span>OldStateValue<span class="hljs-string">&quot;:&quot;</span>ALARM<span class="hljs-string">&quot;,&quot;</span>OKActions<span class="hljs-string">&quot;:[&quot;</span>arn<span class="hljs-punctuation">:</span>aws<span class="hljs-punctuation">:</span>sns<span class="hljs-punctuation">:</span>ap-southeast<span class="hljs-number">-1</span><span class="hljs-punctuation">:</span><span class="hljs-number">123456789012</span><span class="hljs-punctuation">:</span>laminar<span class="hljs-string">&quot;],&quot;</span>AlarmActions<span class="hljs-string">&quot;:[&quot;</span>arn<span class="hljs-punctuation">:</span>aws<span class="hljs-punctuation">:</span>sns<span class="hljs-punctuation">:</span>ap-southeast<span class="hljs-number">-1</span><span class="hljs-punctuation">:</span><span class="hljs-number">123456789012</span><span class="hljs-punctuation">:</span>laminar<span class="hljs-string">&quot;],&quot;</span>InsufficientDataActions<span class="hljs-string">&quot;:[],&quot;</span>Trigger<span class="hljs-string">&quot;:{&quot;</span>MetricName<span class="hljs-string">&quot;:&quot;</span>CPUUtilization<span class="hljs-string">&quot;,&quot;</span>Namespace<span class="hljs-string">&quot;:&quot;</span>AWS/RDS<span class="hljs-string">&quot;,&quot;</span>StatisticType<span class="hljs-string">&quot;:&quot;</span>Statistic<span class="hljs-string">&quot;,&quot;</span>Statistic<span class="hljs-string">&quot;:&quot;</span>AVERAGE<span class="hljs-string">&quot;,&quot;</span>Unit<span class="hljs-string">&quot;:null,&quot;</span>Dimensions<span class="hljs-string">&quot;:[{&quot;</span>value<span class="hljs-string">&quot;:&quot;</span>database<span class="hljs-number">-1</span><span class="hljs-string">&quot;,&quot;</span>name<span class="hljs-string">&quot;:&quot;</span>DBInstanceIdentifier<span class="hljs-string">&quot;}],&quot;</span>Period<span class="hljs-string">&quot;:300,&quot;</span>EvaluationPeriods<span class="hljs-string">&quot;:1,&quot;</span>DatapointsToAlarm<span class="hljs-string">&quot;:1,&quot;</span>ComparisonOperator<span class="hljs-string">&quot;:&quot;</span>LessThanThreshold<span class="hljs-string">&quot;,&quot;</span>Threshold<span class="hljs-string">&quot;:1.0,&quot;</span>TreatMissingData<span class="hljs-string">&quot;:&quot;</span>missing<span class="hljs-string">&quot;,&quot;</span>EvaluateLowSampleCountPercentile<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;}}&quot;</span><span class="hljs-punctuation">,</span>
+		  <span class="hljs-attr">&quot;Timestamp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022-08-26T03:46:29.953Z&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-punctuation">}</span>
+	  <span class="hljs-punctuation">}</span>
+	<span class="hljs-punctuation">]</span>
+  <span class="hljs-punctuation">}</span><!-- HTML_TAG_END --></code></pre>
+</div></div>
+</div>
+		<div class="content svelte-1nb29p1">The above 
 
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">tag.svelte</span>
-</div> file, for example, two properties like
-			
 
-<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">color</span>
-</div> and
-			
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">cloudwatch.json</span>
+</div> message from Amazon CloudWatch,
+			for example, has a 
 
-<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">background-color</span>
-</div> are defined by variable pre-defined
-			in the app.scss file. With this technique, the concept of this blog was decided very quickly.
+
+<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">Records</span>
+</div> key. The type of key
+			is an array in NODEJS and a list in PYTHON. The first item of the key is JSON. A main key of the
+			item is 
+
+
+<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">Sns</span>
+</div>. This key differs from source like
+			Amazon CloudWatch, Amazon RDS and etc. My NODEJS code was wrote for only messages from Amazon
+			CloudWatch.
 		
 </div>
-		<div class="container svelte-iku5xz"><figure><img src="https://user-images.githubusercontent.com/52372569/187074447-b4c706a8-6faa-4ebe-b342-367fb9073ef5.png" alt="Color Instructions on my blog" style="max-width: 100%;" slot="image">
-		<figcaption class="svelte-iku5xz"></figcaption></figure>
+
+		
+		<div class="subtitle svelte-oo9etd">The Goal
+</div>
+		<div class="content svelte-1nb29p1">All of the messages from Amazon Cloudwatch alarm, Amazon RDS event shoud be sent to slack
+			successfully. That means a lambda function shoud be expandable for all Amazon SNS messages.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/188312397-678f8422-ccd0-44e8-ad16-90b2793318f8.png" alt="RDS console" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
 </div>
 		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
 	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
 		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
 </div>
-		<div class="content svelte-1nb29p1">The colors used in this blog are very diverse. But there are not many groups of colors. I
-			prepared some tonal colors that are less intense for relieving eye fatigue and comfort. Also
-			these colors give us feeling soft. I hope my intention will be properly provided to you.
+		<div class="content svelte-1nb29p1">From creating a event subscription to be notified by a slack app, I would like to talk about
+			all of the steps. Descriptions may be omitted unintentionally.
 		
 </div>
+
+		
+		<div class="subtitle svelte-oo9etd">Subscribe an event
+</div>
+		<div class="content svelte-1nb29p1">You could create an subscription on AWS console. Write
+			
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">RDS</span>
+</div>
+			on the search box at the top and Click
+			
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">RDS</span>
+</div>
+			from the results in the services.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/188320527-a31f777c-fc54-4ab7-aa5c-d8a9aaf7e21e.png" alt="RDS Event subscription" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
+	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
+		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
+</div>
+		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+		<div class="content svelte-1nb29p1">On the side menu, click the
+			
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">Event subscriptions</span>
+</div>. After entering the Event
+			subscriptions page, click the
+			
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">Create event subscription</span>
+</div>
+			button colored orange.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/188319972-84b3a6b2-f8cb-4cb9-9176-1179712bc2b8.png" alt="RDS Event subscription" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
+	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
+		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
+</div>
+		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+		<div class="content svelte-1nb29p1">Enter the your subscription name. In my case, I entered
+			
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">laminar</span>
+</div>. After that, choose your Amazon SNS ARN.
+			My target ARN is 
+
+
+<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">laminar</span>
+</div>. For easy resource
+			management, I recommend that you specify the same subscription name and destination name.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/188323556-f72eb4fa-7320-49bb-af7b-0132a7ac6a5e.png" alt="RDS Event subscription" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
+	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
+		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
+</div>
+		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+
 		<div class="footer svelte-59dbvb">© Copyright 2022
 	<span class="color svelte-59dbvb">Laminar</span>
 </div></div></div>
@@ -116,10 +293,10 @@
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1t7r4mz">
-		import { start } from "/blog/_app/start-a615b74a.js";
+		<script type="module" data-sveltekit-hydrate="1ah40yk">
+		import { start } from "/blog/_app/start-69526d7c.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1t7r4mz"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1ah40yk"]').parentNode,
 			paths: {"base":"/blog","assets":"/blog"},
 			session: {},
 			route: true,
@@ -129,8 +306,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/blog/_app/pages/__layout.svelte-751cba87.js"),
-						import("/blog/_app/pages/posts/2022/09/01.svelte-e0adc818.js")
+					import("/blog/_app/pages/__layout.svelte-2eefbcb7.js"),
+						import("/blog/_app/pages/posts/2022/09/01.svelte-856c6d9e.js")
 				],
 				params: {},
 				routeId: "posts/2022/09/01"
