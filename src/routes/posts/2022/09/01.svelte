@@ -10,6 +10,7 @@
 	import Href from '$lib/layout/posts/props/contents/center/href.svelte';
 	import Information from '$lib/layout/posts/props/contents/center/information.svelte';
 	import Color from '$lib/layout/posts/props/contents/center/color.svelte';
+	import AWS_Button from '$lib/layout/posts/props/contents/center/aws/button.svelte';
 
 	// Slots/Contents/Center
 	import Annotation from '$lib/layout/posts/slots/contents/center/annotation.svelte';
@@ -178,9 +179,9 @@
 		<Subtitle>Subscribe an event</Subtitle>
 		<Content>
 			You could create an subscription on AWS console. Write
-			<Color color="red" content="RDS" number="-1" />
+			<AWS_Button type="serviceSearch" content="RDS" />
 			on the search box at the top and Click
-			<Color color="red" content="RDS" number="-1" />
+			<AWS_Button type="service" content="RDS" />
 			from the results in the services.
 		</Content>
 		<Image_v2>
@@ -197,12 +198,28 @@
 			On the side menu, click the
 			<Color color="red" content="Event subscriptions" number="-1" />. After entering the Event
 			subscriptions page, click the
-			<Color color="red" content="Create event subscription" number="-1" />
-			button colored orange.
+			<AWS_Button type="button" content="Create event subscription" />
+			button.
 		</Content>
 		<Image_v2>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/188319972-84b3a6b2-f8cb-4cb9-9176-1179712bc2b8.png"
+				alt="RDS Event subscription"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.green} name={name.green} content={content.image.green._01} />
+		<Step />
+		<Content>
+			Enter the your subscription name. In my case, I entered
+			<AWS_Button type="input" content="laminar" />. After that, choose your Amazon SNS ARN. My
+			target ARN is <AWS_Button type="input" content="laminar" />. For easy resource management, I
+			recommend that you specify the same subscription name and destination name.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/188323556-f72eb4fa-7320-49bb-af7b-0132a7ac6a5e.png"
 				alt="RDS Event subscription"
 				style="max-width: 100%;"
 				slot="image"
@@ -218,7 +235,7 @@
 		</Content>
 		<Image_v2>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/188323556-f72eb4fa-7320-49bb-af7b-0132a7ac6a5e.png"
+				src="https://user-images.githubusercontent.com/52372569/188323913-21086efa-0b04-4fcc-8906-ca41009b0b26.png"
 				alt="RDS Event subscription"
 				style="max-width: 100%;"
 				slot="image"
