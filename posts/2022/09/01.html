@@ -15,18 +15,18 @@
   Current colors taken from GitHub's CSS
 */.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END -->
 	<link rel="stylesheet" href="/blog/_app/assets/pages/__layout.svelte-8e26d482.css">
-	<link rel="stylesheet" href="/blog/_app/assets/pages/posts/2022/09/01.svelte-07b029e5.css">
+	<link rel="stylesheet" href="/blog/_app/assets/pages/posts/2022/09/01.svelte-d316bcff.css">
 	<link rel="stylesheet" href="/blog/_app/assets/code-b1a8dfc9.css">
-	<link rel="stylesheet" href="/blog/_app/assets/posts-afc2ffa1.css">
+	<link rel="stylesheet" href="/blog/_app/assets/posts-c3c7c38a.css">
 	<link rel="stylesheet" href="/blog/_app/assets/url-92fc559d.css">
-	<link rel="modulepreload" href="/blog/_app/start-69526d7c.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/index-b86b2985.js">
-	<link rel="modulepreload" href="/blog/_app/pages/__layout.svelte-2eefbcb7.js">
-	<link rel="modulepreload" href="/blog/_app/pages/posts/2022/09/01.svelte-856c6d9e.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/code-4e203955.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/posts-06bb5a10.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/url-67439a56.js">
-	<link rel="modulepreload" href="/blog/_app/chunks/annotation-8c44a74d.js">
+	<link rel="modulepreload" href="/blog/_app/start-8f5af553.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/index-f9cb7a0d.js">
+	<link rel="modulepreload" href="/blog/_app/pages/__layout.svelte-c500eb9c.js">
+	<link rel="modulepreload" href="/blog/_app/pages/posts/2022/09/01.svelte-c19d63eb.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/code-ea3d56b4.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/posts-2a59a579.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/url-2256a561.js">
+	<link rel="modulepreload" href="/blog/_app/chunks/annotation-dee01bd5.js">
 	</head>
 	<body>
 		
@@ -62,18 +62,21 @@
 			because of this update. This transactions have to be processed by administrators after update.
 		
 </div>
-		<div class="content svelte-1nb29p1">I am monitoring many servers with 
+		<div class="content svelte-1nb29p1">I am monitoring many servers with
+			
 
 
-<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon CloudWatch</span>
-		<span class="blue number svelte-13fzk28">1</span>
-</div> service. The servers which were created from 
+<div class="content svelte-rsy2x6"><span class="blue svelte-rsy2x6">Amazon CloudWatch</span>
+		<span class="blue number svelte-rsy2x6">1</span>
+</div> service. The servers which were created
+			from 
 
 
-<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon EC2</span>
-		<span class="blue number svelte-13fzk28">2</span>
-</div> are running on the AWS. Default metrics like CPU utilization, network bandwidth are provided
-			from Amazon Cloudwatch for free. With Amazon Cloudwatch service, you can configure your alarm which
+<div class="content svelte-rsy2x6"><span class="blue svelte-rsy2x6">Amazon EC2</span>
+		<span class="blue number svelte-rsy2x6">2</span>
+</div>
+			are running on the AWS. Default metrics like CPU utilization, network bandwidth are provided from
+			Amazon Cloudwatch for free. With Amazon Cloudwatch service, you can configure your alarm which
 			notify you when one of the metrics are met a condition of pre-defined rules.
 			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">1</span></div>
 	<div class="annotation"><span slot="annotation">CloudWatch provides you with data and actionable insights to monitor your applications,
@@ -92,16 +95,16 @@
 </div> which says composite alarms can send 
 
 
-<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">Amazon SNS</span>
-		<span class="blue number svelte-13fzk28">1</span>
+<div class="content svelte-rsy2x6"><span class="blue svelte-rsy2x6">Amazon SNS</span>
+		<span class="blue number svelte-rsy2x6">1</span>
 </div>
 			notifications when they change state, I have configured a alarm process which notify to administrators
 			when changing the alarm state. After sending an alarm state to Amazon SNS, the service send to
 			subscriptions like e-mail, 
 
 
-<div class="content svelte-13fzk28"><span class="blue svelte-13fzk28">AWS Lambda</span>
-		<span class="blue number svelte-13fzk28">2</span>
+<div class="content svelte-rsy2x6"><span class="blue svelte-rsy2x6">AWS Lambda</span>
+		<span class="blue number svelte-rsy2x6">2</span>
 </div> and etc.
 			<div class="content svelte-76s24z"><div class="number svelte-76s24z"><span slot="number">1</span></div>
 	<div class="annotation"><span slot="annotation">Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for
@@ -150,18 +153,18 @@
 		<div class="content svelte-1nb29p1">The above 
 
 
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">cloudwatch.json</span>
+<div class="content svelte-rsy2x6"><span class="black background svelte-rsy2x6">cloudwatch.json</span>
 </div> message from Amazon CloudWatch,
 			for example, has a 
 
 
-<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">Records</span>
+<div class="content svelte-rsy2x6"><span class="purple background svelte-rsy2x6">Records</span>
 </div> key. The type of key
 			is an array in NODEJS and a list in PYTHON. The first item of the key is JSON. A main key of the
 			item is 
 
 
-<div class="content svelte-13fzk28"><span class="purple svelte-13fzk28">Sns</span>
+<div class="content svelte-rsy2x6"><span class="purple background svelte-rsy2x6">Sns</span>
 </div>. This key differs from source like
 			Amazon CloudWatch, Amazon RDS and etc. My NODEJS code was wrote for only messages from Amazon
 			CloudWatch.
@@ -182,7 +185,7 @@
 </div>
 		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
 	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
-		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
+		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don't think so, please contact me.</div></div>
 </div>
 		<div class="content svelte-1nb29p1">From creating a event subscription to be notified by a slack app, I would like to talk about
 			all of the steps. Descriptions may be omitted unintentionally.
@@ -193,16 +196,11 @@
 		<div class="subtitle svelte-oo9etd">Subscribe an event
 </div>
 		<div class="content svelte-1nb29p1">You could create an subscription on AWS console. Write
-			
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">RDS</span>
+			<div class="content svelte-r8hg8q"><div class="standard serviceSearch svelte-r8hg8q"><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.5rem" height="1.5rem" viewBox="0 0 1244 1280" preserveAspectRatio="xMidYMid meet" class="svelte-r8hg8q"><metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017 </metadata><g transform="translate(0,1280) scale(0.1,-0.1)" fill="#ffffff" stroke="none"><path d="M4025 12789 c-1029 -79 -1969 -501 -2704 -1214 -985 -955 -1456 -2292 -1285 -3650 156 -1244 849 -2360 1899 -3059 193 -129 272 -175 470 -274 452 -227 906 -362 1445 -429 207 -25 763 -25 970 0 404 50 752 138 1115 281 251 98 600 283 819 433 l80 54 1075 -1073 c3835 -3827 3770 -3762 3828 -3795 189 -105 411 -75 563 77 148 148 180 359 84 553 -21 43 -462 488 -2432 2459 -2212 2213 -2404 2408 -2392 2425 8 10 40 47 70 83 714 836 1088 1927 1031 3011 -32 610 -165 1136 -420 1664 -169 349 -340 615 -592 920 -106 128 -395 417 -524 524 -687 569 -1463 900 -2336 996 -174 19 -598 27 -764 14z m780 -949 c777 -118 1453 -463 1982 -1014 516 -536 829 -1194 930 -1951 24 -186 24 -618 0 -810 -54 -416 -158 -758 -342 -1125 -297 -593 -779 -1101 -1360 -1432 -964 -549 -2153 -590 -3152 -108 -975 470 -1667 1364 -1873 2420 -37 192 -51 323 -57 555 -6 258 4 423 42 651 161 971 742 1831 1588 2348 453 278 935 434 1512 490 22 2 164 3 315 1 217 -3 304 -8 415 -25z"></path></g></svg>
+			RDS</div>
 </div>
 			on the search box at the top and Click
-			
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">RDS</span>
+			<div class="content svelte-r8hg8q"><div class="standard service svelte-r8hg8q">RDS</div>
 </div>
 			from the results in the services.
 		
@@ -212,26 +210,16 @@
 		<figcaption class="svelte-5snfk9"></figcaption></figure>
 	<div class="footer svelte-5snfk9"></div>
 </div>
-		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
-	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
-		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
-</div>
-		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
 	
 </div>
 		<div class="content svelte-1nb29p1">On the side menu, click the
-			
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">Event subscriptions</span>
+			<div class="content svelte-r8hg8q"><div class="standard input svelte-r8hg8q">Event subscriptions</div>
 </div>. After entering the Event
 			subscriptions page, click the
-			
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">Create event subscription</span>
+			<div class="content svelte-r8hg8q"><div class="standard button svelte-r8hg8q">Create event subscription</div>
 </div>
-			button colored orange.
+			button.
 		
 </div>
 		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
@@ -239,23 +227,14 @@
 		<figcaption class="svelte-5snfk9"></figcaption></figure>
 	<div class="footer svelte-5snfk9"></div>
 </div>
-		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
-	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
-		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
-</div>
-		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
 	
 </div>
 		<div class="content svelte-1nb29p1">Enter the your subscription name. In my case, I entered
-			
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">laminar</span>
-</div>. After that, choose your Amazon SNS ARN.
-			My target ARN is 
-
-
-<div class="content svelte-13fzk28"><span class="red svelte-13fzk28">laminar</span>
+			<div class="content svelte-r8hg8q"><div class="standard input svelte-r8hg8q">laminar</div>
+</div>. After that, choose your Amazon SNS ARN. My
+			target ARN is <div class="content svelte-r8hg8q"><div class="standard inputSelect svelte-r8hg8q">laminar
+			<svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24" class="svelte-r8hg8q"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg></div>
 </div>. For easy resource
 			management, I recommend that you specify the same subscription name and destination name.
 		
@@ -265,14 +244,109 @@
 		<figcaption class="svelte-5snfk9"></figcaption></figure>
 	<div class="footer svelte-5snfk9"></div>
 </div>
-		<div class="container svelte-1nl2eag" style="border-left: 1rem solid #adcf9f;"><div class="logo"><img src="/blog/_app/assets/stare-ed794b99.png" alt="Stare" class="svelte-1nl2eag"></div>
-	<div class="message svelte-1nl2eag"><div class="name svelte-1nl2eag">Information</div>
-		<div class="content svelte-1nl2eag">This blog owner has a copyright of this image. If you don&#39;t think so, please contact me.</div></div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
 </div>
-		<div class="content svelte-h8jkoi"><svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+		<div class="content svelte-1nb29p1">You can choose source type from a source list. I want to subscribe events from my instances.
+			So I choose <div class="content svelte-r8hg8q"><div class="standard inputSelect svelte-r8hg8q">Instances
+			<svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24" class="svelte-r8hg8q"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg></div>
+</div> from types.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/189348189-b594ba6c-12b3-42df-b817-114fa07894fb.png" alt="RDS Event Source" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-1nb29p1">Leave the options below as defaults. After configuring the source, click the
+			<div class="content svelte-r8hg8q"><div class="standard button svelte-r8hg8q">Create</div>
+</div> button.
+		
+</div>
+		<div class="content svelte-1nb29p1">If you want to listen a specific event from selected instances, you can choose a
+			<div class="content svelte-r8hg8q"><div class="standard select svelte-r8hg8q"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" class="svelte-r8hg8q"><circle cx="1.5rem" cy="1.5rem" r="0.5rem" stroke="#0073bb" stroke-width="5" fill="#ffffff"></circle></svg>
+			Select specific instances</div>
+</div> and a
+			<div class="content svelte-r8hg8q"><div class="standard select svelte-r8hg8q"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" class="svelte-r8hg8q"><circle cx="1.5rem" cy="1.5rem" r="0.5rem" stroke="#0073bb" stroke-width="5" fill="#ffffff"></circle></svg>
+			Select specific event categories</div>
+</div>options.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/188323913-21086efa-0b04-4fcc-8906-ca41009b0b26.png" alt="RDS Event subscription" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
 	
 </div>
 
+		
+		<div class="subtitle svelte-oo9etd">Create a Lambda function
+</div>
+		<div class="content svelte-1nb29p1">You could create an lambda function on AWS console. Write
+			<div class="content svelte-r8hg8q"><div class="standard serviceSearch svelte-r8hg8q"><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.5rem" height="1.5rem" viewBox="0 0 1244 1280" preserveAspectRatio="xMidYMid meet" class="svelte-r8hg8q"><metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017 </metadata><g transform="translate(0,1280) scale(0.1,-0.1)" fill="#ffffff" stroke="none"><path d="M4025 12789 c-1029 -79 -1969 -501 -2704 -1214 -985 -955 -1456 -2292 -1285 -3650 156 -1244 849 -2360 1899 -3059 193 -129 272 -175 470 -274 452 -227 906 -362 1445 -429 207 -25 763 -25 970 0 404 50 752 138 1115 281 251 98 600 283 819 433 l80 54 1075 -1073 c3835 -3827 3770 -3762 3828 -3795 189 -105 411 -75 563 77 148 148 180 359 84 553 -21 43 -462 488 -2432 2459 -2212 2213 -2404 2408 -2392 2425 8 10 40 47 70 83 714 836 1088 1927 1031 3011 -32 610 -165 1136 -420 1664 -169 349 -340 615 -592 920 -106 128 -395 417 -524 524 -687 569 -1463 900 -2336 996 -174 19 -598 27 -764 14z m780 -949 c777 -118 1453 -463 1982 -1014 516 -536 829 -1194 930 -1951 24 -186 24 -618 0 -810 -54 -416 -158 -758 -342 -1125 -297 -593 -779 -1101 -1360 -1432 -964 -549 -2153 -590 -3152 -108 -975 470 -1667 1364 -1873 2420 -37 192 -51 323 -57 555 -6 258 4 423 42 651 161 971 742 1831 1588 2348 453 278 935 434 1512 490 22 2 164 3 315 1 217 -3 304 -8 415 -25z"></path></g></svg>
+			Lambda</div>
+</div>
+			on the search box at the top and Click
+			<div class="content svelte-r8hg8q"><div class="standard service svelte-r8hg8q">Lambda</div>
+</div>
+			from the results in the services.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/189368580-e70430b6-c727-47a7-a3bb-1b65682705d3.png" alt="Lambda Fucntion" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+		<div class="content svelte-1nb29p1">If you are unable to view this <div class="content svelte-r8hg8q"><div class="standard input svelte-r8hg8q">Functions</div>
+</div> page, click
+			<div class="content svelte-r8hg8q"><div class="standard input svelte-r8hg8q">Functions</div>
+</div> on the left menu bar. To create a lambda function,
+			click the <div class="content svelte-r8hg8q"><div class="standard button svelte-r8hg8q">Create function</div>
+</div> button at the top right corner.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/189377555-cfb043f3-0439-4259-91bb-72842079760c.png" alt="Lambda Fucntion" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+		<div class="content svelte-1nb29p1">You can set your function name. In my case, I name the function
+			<div class="content svelte-r8hg8q"><div class="standard input svelte-r8hg8q">Notify-to-Slack</div>
+</div>.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/189389419-411249a8-5ad9-4b40-ab36-386a3927aaf3.png" alt="Lambda Fucntion" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+		<div class="content svelte-1nb29p1">My sample code can run on the python environment. Choose the
+			<div class="content svelte-r8hg8q"><div class="standard inputSelect svelte-r8hg8q">Python 3.9
+			<svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24" class="svelte-r8hg8q"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg></div>
+</div> runtime from the supported runtime lists.
+		
+</div>
+		<div class="container svelte-5snfk9"><div class="header svelte-5snfk9"><div class="tab"></div></div>
+	<figure><img src="https://user-images.githubusercontent.com/52372569/189390401-41d5f516-56ae-40aa-867a-276e4b1d9a47.png" alt="Lambda Fucntion" style="max-width: 100%;" slot="image">
+		<figcaption class="svelte-5snfk9"></figcaption></figure>
+	<div class="footer svelte-5snfk9"></div>
+</div>
+		<div class="content svelte-w7ylg2"><svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><path d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z" data-name="Down"></path></svg>
+	
+</div>
+
+		
 		<div class="footer svelte-59dbvb">© Copyright 2022
 	<span class="color svelte-59dbvb">Laminar</span>
 </div></div></div>
@@ -293,10 +367,10 @@
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1ah40yk">
-		import { start } from "/blog/_app/start-69526d7c.js";
+		<script type="module" data-sveltekit-hydrate="1fvy5gi">
+		import { start } from "/blog/_app/start-8f5af553.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1ah40yk"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1fvy5gi"]').parentNode,
 			paths: {"base":"/blog","assets":"/blog"},
 			session: {},
 			route: true,
@@ -306,8 +380,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/blog/_app/pages/__layout.svelte-2eefbcb7.js"),
-						import("/blog/_app/pages/posts/2022/09/01.svelte-856c6d9e.js")
+					import("/blog/_app/pages/__layout.svelte-c500eb9c.js"),
+						import("/blog/_app/pages/posts/2022/09/01.svelte-c19d63eb.js")
 				],
 				params: {},
 				routeId: "posts/2022/09/01"
