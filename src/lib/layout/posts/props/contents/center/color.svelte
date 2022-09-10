@@ -6,7 +6,7 @@
 
 <!-- Blue: Annotation -->
 <!-- Purple: Code -->
-<!-- Red: File Name / Instructions -->
+<!-- Black: File Name -->
 <div class="content">
 	{#if number != '-1'}
 		<span class={color}>
@@ -15,12 +15,12 @@
 		<span class="{color} number">
 			{number}
 		</span>
-	{:else if color == 'red'}
-		<span class={color}>
+	{:else if color == 'black'}
+		<span class="{color} background">
 			{content}
 		</span>
 	{:else if color == 'purple'}
-		<span class={color}>
+		<span class="{color} background">
 			{content}
 		</span>
 	{:else}
@@ -33,10 +33,16 @@
 <style lang="scss">
 	.content {
 		display: inline;
-		padding: 0 0.1rem;
+		align-items: baseline;
+		padding: 0.2rem 0.3rem;
+		box-sizing: border-box;
 
-		.red {
-			color: var(--color-red-dark);
+		.black {
+			font-size: 1.5rem;
+			letter-spacing: 0.25rem;
+			color: var(--color-white);
+			background-color: var(--color-dark);
+			border-radius: 1rem;
 		}
 
 		.blue {
@@ -44,9 +50,9 @@
 		}
 
 		.purple {
-			padding: 0 1rem;
 			color: var(--color-purple);
 			background-color: var(--color-white-dark);
+			border: 0.1rem solid var(--color-dark-bright);
 		}
 
 		.white {
@@ -56,6 +62,12 @@
 		.number {
 			vertical-align: super;
 			font-size: 1rem;
+		}
+
+		.background {
+			display: inline-flex;
+			padding: 0.25rem 1.5rem;
+			box-sizing: border-box;
 		}
 	}
 </style>

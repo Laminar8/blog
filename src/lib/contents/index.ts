@@ -69,7 +69,7 @@ export const index = {
 			_01: {
 				tag: ['Slack', 'AWS', 'RDS'],
 				title: capitalize('Subscribe Amazon RDS notification and Get notifications from Slack'),
-				lastUpdate: '2022/09/01',
+				lastUpdate: '2022/09/10',
 				status: ['In progress'],
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png',
@@ -98,6 +98,37 @@ export const index = {
 									]
 								  }`,
 								8
+							)
+						}
+					],
+					python: [
+						{
+							fileName: 'lambda_function.py',
+							body: codeIndent(
+								`
+								from datetime import datetime
+								import module.slack as slack
+								
+								def lambda_handler(event, context):
+									message = True
+								
+									try:
+										sns = event["Records"][0]["Sns"]
+									except Exception as error:
+										# Debug errors
+										print(error)
+								
+										# Give a notification to an administrator
+										sns = {
+											"Subject": "Fail to parse a coming sns event.",
+											"Timestamp": datetime.now(),
+										}
+								
+										# Change message value to False
+										message = False
+								
+									finally:
+										slack.post(sns, message)`, 8
 							)
 						}
 					]

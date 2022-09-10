@@ -90,7 +90,7 @@
 		</Code>
 		<Content>
 			All colors using on this blog are defined to variables in a
-			<Color color="red" content="app.scss" number="-1" /> file.
+			<Color color="black" content="app.scss" number="-1" /> file.
 			<Color color="purple" content=":root" number="-1" /> element in the file can affect all of our
 			blog html elements with declaring global CSS variables. To change colors without a global variable
 			is a very difficult task. All colors in the svelte files need to be re-defined. But with a variable,
@@ -105,8 +105,8 @@
 			</div>
 		</Code>
 		<Content>
-			In a <Color color="red" content="tag.svelte" number="-1" /> file, for example, two properties like
-			<Color color="purple" content="color" number="-1" /> and
+			In a <Color color="black" content="tag.svelte" number="-1" /> file, for example, two properties
+			like <Color color="purple" content="color" number="-1" /> and
 			<Color color="purple" content="background-color" number="-1" /> are defined by variable pre-defined
 			in the app.scss file. With this technique, the concept of this blog was decided very quickly.
 		</Content>
