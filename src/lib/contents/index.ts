@@ -128,7 +128,106 @@ export const index = {
 										message = False
 								
 									finally:
-										slack.post(sns, message)`, 8
+										slack.post(sns, message)`,
+								8
+							)
+						},
+						{
+							fileName: 'slack.py',
+							body: codeIndent(
+								`
+								import os
+								import json
+								import requests
+								from datetime import datetime, timezone, timedelta
+
+								# Slack
+								# Get from https://api.slack.com/apps
+								token = os.environ["token"]
+								channel_id = os.environ["channel_id"]
+
+								method = "POST"
+								headers = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
+								url = "https://slack.com/api/chat.postMessage"
+
+								# Unnecessary cloudwatch alarms
+								cloudwatch_keys = [
+									"AWSAccountId",
+									"AlarmConfigurationUpdatedTimestamp",
+									"OKActions",
+									"AlarmActions",
+									"InsufficientDataActions",
+									"AlarmArn",
+								]
+								rds_keys = ["Identifier Link", "Source ARN"]
+
+								def create_message(sns, msg=True):
+									if msg:
+										message = json.loads(sns["Message"])
+
+										if len(message.keys()) >= 10:
+											message_block = [
+												{
+													"type": "divider",
+												},
+												{
+													"type": "section",
+													"fields": [
+														{"type": "mrkdwn", "text": f"*{k}:*\\n>{message[k]}\\n"}
+														for k in list(message.keys())[:10]
+														if k not in cloudwatch_keys + rds_keys
+													],
+												},
+											]
+										else:
+											message_block = [
+												{
+													"type": "divider",
+												},
+												{
+													"type": "section",
+													"fields": [
+														{"type": "mrkdwn", "text": f"*{k}:*\\n>{message[k]}\\n"}
+														for k in message.keys()
+														if k not in cloudwatch_keys + rds_keys
+													],
+												},
+											]
+									else:
+										message_block = []
+									
+									return json.dumps(
+										{
+											"channel": channel_id,
+											"text": f"{sns['Subject']} \\n",
+											"blocks": [
+												{
+													"type": "header",
+													"text": {"type": "plain_text", "text": sns["Subject"]},
+												},
+											]
+											+ message_block,
+										}
+									)
+									  
+								def post(sns, msg):
+									data = create_message(sns, msg)
+									response = requests.request(method, url, headers=headers, data=data)
+									output = response.json()
+
+									return output
+								`,
+								8
+							)
+						}
+					],
+					bash: [
+						{
+							fileName: 'Bash',
+							body: codeIndent(
+								`pip install requests -t .
+								`,
+								8
 							)
 						}
 					]

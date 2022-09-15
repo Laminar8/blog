@@ -4,11 +4,7 @@
 </script>
 
 <div class="content">
-	{#if type == 'service'}
-		<div class="standard service">
-			{content}
-		</div>
-	{:else if type == 'serviceSearch'}
+	{#if type == 'serviceSearch'}
 		<div class="standard serviceSearch">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +23,8 @@
 			</svg>
 			{content}
 		</div>
-	{:else if type == 'input'}
-		<div class="standard input">
-			{content}
-		</div>
 	{:else if type == 'inputSelect'}
+		<!-- Right side -->
 		<div class="standard inputSelect">
 			{content}
 			<svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24">
@@ -40,6 +33,17 @@
 					data-name="Down"
 				/>
 			</svg>
+		</div>
+	{:else if type == 'inputSelectReverse'}
+		<!-- Left side -->
+		<div class="standard inputSelectReverse">
+			<svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24">
+				<path
+					d="M16.924 9.617A1 1 0 0 0 16 9H8a1 1 0 0 0-.707 1.707l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0 .217-1.09z"
+					data-name="Down"
+				/>
+			</svg>
+			{content}
 		</div>
 	{:else if type == 'select'}
 		<div class="standard select">
@@ -55,12 +59,8 @@
 			</svg>
 			{content}
 		</div>
-	{:else if type == 'lambda'}
-		<div class="standard lambda">
-			{content}
-		</div>
 	{:else}
-		<div class="standard button">
+		<div class="standard {type}">
 			{content}
 		</div>
 	{/if}
@@ -110,6 +110,16 @@
 
 			svg {
 				margin-left: 1rem;
+			}
+		}
+
+		.inputSelectReverse {
+			color: #16191f;
+			background-color: #ffffff;
+			border: 0.1rem solid #aab7b8;
+
+			svg {
+				margin-right: 1rem;
 			}
 		}
 

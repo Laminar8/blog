@@ -32,7 +32,7 @@
 
 <style lang="scss">
 	.content {
-		display: inline;
+		display: inline-flex;
 		align-items: baseline;
 		padding: 0.2rem 0.3rem;
 		box-sizing: border-box;
@@ -60,8 +60,13 @@
 		}
 
 		.number {
-			vertical-align: super;
+			display: inline-flex;
+			align-self: flex-start;
 			font-size: 1rem;
+
+			// Lift text up
+			position: relative;
+			top: -0.4rem;
 		}
 
 		.background {

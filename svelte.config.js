@@ -16,7 +16,7 @@ const config = {
 			precompress: false
 		}),
 		paths: {
-			base: ''
+			base: '/blog'
 		},
 		prerender: {
 			default: true

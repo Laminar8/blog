@@ -8,8 +8,10 @@
 	// Props/Contents/Center
 	import Title from '$lib/layout/posts/props/contents/center/title.svelte';
 	import Href from '$lib/layout/posts/props/contents/center/href.svelte';
+	import Icon from '$lib/layout/posts/props/contents/center/icon.svelte';
 	import Information from '$lib/layout/posts/props/contents/center/information.svelte';
 	import Color from '$lib/layout/posts/props/contents/center/color.svelte';
+	import Button from '$lib/layout/posts/props/contents/center/button.svelte';
 	import AWS_Button from '$lib/layout/posts/props/contents/center/aws/button.svelte';
 
 	// Slots/Contents/Center
@@ -37,6 +39,7 @@
 	import Highlight from 'svelte-highlight';
 	import json from 'svelte-highlight/languages/json';
 	import python from 'svelte-highlight/languages/python';
+	import bash from 'svelte-highlight/languages/bash';
 	import github from 'svelte-highlight/styles/github';
 
 	// Init
@@ -131,8 +134,8 @@
 		<Content>
 			With AWS Lambda service, you can create a lambda function which runs your code without a
 			server. I have wrote a code that was running on the NODEJS14 runtime to send the message from
-			Amazon SNS to Slack. The message is a JSON format and raw text. To understand the message fast
-			and concisely, it has to be parsed properly.
+			Amazon SNS to <Icon service="slack" content="slack" /> . The message is a JSON format and raw text.
+			To understand the message fast and concisely, it has to be parsed properly.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -154,7 +157,10 @@
 		<!-- Chapter 2 -->
 		<Subtitle>The Goal</Subtitle>
 		<Content>
-			All of the messages from Amazon Cloudwatch alarm, Amazon RDS event shoud be sent to slack
+			All of the messages from Amazon Cloudwatch alarm, Amazon RDS event shoud be sent to <Icon
+				service="slack"
+				content="slack"
+			/>
 			successfully. That means a lambda function shoud be expandable for all Amazon SNS messages.
 		</Content>
 		<Image_v2>
@@ -167,8 +173,10 @@
 		</Image_v2>
 		<Information color={color.green} name={name.green} content={content.image.green._01} />
 		<Content>
-			From creating a event subscription to be notified by a slack app, I would like to talk about
-			all of the steps. Descriptions may be omitted unintentionally.
+			From creating a event subscription to be notified by a <Icon
+				service="slack"
+				content="slack"
+			/> app, I would like to talk about all of the steps. Descriptions may be omitted unintentionally.
 		</Content>
 
 		<!-- Chapter 2 -->
@@ -298,8 +306,14 @@
 		</Image_v2>
 		<Step />
 		<Content>
-			My sample code can run on the python environment. Choose the
+			My sample code can run on the Python environment. Choose the
 			<AWS_Button type="inputSelect" content="Python 3.9" /> runtime from the supported runtime lists.
+		</Content>
+		<Content>
+			As noted for the image below, the lambda console code editor supports only
+			<Color color="purple" content="Nodejs" number="-1" />,
+			<Color color="purple" content="Python" number="-1" /> and
+			<Color color="purple" content="Ruby" number="-1" />.
 		</Content>
 		<Image_v2>
 			<img
@@ -335,8 +349,14 @@
 			</div>
 		</Code>
 		<Content>
-			Copy the python code above and paste the code in your
-			<Color color="black" content="lambda_handler.py" number="-1" /> python file.
+			Copy the Python code above and paste the code in your
+			<Color color="black" content="lambda_handler.py" number="-1" /> Python file.
+		</Content>
+		<Content>
+			This code is valid only for Amazon
+			<AWS_Button type="service" content="Simple Notification Service" /> now. If you try to send not
+			matched messages, <Icon service="slack" content="slack" /> only show the limited information like
+			time and an error message.
 		</Content>
 		<Image_v2>
 			<img
@@ -375,9 +395,9 @@
 		</Image_v2>
 		<Step />
 		<Content>
-			You click the mouse right button on your new folder and click the
-			<AWS_Button type="lambda" content="Rename" /> for entering a new name
-			<AWS_Button type="input" content="module" />.
+			To create a Python file for sending messages to <Icon service="slack" content="slack" /> with formatted
+			blocks, click mouse right button on your new folder and choose the
+			<AWS_Button type="lambda" content="New File" /> option like you created a new folder before.
 		</Content>
 		<Image_v2>
 			<img
@@ -387,6 +407,279 @@
 				slot="image"
 			/>
 		</Image_v2>
+		<Step />
+		<Content>
+			You click the mouse right button on your new folder and click the
+			<AWS_Button type="lambda" content="Rename" /> for entering a new name
+			<AWS_Button type="input" content="slack" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190206647-775f8755-9f3b-48ff-99d0-4a42f4a211b0.png"
+				alt="Lambda Fucntion"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.python[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={python} code={codeHighlight.python[1].body} />
+			</div>
+		</Code>
+		<Content>
+			Copy the Python code above and paste the code in your
+			<Color color="black" content="slack.py" number="-1" /> Python file.
+		</Content>
+		<Content>
+			Using Python <Color color="purple" content="requests" number="-1" /> module, you could call an
+			<Icon service="slack" content="slack" /> post API. Method, headers and url need to be assigned
+			properly to call the API. Two variables,
+			<Color color="purple" content="cloudwatch_keys" number="-1" /> and
+			<Color color="purple" content="rds_keys" number="-1" />, are used to limit the number of
+			fields. Slack allows only ten fields.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190210628-83691574-1821-413b-9bd7-196e054d9074.png"
+				alt="Lambda Fucntion"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click the <AWS_Button type="input" content="Deploy" /> button to deploy your code. After a few
+			seconds, your code will be deployed successfully.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190397272-26128f0a-8558-4689-ab4d-d34b87dc7846.png"
+				alt="Lambda Fucntion"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+
+		<!-- Chapter 4 -->
+		<Subtitle>Create a Lambda layer</Subtitle>
+		<Content>
+			The lambda runtime only provides AWS Python SDK environment
+			<Color color="blue" content="Boto3" number="1" /> . If you would like to import
+			<Color color="purple" content="requests" number="-1" /> module, the layer could be helpful.
+			<Annotation>
+				<span slot="number">1</span>
+				<span slot="annotation">
+					The Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows
+					Python developers to write software that makes use of services like Amazon S3 and Amazon
+					EC2.
+				</span>
+			</Annotation>
+		</Content>
+		<Content>
+			Go to the AWS <AWS_Button type="service" content="Lambda" /> service and click
+			<AWS_Button type="input" content="layers" /> under
+			<AWS_Button type="inputSelectReverse" content="Additional resources" />. If you could not find
+			the options, open your menu bar first on the left side.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190420400-b5b625c3-adb5-4453-8e56-e2e358b5530f.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click <AWS_Button type="button" content="Create layer" /> button on your right side.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190422403-7a0fc894-9091-4a70-9ce0-bce2b735efe3.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Before you upload a layer, you have to create a layer file which is zipped and located modules
+			properly.
+		</Content>
+		<Content>
+			First of all, create a new folder named
+			<Color color="purple" content="python" number="-1" /> . You could also create a path like
+			<Color color="purple" content="python/lib/python3.9/site-packages " number="-1" /> now.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[0].body} />
+			</div>
+		</Code>
+		<Content>
+			Run the above bash code to download the
+			<Color color="purple" content="requests" number="-1" /> module in your new folder. After running
+			the code, your folder looks like this image below.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190426454-c82b8260-2d9a-430f-9304-3a5865057e42.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Zip your Python folder and rename the folder, such as the
+			<Color color="purple" content="requests" number="-1" /> .
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190428539-cb12b918-67bf-47de-9895-89c220dfe7d5.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Finally we are ready to upload our requests module for the lambda function. Back to your AWS
+			Console, enter your layer name just same as our module name
+			<Color color="purple" content="requests" number="-1" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190430880-c4fb268b-37ca-4cbd-a37b-33a5fb154b0e.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click <AWS_Button type="input" content="Upload" /> button and choose your zip file.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190433401-b6b90153-4192-4ce1-846f-570624d64ea9.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Check your upload first, then click the <AWS_Button type="button" content="Create" /> button to
+			finish this task.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190434780-e5810101-f1a7-4ce5-8209-fa800900d1d7.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+
+		<!-- Chapter 5 -->
+		<Subtitle>Add a layer to your function</Subtitle>
+		<Content>
+			To add a layer to your function, return to your function and click
+			<AWS_Button type="input" content="Add a layer" /> button in
+			<AWS_Button type="input" content="Layers" /> section. You can find the section at the bottom of
+			the page.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190436004-3dbaa08e-6237-44ae-a006-a98efe0f5cf2.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			We will add a python <Color color="purple" content="requests" number="-1" /> module to your function.
+			Click the second layer source, <AWS_Button type="select" content="Custom layers" />, and
+			choose your <AWS_Button type="inputSelect" content="requests" /> layer and version
+			<AWS_Button type="inputSelect" content="1" />.
+		</Content>
+		<Content>
+			If your configuration is completed, click <AWS_Button type="button" content="Add" /> button.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190439575-068a9281-497d-44a1-995b-c01b6abb80a8.png"
+				alt="Lambda layer"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+
+		<!-- Chapter 6 -->
+		<Subtitle>Create a Slack App</Subtitle>
+		<Content>
+			Run your slack app and click <Button service="slack" type="menu" content="Apps" /> on the left
+			side of the app.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190445561-1134eff4-d528-4b3f-ade9-3d749b4fdadb.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			To make a app, click <Button service="slack" type="text" content="App Directory" /> on your right
+			side.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190456367-dfd95cc8-494e-4bd3-97a8-5a5debb73e46.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click <Button service="slack" type="text" content="Build" /> button between
+			<Button service="slack" type="text" content="Manage" /> button and your name.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190459472-c1e83af1-72e8-4836-828a-48b06eefe8d9.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click <Button service="slack" type="buttonWhite" content="Create an app" /> button to start to
+			make your own app.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190460516-8b69083f-5e29-456a-97ba-55b966bd8ee0.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
 		<Step />
 
 		<!-- Footer -->
