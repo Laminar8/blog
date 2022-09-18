@@ -69,7 +69,7 @@ export const index = {
 			_01: {
 				tag: ['Slack', 'AWS', 'RDS'],
 				title: capitalize('Subscribe Amazon RDS notification and Get notifications from Slack'),
-				lastUpdate: '2022/09/10',
+				lastUpdate: '2022/09/19',
 				status: ['In progress'],
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png',

@@ -641,6 +641,18 @@
 				slot="image"
 			/>
 		</Image_v2>
+		<Content>
+			If you cannot find <Button service="slack" type="menu" content="Apps" /> button, try to click
+			<Button service="slack" type="menu" content="Browse Slack" /> then you can find it.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190917423-41feade9-ad62-4377-8e7a-dfb5ea2abec2.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
 		<Step />
 		<Content>
 			To make a app, click <Button service="slack" type="text" content="App Directory" /> on your right
@@ -657,7 +669,8 @@
 		<Step />
 		<Content>
 			Click <Button service="slack" type="text" content="Build" /> button between
-			<Button service="slack" type="text" content="Manage" /> button and your name.
+			<Button service="slack" type="text" content="Manage" /> button and your name like
+			<Button service="slack" type="textSelect" content="Laminar" />.
 		</Content>
 		<Image_v2>
 			<img
@@ -680,6 +693,44 @@
 				slot="image"
 			/>
 		</Image_v1>
+		<Step />
+		<Content>
+			To create a <Icon service="slack" content="slack" /> App, click <u>see an example</u> link.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190917629-e533e9de-c5b3-40b6-9a1e-f711758da0c1.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			With <Button service="slack" type="buttonPink" content="Posting messages using curl" /> example,
+			you can configure your app easily. The example has pre-configured scopes, settings and etc.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190918015-83fb6ee6-db75-40f6-b515-514d31c95bdd.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			After scroll down a little, you can find
+			<Button service="slack" type="buttonGreen" content="Create app" /> button. Click it.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/190918488-dcabe75d-13a6-4fd4-a1c4-1b888ef96beb.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
 		<Step />
 
 		<!-- Footer -->
