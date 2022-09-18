@@ -18,7 +18,7 @@ import{S as A,i as v,s as w,e as b,t as d,k as T,c as k,a as y,h as p,m as x,d a
 										background-color: var(--color-blue);
 										border-radius: 1rem;
 									}
-								}`,8)}]}}},_09:{_01:{tag:["Slack","AWS","RDS"],title:g("Subscribe Amazon RDS notification and Get notifications from Slack"),lastUpdate:"2022/09/10",status:["In progress"],image:{src:"https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png",alt:"Slack"},codeHighlight:{json:[{fileName:"cloudwatch.json",body:o(`{
+								}`,8)}]}}},_09:{_01:{tag:["Slack","AWS","RDS"],title:g("Subscribe Amazon RDS notification and Get notifications from Slack"),lastUpdate:"2022/09/19",status:["In progress"],image:{src:"https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png",alt:"Slack"},codeHighlight:{json:[{fileName:"cloudwatch.json",body:o(`{
 									"Records": [
 									  {
 										"EventSource": "aws:sns",
