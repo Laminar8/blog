@@ -83,6 +83,12 @@
 				color: #ffffff;
 				background-color: #007a5a;
 			}
+
+			.buttonBlue {
+				border-radius: 0.5rem;
+				color: #ffffff;
+				background-color: #1264a3;
+			}
 		}
 	}
 </style>

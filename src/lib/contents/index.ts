@@ -69,8 +69,8 @@ export const index = {
 			_01: {
 				tag: ['Slack', 'AWS', 'RDS'],
 				title: capitalize('Subscribe Amazon RDS notification and Get notifications from Slack'),
-				lastUpdate: '2022/09/19',
-				status: ['In progress'],
+				lastUpdate: '2022/09/22',
+				status: ['Published'],
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png',
 					alt: 'Slack'
@@ -227,6 +227,54 @@ export const index = {
 							body: codeIndent(
 								`pip install requests -t .
 								`,
+								8
+							)
+						}
+					]
+				}
+			},
+			_22: {
+				tag: ['Blog', 'Information', 'Svelte', 'SCSS'],
+				title: capitalize('Time spent completing the first post: 1 Month'),
+				lastUpdate: '2022/09/22',
+				status: ['In progress'],
+				image: {
+					src: 'https://user-images.githubusercontent.com/52372569/186199281-0358ffca-d144-431d-a152-82ea4691e343.png',
+					alt: 'SP, Brasil'
+				},
+				codeHighlight: {
+					scss: [
+						{
+							fileName: 'app.scss',
+							body: codeIndent(
+								`:root {
+								// Color
+								--color-dark: #1f1f1f;
+								--color-dark-bright: #8e8e8e;
+								--color-white: #f1f1f1;
+								--color-white-dark: #e1e1e1;
+								--color-red: #df7861;
+								--color-red-dark: #f47c7c;
+								--color-yellow: #ffb562;
+								--color-yellow-bright: #f8e6d1;
+								--color-green: #adcf9f;
+								--color-green-dark: #94b49f;
+								--color-blue: #607eaa;
+								--color-blue-dark: #06113c;
+							}`,
+								7
+							)
+						},
+						{
+							fileName: 'tag.svelte',
+							body: codeIndent(
+								`.tag {
+									.content {
+										color: var(--color-white);
+										background-color: var(--color-blue);
+										border-radius: 1rem;
+									}
+								}`,
 								8
 							)
 						}

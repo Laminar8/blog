@@ -104,7 +104,8 @@
 			</Annotation>
 		</Content>
 		<Content>
-			Following <Href
+			Following
+			<Href
 				href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
 				name="Amazon Cloudwatch document"
 			/> which says composite alarms can send <Color color="blue" content="Amazon SNS" number="1" />
@@ -173,10 +174,9 @@
 		</Image_v2>
 		<Information color={color.green} name={name.green} content={content.image.green._01} />
 		<Content>
-			From creating a event subscription to be notified by a <Icon
-				service="slack"
-				content="slack"
-			/> app, I would like to talk about all of the steps. Descriptions may be omitted unintentionally.
+			From creating a event subscription to be notified by a
+			<Icon service="slack" content="slack" /> app, I would like to talk about all of the steps. Descriptions
+			may be omitted unintentionally.
 		</Content>
 
 		<!-- Chapter 2 -->
@@ -732,6 +732,248 @@
 			/>
 		</Image_v2>
 		<Step />
+		<Content>
+			Pick your workspace just like I choose my workspace
+			<Button service="slack" type="textSelect" content="Laminar" />. Then click
+			<Button service="slack" type="buttonGreen" content="Next" /> to go next steps.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191319256-4c68158f-1913-468e-a906-c657f06c00f2.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Review your app configuration. You can also configure these settings after creating your app.
+			Click <Button service="slack" type="buttonGreen" content="Create" /> button to create an app.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191319927-1e1a1b47-1e2f-421c-94de-e1d83ecc01a7.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Before installing this app to your workspace, close this pop up window by clicking
+			<Button service="slack" type="buttonGreen" content="Got It" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191322640-b47cb9c1-5d8e-4e71-bb8b-be838c280efa.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			You can install your app. Click
+			<Button service="slack" type="text" content="Install to Workspace" /> button.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191322890-adc0644f-829c-44c9-96a7-79949322e401.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Your app is requesting permission to access your workspace. Click
+			<Button service="slack" type="buttonGreen" content="Allow" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191324378-1892ca72-e3a0-4fc6-852a-01dfba1630d8.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>Go to your app and check if your app is added.</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191324531-4e694049-55cb-48bc-a6d3-44f903e7eb79.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+
+		<!-- Chapter 7 -->
+		<Subtitle>Add Lambda environment variables</Subtitle>
+		<Content>
+			Back to your browser, then click
+			<Button service="slack" type="buttonBlue" content="OAuth & Permissions" /> under Features. You
+			can see your OAuth Token(ex: xoxb-xxxxx) for your workspace. Click
+			<Button service="slack" type="text" content="Copy" /> to copy your token.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191527727-2dee00d5-b856-4f62-8656-2241719acf2b.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>Go to your lambda function to configure your function environment variables.</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191326984-9b21021b-c7cb-4c62-8a8f-c93c73fb6d89.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Go to this <AWS_Button type="input" content="Configuration" /> tab, then click
+			<AWS_Button type="input" content="Environment variables" />. If you never add your variables,
+			you cannot see your items now. To add your first variable, click
+			<AWS_Button type="input" content="Edit" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191528676-b4d92a9e-a2b7-49aa-afc4-84062a00344c.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Click <AWS_Button type="input" content="Add environment variable" /> button and enter your key
+			as <AWS_Button type="input" content="token" /> and your value as copied OAuth token
+			<AWS_Button type="input" content="xoxb-xxxx" />. After your edit is completed, click
+			<AWS_Button type="button" content="Save" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191528995-dac25700-a345-4713-91b8-93adb439d750.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			To get your channel ID, open <Icon service="slack" content="slack" /> application again. Over your
+			private channel name, click your right mouse button to open menu then click
+			<Button service="slack" type="buttonBlue" content="View channel details" />
+			options.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191329708-4a449a53-5140-456d-819c-eb392ec8af63.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Move to the bottom of the pop up in <Button service="slack" type="text" content="About" /> tab.
+			You can copy your channel ID(ex: C0XXXXXX) by clicking copy icons.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191529731-6cd0e5cc-4694-4267-a0ef-0cb6f5fbbb1b.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			In <Button service="slack" type="text" content="Integrations" /> tab, you can add your app to your
+			channel. Click
+			<Button service="slack" type="buttonWhite" content="Add an app" /> button.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191330969-a43110b8-1df1-4689-aea8-d53d9934c137.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			You can check available apps in your workspace. I have one app which I create for this guide.
+			Add your app by clicking <Button service="slack" type="buttonWhite" content="Add" /> button.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191331088-1d1fd5c0-92ed-4e27-83e1-9b81eb084e39.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>Make sure that your app is added to the private channel.</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191331313-de13d841-a31e-4429-8dca-2f92bf684d67.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+		<Content>
+			Our lambda function wants one more environment variable. Your key is
+			<AWS_Button type="input" content="channel_id" /> and value is the previous copied channel ID
+			<AWS_Button type="input" content="C0XXXXX" />. If you finish your task, click
+			<AWS_Button type="button" content="Save" />. button.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191537055-eaf6f2dd-0dbe-4b87-ab34-942de1d1a5f9.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Step />
+
+		<!-- Chapter 8 -->
+		<Subtitle>Check your alarm from slack</Subtitle>
+		<Content>
+			You can get alarms from <Icon service="slack" content="slack" /> with these formatted messages.
+			Wait until your alarm will be sent or test your lambda function with
+			<Color color="black" content="cloudwatch.json" number="-1" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191331943-60753b0b-ab87-4949-bddf-2835cc14448a.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Content>
+			If your slack application is configured correctly, you also can consider changing your app
+			display information.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/191542446-d1da30fd-780a-4785-89e9-482eca395876.png"
+				alt="Slack app"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
 
 		<!-- Footer -->
 		<Footer />
