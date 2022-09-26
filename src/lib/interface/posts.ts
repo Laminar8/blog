@@ -11,7 +11,7 @@ export interface posts {
 					alt: string;
 				};
 				codeHighlight?: {
-					[language: string]: [{ filename: string; body: string }];
+					[language: string]: { fileName: string; body: string }[];
 				};
 			};
 		};
