@@ -1,0 +1,1 @@
+window.__sveltekit_data = (function(a,b){return {type:b,nodes:[null,{type:b,data:{lastUpdate:"2022\u002F09\u002F29",status:["In progress"],codeHighlight:{}},uses:{dependencies:a,params:a,parent:a,url:a}}]}}(void 0,"data"))
