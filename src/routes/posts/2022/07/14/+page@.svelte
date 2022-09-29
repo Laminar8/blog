@@ -29,8 +29,17 @@
 	import { index } from '$lib/contents/index';
 	import { information } from '$lib/contents/items/information';
 
+	// Import types
+	import type { post } from '$lib/interface/posts';
+</script>
+
+<script lang="ts">
+	// Get data from page.server.ts
+	export let data: post;
+
 	// Main
-	const { title, lastUpdate, tag, status, image } = index._2022._07._14;
+	const { lastUpdate, status, codeHighlight } = data;
+	const { title, tag, image } = index._2022._07._14;
 	const { color, name, content } = information;
 </script>
 
