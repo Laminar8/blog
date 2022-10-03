@@ -1,2 +1,4 @@
 export const codeIndent = (code: string, repeatNumber: number) =>
-	code.replaceAll('    '.repeat(repeatNumber), '');
+	code.includes('    '.repeat(repeatNumber))
+		? code.replaceAll('    '.repeat(repeatNumber), '')
+		: code.replaceAll('\t'.repeat(repeatNumber), '');

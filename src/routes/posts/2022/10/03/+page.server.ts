@@ -3,8 +3,8 @@ export const prerender = true;
 
 export function load() {
 	return {
-		lastUpdate: '2022/10/03',
-		status: ['Published'],
+		lastUpdate: '2022/09/29',
+		status: ['In progress'],
 		codeHighlight: {
 			bash: [
 				{
