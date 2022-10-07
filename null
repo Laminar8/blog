@@ -5,21 +5,21 @@
 		<link rel="icon" href="/blog/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/blog/_app/immutable/start-ffaaed97.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/start-28544e6f.js">
 	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-a666ad97.js">
-	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-748cd30b.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-c0faf402.js">
 	</head>
 	<body>
 		
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/blog/_app/immutable/start-ffaaed97.js";
+		import { start } from "/blog/_app/immutable/start-28544e6f.js";
 
 		start({
 			env: {},
 			hydrate: null,
 			paths: {"base":"/blog","assets":"/blog"},
 			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-			trailing_slash: "never"
+			trailing_slash: "always"
 		});
 	</script>
 	</body>
