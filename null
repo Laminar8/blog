@@ -5,14 +5,14 @@
 		<link rel="icon" href="/blog/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/blog/_app/immutable/start-27137301.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/start-ffaaed97.js">
 	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-a666ad97.js">
-	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-610e5075.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-748cd30b.js">
 	</head>
 	<body>
 		
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/blog/_app/immutable/start-27137301.js";
+		import { start } from "/blog/_app/immutable/start-ffaaed97.js";
 
 		start({
 			env: {},

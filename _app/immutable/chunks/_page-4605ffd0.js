@@ -1,0 +1,1 @@
+const a=!1;function r({url:e}){return{tag:e.searchParams.get("tag")||""}}const o=Object.freeze(Object.defineProperty({__proto__:null,prerender:!1,load:r},Symbol.toStringTag,{value:"Module"}));export{o as _,r as l,a as p};
