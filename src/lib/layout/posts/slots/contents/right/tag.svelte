@@ -1,12 +1,29 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { url } from '$lib/contents/url';
+
 	export let tag: string[];
+
+	const reTagging = async (event: any) => {
+		await fetch('/api/tag/set', {
+			method: 'POST',
+			body: JSON.stringify({ tag: event.target.outerText }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		});
+
+		if (event.target) {
+			await goto(`${url}/posts`);
+		}
+	};
 </script>
 
 <div class="container">
 	<div class="message">Tags</div>
 	<div class="tag">
 		{#each tag as content}
-			<div class="content">
+			<div class="content" on:click={(event) => reTagging(event)}>
 				{content}
 			</div>
 		{/each}
@@ -51,6 +68,8 @@
 				white-space: nowrap;
 				word-break: break-all;
 				text-overflow: ellipsis;
+
+				cursor: pointer;
 			}
 		}
 	}
