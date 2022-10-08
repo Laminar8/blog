@@ -7,7 +7,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			edge: false,
+			split: true
+		})
 	}
 };
 
