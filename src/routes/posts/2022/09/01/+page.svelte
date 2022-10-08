@@ -22,6 +22,7 @@
 	import Image_v2 from '$lib/layout/posts/slots/contents/center/image_v2.svelte';
 	import Code from '$lib/layout/posts/slots/contents/center/code.svelte';
 	import Step from '$lib/layout/posts/slots/contents/center/step.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
@@ -51,7 +52,7 @@
 	export let data: post;
 
 	// Main
-	const { lastUpdate, status, codeHighlight } = data;
+	const { publish, lastUpdate, status, codeHighlight } = data;
 	const { title, tag, image } = index._2022._09._01;
 	const { color, name, content } = information;
 </script>
@@ -161,6 +162,7 @@
 			Amazon CloudWatch, Amazon RDS and etc. My NODEJS code was wrote for only messages from Amazon
 			CloudWatch.
 		</Content>
+		<Split />
 
 		<!-- Chapter 2 -->
 		<Subtitle>The Goal</Subtitle>
@@ -185,8 +187,9 @@
 			<Icon service="slack" content="slack" /> app, I would like to talk about all of the steps. Descriptions
 			may be omitted unintentionally.
 		</Content>
+		<Split />
 
-		<!-- Chapter 2 -->
+		<!-- Chapter 3 -->
 		<Subtitle>Subscribe an event</Subtitle>
 		<Content>
 			You could create an subscription on AWS console. Write
@@ -265,9 +268,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 3 -->
+		<!-- Chapter 4 -->
 		<Subtitle>Create a Lambda function</Subtitle>
 		<Content>
 			You could create an lambda function on AWS console. Write
@@ -470,9 +473,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 4 -->
+		<!-- Chapter 5 -->
 		<Subtitle>Create a Lambda layer</Subtitle>
 		<Content>
 			The lambda runtime only provides AWS Python SDK environment
@@ -596,9 +599,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 5 -->
+		<!-- Chapter 6 -->
 		<Subtitle>Add a layer to your function</Subtitle>
 		<Content>
 			To add a layer to your function, return to your function and click
@@ -632,9 +635,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 6 -->
+		<!-- Chapter 7 -->
 		<Subtitle>Create a Slack App</Subtitle>
 		<Content>
 			Run your slack app and click <Button service="slack" type="menu" content="Apps" /> on the left
@@ -814,9 +817,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 7 -->
+		<!-- Chapter 8 -->
 		<Subtitle>Add Lambda environment variables</Subtitle>
 		<Content>
 			Back to your browser, then click
@@ -952,9 +955,9 @@
 				slot="image"
 			/>
 		</Image_v2>
-		<Step />
+		<Split />
 
-		<!-- Chapter 8 -->
+		<!-- Chapter 9 -->
 		<Subtitle>Check your alarm from slack</Subtitle>
 		<Content>
 			You can get alarms from <Icon service="slack" content="slack" /> with these formatted messages.
@@ -986,7 +989,7 @@
 		<Footer />
 	</div>
 	<div slot="right">
-		<Date {lastUpdate} />
+		<Date {lastUpdate} {publish} {status} />
 		<Status {status} />
 		<Tag {tag} />
 	</div>

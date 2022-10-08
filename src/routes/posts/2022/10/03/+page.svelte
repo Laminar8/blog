@@ -15,13 +15,14 @@
 	// import AWS_Button from '$lib/layout/posts/props/contents/center/aws/button.svelte';
 
 	// Slots/Contents/Center
-	import Annotation from '$lib/layout/posts/slots/contents/center/annotation.svelte';
+	// import Annotation from '$lib/layout/posts/slots/contents/center/annotation.svelte';
 	import Subtitle from '$lib/layout/posts/slots/contents/center/subtitle.svelte';
 	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
 	import Image_v1 from '$lib/layout/posts/slots/contents/center/image_v1.svelte';
 	import Image_v2 from '$lib/layout/posts/slots/contents/center/image_v2.svelte';
 	import Code from '$lib/layout/posts/slots/contents/center/code.svelte';
 	import Step from '$lib/layout/posts/slots/contents/center/step.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
@@ -37,8 +38,15 @@
 
 	// Highlight syntax
 	import Highlight from 'svelte-highlight';
-	import bash from 'svelte-highlight/languages/bash';
 	import github from 'svelte-highlight/styles/github';
+
+	// Highlight Language syntax
+	import bash from 'svelte-highlight/languages/bash';
+	import css from 'svelte-highlight/languages/css';
+	import json from 'svelte-highlight/languages/json';
+	import yaml from 'svelte-highlight/languages/yaml';
+	import javascript from 'svelte-highlight/languages/javascript';
+	import typescript from 'svelte-highlight/languages/typescript';
 
 	// Import types
 	import type { post } from '$lib/interface/posts';
@@ -49,8 +57,8 @@
 	export let data: post;
 
 	// Main
-	const { lastUpdate, status, codeHighlight } = data;
-	const { title, tag, image } = index._2022._09._22;
+	const { publish, lastUpdate, status, codeHighlight } = data;
+	const { title, tag, image } = index._2022._10._03;
 	const { color, name, content } = information;
 </script>
 
@@ -72,54 +80,160 @@
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />
 			<div slot="caption">
 				@Image from
-				<Href href="https://kit.svelte.dev/" name="SvelteKit" />
+				<Href href="https://www.netlify.com/" name="Netlify" />
 			</div>
 		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>New SvelteKit</Subtitle>
+		<Subtitle>New Functions - Including Filter posts based on Tag</Subtitle>
 		<Content>
-			One day in May, this blog has been started from cloning new sveltekit. While creating blog
-			layouts and posting some, sveltekit has new changes. Directories and files in your app are
-			defined different in comparison with old sveltekit although sveltekit uses same
-			filesystem-based router systems.
+			For last two months, I concentrated on creating my blog and publishing posts. The blog has
+			deployed on a Github Page and has 4 posts. It is certainly good news. However I am concerned
+			about slow development for my blog. Recently, I has added my blog some functions. I would like
+			to introduce my functions and why I have to migrate this blog from Github pages to Netlify.
 		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.css[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={css} code={codeHighlight.css[0].body} />
+			</div>
+		</Code>
 		<Content>
-			I don't know exactly the sveltekit version, but at least there was no rule or guideline to add
-			plus sign to my svelte files in my first app. However new sveltekit defines new a page of your
-			app with a <Color color="black" content="+page.svelte" number="-1" /> component file. Similary
-			<Color color="black" content="+page.js" number="-1" /> and
-			<Color color="black" content="+page.server.js" number="-1" /> files can be defend to load some
-			data.
+			First is an animation effect. Like a effect when minimizing and maximizing the windows from
+			OS, contents reveal from outside by CSS animation codes. You can see it on any pages in this
+			blog. The animiation is very shor - about 1 second. Try it by refreshing this page.
 		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.css[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={css} code={codeHighlight.css[1].body} />
+			</div>
+		</Code>
 		<Content>
-			With git, I would like to migrate blog data from old sveltekit app to new one. You can think
-			this migration plan is not suited because this blog is only managed by me. However let's guess
-			the blog is managed from a group members.
+			Next is a responsive page. The pages on our blog are served to your device resolution
+			diffrently. Currently the minimum width is 650px and blog doesn't support mobile. My goal is
+			that I want you to read and enjoy our posts no matter what device you use.
 		</Content>
-
-		<!-- Chapter 2 -->
-		<Image_v1>
+		<Image_v2>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/193540414-d09144f1-4a1e-462e-a4bd-9f44ae0f9ebc.png"
-				alt="Git branch"
+				src="https://user-images.githubusercontent.com/52372569/194706371-88adbdd8-8b88-45ba-bf54-0e004950c789.png"
+				alt="My blog"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-			<div slot="caption">
-				@Image from
-				<Href
-					href="https://www.atlassian.com/git/tutorials/using-branches/git-merge"
-					name="Atlassian"
-				/>
-			</div>
-		</Image_v1>
-		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Git branch</Subtitle>
+		</Image_v2>
+		<Information color={color.green} name={name.green} content={content.image.green._01} />
 		<Content>
-			I'm currently using a <Color color="purple" content="dev" number="-1" /> branch. For upgrading
-			my sveltekit, I create a new branch, <Color color="purple" content="feature" number="-1" />.
-			If my app on the <Color color="purple" content="feature" number="-1" /> branch works properly,
-			the branch would be merged to the <Color color="purple" content="dev" number="-1" /> branch.
+			You can filter posts based on tags. Only one tag could be selected. You don't have to write
+			all words of your tag. A word piece of your tag is enough sometimes. In addition to input your
+			tags, you could select a tag from 6 popular tags or tags in posts.
+		</Content>
+		<Split />
+
+		<!-- Chapter 2 -->
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194707046-dcaefc9c-b700-4a39-936f-4aaddf59243f.png"
+				alt="404 Error"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>404 Errors</Subtitle>
+		<Content>
+			When you access to a page which is not available, 404 Error could occur because no file could
+			be returned from requested path. While adding functions for tag, I faced the error after
+			deploying my blog to Github Pages. Because the Github Pages allows only static pages and all
+			of your pages has to be prerenderable. I couldn't catch the error when I develop the functions
+			in dev mode.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194707679-6c43db02-210f-4f9f-b274-294319860223.png"
+				alt="url"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			On a post page, you can select a tag from post tags. After selecting it, you go to the index
+			page. In this step, the information about tag needs to be sent between the pages. I have two
+			functions to allow it. One is
+			<Color color="purple" content="url.searchparams" number="-1" /> and the other is
+			<Color color="purple" content="svelte/store" number="-1" />.
+		</Content>
+		<Content>
+			Unfortunately, all the functions are not available when the page is prerendable. The pages
+			could have to be rendered from server side. We call the technology
+			<Color color="purple" content="SSR" number="-1" />.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194708621-d53fce44-642d-4e6b-ae1d-d31dd40dc3a7.png"
+				alt="url"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			For your information, url.searchparams could be processed on
+			<Color color="black" content="+server.ts" number="-1" />. When the index page is loading, the
+			<Color color="black" content="+server.ts" number="-1" /> could access to url. After parsing url
+			from request, return response with the information about tag.
+		</Content>
+		<Content>
+			This function is depreciated and couldn't be accessible. Before migrating to Netlify, this
+			function is replaced to <Color color="purple" content="svelte/store" number="-1" />.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.typescript[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={typescript} code={codeHighlight.typescript[0].body} />
+			</div>
+		</Code>
+		<Content>
+			The <Color color="purple" content="svelte/store" number="-1" /> function could be accessible from
+			tag APIs. <Color color="purple" content="GET" number="-1" /> function with GET method returns a
+			tag which stores on Writable object.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.typescript[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={typescript} code={codeHighlight.typescript[1].body} />
+			</div>
+		</Code>
+		<Content>
+			On the other hand <Color color="purple" content="SET" number="-1" /> function with POST method
+			stores a tag to Writable object.
+		</Content>
+		<Split />
+
+		<!-- Chapter 3 -->
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194712433-e9316463-fcf8-4494-9503-e6533fbfc6d9.png"
+				alt="API Endpoints"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Migrate to Netlify</Subtitle>
+		<Content>
+			With server side rendering issue, I could never maintain my blog on Github Pages. I decided to
+			migrate my blog to Netlify. I deleted node dependencies what I used for Github Pages. Then I
+			installed new svelte adapter
+			<Color color="purple" content="@sveltejs/adapter-netlify@next" number="-1" />.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -129,8 +243,89 @@
 				<Highlight language={bash} code={codeHighlight.bash[0].body} />
 			</div>
 		</Code>
-		<Content>Following above bash command, you can create a new branch.</Content>
 		<Step />
+		<Content>
+			Create a file <Color color="black" content="netlify.toml" number="-1" /> in root directory and
+			paste below codes. .
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.yaml[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={yaml} code={codeHighlight.yaml[0].body} />
+			</div>
+		</Code>
+		<Step />
+		<Content>
+			Simplify your npm scripts. When I use the Github Pages, the scripts were complicated. For now,
+			I should run <Color color="purple" content="vite build" number="-1" /> only to deploy on the Netlify.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.json[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={json} code={codeHighlight.json[0].body} />
+			</div>
+		</Code>
+		<Step />
+		<Content>
+			Finally edit your <Color color="black" content="svelte.config.js" number="-1" />. To enable
+			your API, you have to use <Color color="purple" content="edge" number="-1" /> function. If I disable
+			the <Color color="purple" content="edge" number="-1" />, API was not working.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.javascript[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={javascript} code={codeHighlight.javascript[0].body} />
+			</div>
+		</Code>
+		<Content>
+			You want the details about Sveltekit on Netlify, go to the Netlify docs about
+			<Href
+				href="https://docs.netlify.com/integrations/frameworks/sveltekit/"
+				name="SvelteKit on Netlify"
+			/>.
+		</Content>
+		<Split />
+
+		<!-- Chapter 4 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194715659-bb4bccd6-83be-4bcd-9255-dd6ee2baa2c4.png"
+				alt="Deploy error"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Deploy error</Subtitle>
+		<Content>
+			I thought Netlify settings were all configured. However all deploys were failed because the
+			svelte could not import some svelte files. Most of the cases, the problem is file name. In
+			deploy steps, check the file name with case sensitive. I checked my file names several times,
+			but I could not find the problem.
+		</Content>
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194716171-e50b830e-442f-4daa-98f0-3b0ff70e8b5d.png"
+				alt="Deploy error"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Content>
+			I did googling many times. Finally the mystery was revealed from
+			<Href
+				href="https://github.com/sveltejs/kit/issues/5337"
+				name="Module Not Found in Build Production w/ Netlify"
+			/>. The config of git was the issue. Maybe the git is not case sensitive. When I rename my
+			files only first word to uppercase, the git wouldn't know the changing. To solve this problem,
+			enter below command.
+		</Content>
 		<Code>
 			<div slot="file">
 				{codeHighlight.bash[1].fileName}
@@ -139,109 +334,29 @@
 				<Highlight language={bash} code={codeHighlight.bash[1].body} />
 			</div>
 		</Code>
-		<Content>
-			You can switch to your new branch,
-			<Color color="purple" content="feature" number="-1" />.
-		</Content>
-		<Step />
-		<Code>
-			<div slot="file">
-				{codeHighlight.bash[2].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={bash} code={codeHighlight.bash[2].body} />
-			</div>
-		</Code>
-		<Content>To clone a new sveltekit app, follow the official commands.</Content>
-		<Step />
-		<Code>
-			<div slot="file">
-				{codeHighlight.bash[3].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={bash} code={codeHighlight.bash[3].body} />
-			</div>
-		</Code>
-		<Content>
-			You also have to add your dev dependencies on your
-			<Color color="black" content="package.json" number="-1" /> file.
-		</Content>
+		<Split />
+
+		<!-- Chapter 5 -->
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/193569669-688c4f88-5523-4f11-8411-fbc806932668.png"
-				alt="Svelte directories"
+				src="https://user-images.githubusercontent.com/52372569/194716713-c2919395-c852-40fc-8013-f329c371305a.png"
+				alt="Deploy"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-			<div slot="caption">
-				@Image from
-				<Href href="https://node.new/sveltekit" name="StackBlitz" />
-			</div>
 		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Lovely Netlify</Subtitle>
 		<Content>
-			Copy all of your static file from your old sveltekit app. Paste those files to your new app.
-			To deploy your app successfully, you should apply filesystem-based naming rules to yours.
-		</Content>
-		<Step />
-		<Code>
-			<div slot="file">
-				{codeHighlight.bash[4].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={bash} code={codeHighlight.bash[4].body} />
-			</div>
-		</Code>
-		<Content>If your app are configured corretly and works properly, commit your works.</Content>
-		<Step />
-		<Code>
-			<div slot="file">
-				{codeHighlight.bash[5].fileName}
-			</div>
-			<div slot="code">
-				<Highlight language={bash} code={codeHighlight.bash[5].body} />
-			</div>
-		</Code>
-		<Content>
-			Switch to your working branch, and merge your new codes from
-			<Color color="purple" content="feature" number="-1" /> branch. After your merge is done, delete
-			your <Color color="purple" content="feature" number="-1" /> branch and commit your data from your
-			merged branch.
-		</Content>
-
-		<!-- Chapter 3 -->
-		<Image_v2>
-			<img
-				src="https://user-images.githubusercontent.com/52372569/193591958-9ef1edcb-67f8-4f82-9e77-bba2045f10c6.png"
-				alt="Git branch"
-				style="max-width: 100%;"
-				slot="image"
-			/>
-		</Image_v2>
-		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Advanced routing</Subtitle>
-		<Content>
-			While applying new svelteKit to my project, I couldn't understand
-			<Color color="blue" content="Advanced routing" number="1" />. My blog is serving all of my
-			posting correctly, however I'm not sure I can create another blog.
-			<Annotation>
-				<span slot="number">1</span>
-				<span slot="annotation">
-					SvelteKit needs to know which route is being requested. The app are routed using high
-					priority rules, such as rest parameters, matching, sorting, and so on.
-				</span>
-			</Annotation>
-		</Content>
-		<Content>
-			Route hierarchy and layout hierarchy are very complicated. Valid directories from old app
-			couldn't be compatible with new app maybe. Be careful this routing system.
+			The migration is ended successfully. I am delighted to deploy my blog with fully functional. I
+			would like to keep going this blog development. Keep following me 😆
 		</Content>
 
 		<!-- Footer -->
 		<Footer />
 	</div>
 	<div slot="right">
-		<Date {lastUpdate} />
+		<Date {lastUpdate} {publish} {status} />
 		<Status {status} />
 		<Tag {tag} />
 	</div>

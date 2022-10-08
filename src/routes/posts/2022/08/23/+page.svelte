@@ -17,6 +17,7 @@
 	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
 	import Image from '$lib/layout/posts/slots/contents/center/image_v1.svelte';
 	import Code from '$lib/layout/posts/slots/contents/center/code.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
@@ -44,7 +45,7 @@
 	export let data: post;
 
 	// Main
-	const { lastUpdate, status, codeHighlight } = data;
+	const { publish, lastUpdate, status, codeHighlight } = data;
 	const { title, tag, image } = index._2022._08._23;
 	const { color, name, content } = information;
 </script>
@@ -131,6 +132,7 @@
 			prepared some tonal colors that are less intense for relieving eye fatigue and comfort. Also
 			these colors give us feeling soft. I hope my intention will be properly provided to you.
 		</Content>
+		<Split />
 
 		<!-- Chapter 2 -->
 		<Image>
@@ -167,6 +169,7 @@
 			changes. It takes long time to translate into english. I have to check my progress regularly
 			and possibility to keep going this way.
 		</Content>
+		<Split />
 
 		<!-- Chapter 3 -->
 		<Image>
@@ -199,7 +202,7 @@
 		<Footer />
 	</div>
 	<div slot="right">
-		<Date {lastUpdate} />
+		<Date {lastUpdate} {publish} {status} />
 		<Status {status} />
 		<Tag {tag} />
 	</div>

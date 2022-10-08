@@ -22,6 +22,7 @@
 	import Image_v2 from '$lib/layout/posts/slots/contents/center/image_v2.svelte';
 	import Code from '$lib/layout/posts/slots/contents/center/code.svelte';
 	import Step from '$lib/layout/posts/slots/contents/center/step.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
@@ -49,7 +50,7 @@
 	export let data: post;
 
 	// Main
-	const { lastUpdate, status, codeHighlight } = data;
+	const { publish, lastUpdate, status, codeHighlight } = data;
 	const { title, tag, image } = index._2022._09._22;
 	const { color, name, content } = information;
 </script>
@@ -68,13 +69,9 @@
 		<Title {title} />
 
 		<!-- Chapter 1 -->
-		<Image_v1>
+		<Image_v2>
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />
-			<div slot="caption">
-				@Image from
-				<Href href="https://kit.svelte.dev/" name="SvelteKit" />
-			</div>
-		</Image_v1>
+		</Image_v2>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>New SvelteKit</Subtitle>
 		<Content>
@@ -96,6 +93,7 @@
 			this migration plan is not suited because this blog is only managed by me. However let's guess
 			the blog is managed from a group members.
 		</Content>
+		<Split />
 
 		<!-- Chapter 2 -->
 		<Image_v1>
@@ -208,6 +206,7 @@
 			your <Color color="purple" content="feature" number="-1" /> branch and commit your data from your
 			merged branch.
 		</Content>
+		<Split />
 
 		<!-- Chapter 3 -->
 		<Image_v2>
@@ -236,12 +235,33 @@
 			Route hierarchy and layout hierarchy are very complicated. Valid directories from old app
 			couldn't be compatible with new app maybe. Be careful this routing system.
 		</Content>
+		<Split />
+
+		<!-- Chapter 4 -->
+		<Image_v2>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/194696342-dfe08a7c-9ae9-4920-9e89-d32e18833fb6.png"
+				alt="Sveltekit"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v2>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Migrating from Sapper</Subtitle>
+		<Content>
+			Sveltekit docs provides information about migration from Sapper officially. If I can know this
+			earlier, it would be helpful. Check this contents -
+			<Href
+				href="https://kit.svelte.dev/docs/migrating#pages-and-layouts"
+				name="Pages and layouts"
+			/>.
+		</Content>
 
 		<!-- Footer -->
 		<Footer />
 	</div>
 	<div slot="right">
-		<Date {lastUpdate} />
+		<Date {lastUpdate} {publish} {status} />
 		<Status {status} />
 		<Tag {tag} />
 	</div>

@@ -16,6 +16,7 @@
 	import Subtitle from '$lib/layout/posts/slots/contents/center/subtitle.svelte';
 	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
 	import Image from '$lib/layout/posts/slots/contents/center/image_v1.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
 
 	// Slots/Contents/Right
 	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
@@ -38,7 +39,7 @@
 	export let data: post;
 
 	// Main
-	const { lastUpdate, status, codeHighlight } = data;
+	const { publish, lastUpdate, status, codeHighlight } = data;
 	const { title, tag, image } = index._2022._07._14;
 	const { color, name, content } = information;
 </script>
@@ -82,6 +83,7 @@
 			posts faster and easier. For their needs, I will continue to try new things by studying ways
 			to improve readability.
 		</Content>
+		<Split />
 
 		<!-- Chapter 2 -->
 		<Image>
@@ -214,6 +216,7 @@
 				</span>
 			</Annotation>
 		</Content>
+		<Split />
 
 		<!-- Chapter 3 -->
 		<Image>
@@ -264,6 +267,8 @@
 			access easily weaken me. Therefore to Keep my study habits and attitudes, I have to live in
 			harmony between the entertains and study.
 		</Content>
+		<Split />
+
 		<!-- Chapter 4 -->
 		<Image>
 			<img
@@ -296,6 +301,8 @@
 			to achieve them. For people like me who want to start something new, I would like to write
 			good guides including all of contents.
 		</Content>
+		<Split />
+
 		<!-- Chapter 5 -->
 		<Image>
 			<img
@@ -325,7 +332,7 @@
 		<Footer />
 	</div>
 	<div slot="right">
-		<Date {lastUpdate} />
+		<Date {lastUpdate} {publish} {status} />
 		<Status {status} />
 		<Tag {tag} />
 	</div>

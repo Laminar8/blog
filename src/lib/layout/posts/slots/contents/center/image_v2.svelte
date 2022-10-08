@@ -1,7 +1,5 @@
 <div class="container">
-	<div class="header">
-		<div class="tab" />
-	</div>
+	<div class="header" />
 	<figure>
 		<slot name="image" />
 		<figcaption>

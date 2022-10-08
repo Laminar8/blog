@@ -1,5 +1,5 @@
 <div class="subtitle">
-	<slot>Loading subtitle...</slot>
+	<slot />
 </div>
 
 <style lang="scss">

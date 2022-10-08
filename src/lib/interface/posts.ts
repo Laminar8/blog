@@ -14,8 +14,9 @@ export interface index {
 }
 
 export interface post {
+	publish: string;
 	lastUpdate: string;
-	status: ['Published', 'In progress'];
+	status: ['Published', 'In progress', 'Editing', 'Edited'];
 	codeHighlight:
 		| {
 				[language: string]: { fileName: string; body: string }[];

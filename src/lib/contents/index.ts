@@ -35,18 +35,18 @@ export const index = {
 				tag: ['Svelte', 'SvelteKit', 'Git'],
 				title: capitalize('Apply new SvelteKit to my project'),
 				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/193067425-2114c3ed-a30b-4940-a7a8-cb71777f742e.png',
+					src: 'https://user-images.githubusercontent.com/52372569/194696995-b79a2e0a-86c3-42a1-9428-d6732e467e39.png',
 					alt: 'Svelte'
 				}
 			}
 		},
 		_10: {
 			_03: {
-				tag: ['Slack', 'AWS', 'RDS'],
-				title: capitalize('Subscribe Amazon RDS notification and Get notifications from Slack'),
+				tag: ['Github', 'Netlify', 'SSR', 'SSG'],
+				title: capitalize('Move from Github Pages to netlify for SSR'),
 				image: {
-					src: 'https://user-images.githubusercontent.com/52372569/188123705-e58d8e1b-6fcd-42a2-81d6-0f5b2f9c31e9.png',
-					alt: 'Slack'
+					src: 'https://user-images.githubusercontent.com/52372569/194698349-eac36581-3b71-494c-978a-0f0e4509a050.png',
+					alt: 'Netlify'
 				}
 			}
 		}
