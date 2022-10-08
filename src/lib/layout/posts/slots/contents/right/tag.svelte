@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { url } from '$lib/contents/url';
 
 	export let tag: string[];
 
@@ -14,7 +13,7 @@
 		});
 
 		if (event.target) {
-			await goto(`${url}/posts`);
+			await goto(`/posts`);
 		}
 	};
 </script>

@@ -1,7 +1,4 @@
 <script lang="ts">
-	// Import module
-	import { url } from '$lib/contents/url';
-
 	const dots = ['#DF7861', '#FFB562', '#ADCF9F'];
 
 	// Init
@@ -15,7 +12,7 @@
 	<div class="left" bind:offsetHeight={height}>
 		{#each dots as dot, index}
 			{#if index == 0}
-				<a href={url}>
+				<a href="/">
 					<div class="dot" style="width: {width}px; background-color: {dot};" />
 				</a>
 			{:else}

@@ -1,7 +1,6 @@
 <script lang="ts">
 	// Import module
 	import { onMount } from 'svelte';
-	import { url } from '$lib/contents/url';
 	import { compareDate } from '$lib/module/compareDate';
 	import type { index } from '$lib/interface/posts';
 
@@ -69,7 +68,7 @@
 					.toUpperCase()
 					.includes(tag.toUpperCase())).length > 0) || !tag}
 			<div class="post">
-				<a href="{url}/posts/{post.url}">
+				<a href="/posts/{post.url}">
 					<div class="image">
 						<img src={post.attribute.image.src} alt={post.attribute.image.alt} />
 					</div>
