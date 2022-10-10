@@ -51,7 +51,7 @@ export const index = {
 			},
 			_09: {
 				tag: ['Hadoop', 'Distcp', 'S3', 'Migration'],
-				title: capitalize('Migration from Hadoop to S3 with DistCp'),
+				title: capitalize('Migration from Hadoop to S3'),
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/194717181-f69dbf9d-152b-490e-adb3-79e79fc3cde2.png',
 					alt: 'Hadoop'

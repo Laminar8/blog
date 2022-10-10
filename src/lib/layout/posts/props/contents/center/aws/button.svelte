@@ -59,6 +59,16 @@
 			</svg>
 			{content}
 		</div>
+	{:else if type == 'selectCheck'}
+		<div class="standard selectCheck">
+			<svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 26 25"
+				><path
+					fill="#16b"
+					d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+				/></svg
+			>
+			{content}
+		</div>
 	{:else}
 		<div class="standard {type}">
 			{content}
@@ -133,6 +143,18 @@
 			}
 		}
 
+		.selectCheck {
+			color: #16191f;
+			background-color: #ffffff;
+			border: 0.1rem solid #aab7b8;
+
+			svg {
+				margin-right: 1rem;
+				margin-bottom: 0.2rem;
+				padding: 0.2rem;
+			}
+		}
+
 		.lambda {
 			color: #ffffff;
 			background-color: #63acff;
@@ -141,6 +163,13 @@
 		.button {
 			color: #ffffff;
 			background-color: #ec7211;
+		}
+
+		.buttonOld {
+			color: #ffffff;
+			background: linear-gradient(#2d8cec, #16b);
+			border-color: #0b4075;
+			border-radius: 0.4rem;
 		}
 
 		svg {
