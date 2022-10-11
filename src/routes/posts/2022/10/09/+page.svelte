@@ -100,7 +100,7 @@
 			<div slot="caption">
 				@Image from
 				<Href
-					href="https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-data-from-an-on-premises-hadoop-environment-to-amazon-s3-using-distcp-with-aws-privatelink-for-amazon-s3.html/"
+					href="https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-data-from-an-on-premises-hadoop-environment-to-amazon-s3-using-distcp-with-aws-privatelink-for-amazon-s3.html"
 					name="Amazon Docs"
 				/>
 			</div>
@@ -243,7 +243,7 @@
 			<div slot="caption">
 				@Image from
 				<Href
-					href="https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-data-from-an-on-premises-hadoop-environment-to-amazon-s3-using-distcp-with-aws-privatelink-for-amazon-s3.html/"
+					href="https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-data-from-an-on-premises-hadoop-environment-to-amazon-s3-using-distcp-with-aws-privatelink-for-amazon-s3.html"
 					name="Amazon Docs"
 				/>
 			</div>
@@ -254,6 +254,12 @@
 			In my hadoop cluster v2.7.7, the script provided from AWS docs is not working correctly.
 			Inspecting the errors, the issue was that S3 endpoint parameters was not configured even
 			passing as the parameter.
+		</Content>
+		<Content>
+			Running the script every time, the S3 endpoint is resolved to default endpoint,
+			<AWS_Button type="input" content="s3.amazonaws.com" />. DistCp needs to translate the regional
+			endpoint to private ip assigned in your subnet and transfer the file to S3 within private
+			network.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -278,7 +284,7 @@
 		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Content>
-			To solve the issue, pass the vpc endpoint in your s3 path not paramter. Thank you Steve
+			To solve the issue, pass the vpc endpoint in your s3 path and the paramter. Thanks, Steve
 			Loughran 😆
 		</Content>
 		<Code>
@@ -289,6 +295,89 @@
 				<Highlight language={bash} code={codeHighlight.bash[1].body} />
 			</div>
 		</Code>
+		<Step />
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195106600-e4e671ab-fbe4-4966-83f0-490fdad7286b.png"
+				alt="Amazon Docs"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-data-from-an-on-premises-hadoop-environment-to-amazon-s3-using-distcp-with-aws-privatelink-for-amazon-s3.html"
+					name="Amazon Docs"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			However the regional endpoint was not resolved as expected. To translate correctly, you could
+			add an entry for either
+			<AWS_Button type="input" content="bucketName.s3.region.amazonaws.com" /> or
+			<AWS_Button type="input" content="s3.region.amazonaws.com" /> in your
+			<Color color="black" content="/etc/hosts" number="-1" /> file.
+		</Content>
+		<Content>
+			I have added <AWS_Button type="input" content="bucketName.s3.region.amazonaws.com" /> to private
+			ip in <Color color="black" content="/etc/hosts" number="-1" />. After the error, I added
+			<AWS_Button type="input" content="s3.region.amazonaws.com" /> to same private ip below the previous
+			entry.
+		</Content>
+		<Content>
+			Clearly, the error message is changed to 400 error. Maybe DNS error would not hit you anymore
+			😭
+		</Content>
+		<Step />
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195116082-69aed179-69cf-42fb-a78f-0e6c44caf31d.png"
+				alt="stackoverflow"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://stackoverflow.com/questions/34810759/amazons3exception-bad-request-distcp-from-frankfurt-s3-to-emr-hdfs-failing"
+					name="stackoverflow"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			When I run the DistCp script, I got a
+			<AWS_Button type="input" content="AmazonS3Exception: Bad Request" /> message which was not clear.
+			Most people have mentioned that the issue was caused by
+			<AWS_Button type="input" content="Signature	Version 4" />.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195129431-6e6e222d-11a7-4cc7-9e9b-199a5738b2f9.png"
+				alt="Hadoop-AWS module"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://hadoop.apache.org/docs/stable/hadoop-aws/tools/hadoop-aws/index.html#General_S3A_Client_configuration"
+					name="Apache Docs"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			Apache Hadoop docs says that V4-signing-only regions (Frankfurt, Seoul) requires the endpoint
+			to be identified. Also if the wrong endpoint is used, the request may fail. This may be
+			reported as a 301/redirect error, or as a 400 Bad Request: take these as cues to check the
+			endpoint setting of a bucket.
+		</Content>
+		<Content>
+			I ran the script which added correct endpoint paramter clearly. Why did not it work? 🤔
+		</Content>
+		<Step />
 
 		<!-- Footer -->
 		<Footer />
