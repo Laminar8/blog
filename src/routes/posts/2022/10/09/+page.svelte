@@ -257,9 +257,9 @@
 		</Content>
 		<Content>
 			Running the script every time, the S3 endpoint is resolved to default endpoint,
-			<AWS_Button type="input" content="s3.amazonaws.com" />. DistCp needs to translate the regional
-			endpoint to private ip assigned in your subnet and transfer the file to S3 within private
-			network.
+			<Color color="purple" content="s3.amazonaws.com" number="-1" />. DistCp needs to translate the
+			regional endpoint to private ip assigned in your subnet and transfer the file to S3 within
+			private network.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -315,15 +315,16 @@
 		<Content>
 			However the regional endpoint was not resolved as expected. To translate correctly, you could
 			add an entry for either
-			<AWS_Button type="input" content="bucketName.s3.region.amazonaws.com" /> or
-			<AWS_Button type="input" content="s3.region.amazonaws.com" /> in your
+			<Color color="purple" content="bucketName.s3.region.amazonaws.com" number="-1" /> or
+			<Color color="purple" content="s3.region.amazonaws.com" number="-1" /> in your
 			<Color color="black" content="/etc/hosts" number="-1" /> file.
 		</Content>
 		<Content>
-			I have added <AWS_Button type="input" content="bucketName.s3.region.amazonaws.com" /> to private
-			ip in <Color color="black" content="/etc/hosts" number="-1" />. After the error, I added
-			<AWS_Button type="input" content="s3.region.amazonaws.com" /> to same private ip below the previous
-			entry.
+			I have added <Color color="purple" content="bucketName.s3.region.amazonaws.com" number="-1" />
+			to private ip in <Color color="black" content="/etc/hosts" number="-1" />. After the error, I
+			added
+			<Color color="purple" content="s3.region.amazonaws.com" number="-1" /> to same private ip below
+			the previous entry.
 		</Content>
 		<Content>
 			Clearly, the error message is changed to 400 error. Maybe DNS error would not hit you anymore
@@ -348,9 +349,9 @@
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Content>
 			When I run the DistCp script, I got a
-			<AWS_Button type="input" content="AmazonS3Exception: Bad Request" /> message which was not clear.
+			<Color color="purple" content="AmazonS3Exception: Bad Request" number="-1" />
 			Most people have mentioned that the issue was caused by
-			<AWS_Button type="input" content="Signature	Version 4" />.
+			<Color color="purple" content="Signature Version 4" number="-1" />.
 		</Content>
 		<Image_v1>
 			<img
@@ -378,6 +379,67 @@
 			I ran the script which added correct endpoint paramter clearly. Why did not it work? 🤔
 		</Content>
 		<Step />
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195602100-3697acc0-672f-44f5-bba0-32cfc9679964.png"
+				alt="stackoverflow"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://stackoverflow.com/questions/50943337/spark-2-3-0-aws-sdk-java-1-7-4-s3a-read-failed-with-amazons3exception-bad-req"
+					name="stackoverflow"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			An answer from <Color color="purple" content="ruseel" number="-1" /> looks very reasonable. My
+			hadoop environment is close to his. I passed the endpoint information to parameter. I also passed
+			parameters to use V4 Signing but I have had no idea it was worked or not. I doubt the error was
+			caused by aws-java-sdk version.
+		</Content>
+		<Content>
+			My aws-java-sdk version is 1.7.x. It was released before June, 2016. The default signing
+			mechanism version is v2. From released version after June, 2016, the default version is v4. I
+			have a plan to upgrade aws-java-sdk version(next 1.11.x) to transfer the data by DistCp.
+		</Content>
+		<Split />
+
+		<!-- Chapter 4 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195609006-f7e327a5-a97e-45dd-85e3-502dad493d5a.png"
+				alt="cloudera"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://community.cloudera.com/t5/Support-Questions/How-to-use-hdfs-dfs-command-with-DEBUG-level/m-p/85654"
+					name="cloudera"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Hadoop Debug</Subtitle>
+		<Content>
+			If you want more details after running the Hadoop DistCp scripts, set your environment
+			variable: <Color color="purple" content="HADOOP_ROOT_LOGGER=DEBUG,console" number="-1" />. The
+			default value is
+			<Color color="purple" content="INFO,console" number="-1" />.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[2].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[2].body} />
+			</div>
+		</Code>
 
 		<!-- Footer -->
 		<Footer />

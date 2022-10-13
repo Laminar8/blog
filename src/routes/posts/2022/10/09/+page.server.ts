@@ -31,6 +31,10 @@ export function load() {
 						`hadoop fs -ls s3a://bucket.vpce-123456-4jiz2sq4-us-east-2b.s3.us-east-2.vpce.amazonaws.com/`,
 						6
 					)
+				},
+				{
+					fileName: 'bash',
+					body: codeIndent(`export HADOOP_ROOT_LOGGER=DEBUG,console`, 6)
 				}
 			]
 		}
