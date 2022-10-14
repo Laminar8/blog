@@ -365,7 +365,24 @@
 			Enable your workflow by clicking the
 			<Button service="zapier" type="buttonBlue" content="Turn on Zap" /> button.
 		</Content>
-		<Step />
+		<Content>Configure is done. Go to test your workflow in production.</Content>
+		<Split />
+
+		<!-- Chapter 5 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/195889545-c3c0da36-d72d-4e60-b788-a7c04de9d4bc.png"
+				alt="Plan"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Free plan</Subtitle>
+		<Content>
+			The free plan limits <Color color="purple" content="100 tasks" number="-1" /> per month. One message
+			consumes one tasks. Take care of your number of tasks.
+		</Content>
 
 		<!-- Footer -->
 		<Footer />
