@@ -22,6 +22,18 @@
 				</div>
 			{/if}
 		</div>
+	{:else if service == 'zapier'}
+		<div class={service}>
+			<div class="standard {type}">
+				{content}
+			</div>
+		</div>
+	{:else if service == 'netlify'}
+		<div class={service}>
+			<div class="standard {type}">
+				{content}
+			</div>
+		</div>
 	{:else}
 		<div />
 	{/if}
@@ -88,6 +100,22 @@
 				border-radius: 0.5rem;
 				color: #ffffff;
 				background-color: #1264a3;
+			}
+		}
+
+		.zapier {
+			.buttonBlue {
+				border-radius: 0.3rem;
+				color: #fffdf9;
+				background-color: #3d4592;
+			}
+		}
+
+		.netlify {
+			.buttonBlueBright {
+				border-radius: 0.375rem;
+				color: #054861;
+				background-color: #5cebdf;
 			}
 		}
 	}

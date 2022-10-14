@@ -80,7 +80,7 @@
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />
 			<div slot="caption">
 				@Image from
-				<Href href="https://www.netlify.com/" name="Netlify" />
+				<Href href="https://www.netlify.com/" name="netlify" />
 			</div>
 		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
@@ -89,7 +89,7 @@
 			For last two months, I concentrated on creating my blog and publishing posts. The blog has
 			deployed on a Github Page and has 4 posts. It is certainly good news. However I am concerned
 			about slow development for my blog. Recently, I has added my blog some functions. I would like
-			to introduce my functions and why I have to migrate this blog from Github pages to Netlify.
+			to introduce my functions and why I have to migrate this blog from Github pages to netlify.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -188,7 +188,7 @@
 			from request, return response with the information about tag.
 		</Content>
 		<Content>
-			This function is depreciated and couldn't be accessible. Before migrating to Netlify, this
+			This function is depreciated and couldn't be accessible. Before migrating to netlify, this
 			function is replaced to <Color color="purple" content="svelte/store" number="-1" />.
 		</Content>
 		<Code>
@@ -228,10 +228,10 @@
 			/>
 		</Image_v2>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Migrate to Netlify</Subtitle>
+		<Subtitle>Migrate to netlify</Subtitle>
 		<Content>
 			With server side rendering issue, I could never maintain my blog on Github Pages. I decided to
-			migrate my blog to Netlify. I deleted node dependencies what I used for Github Pages. Then I
+			migrate my blog to netlify. I deleted node dependencies what I used for Github Pages. Then I
 			installed new svelte adapter
 			<Color color="purple" content="@sveltejs/adapter-netlify@next" number="-1" />.
 		</Content>
@@ -259,7 +259,7 @@
 		<Step />
 		<Content>
 			Simplify your npm scripts. When I use the Github Pages, the scripts were complicated. For now,
-			I should run <Color color="purple" content="vite build" number="-1" /> only to deploy on the Netlify.
+			I should run <Color color="purple" content="vite build" number="-1" /> only to deploy on the netlify.
 		</Content>
 		<Code>
 			<div slot="file">
@@ -284,10 +284,10 @@
 			</div>
 		</Code>
 		<Content>
-			You want the details about Sveltekit on Netlify, go to the Netlify docs about
+			You want the details about Sveltekit on netlify, go to the netlify docs about
 			<Href
 				href="https://docs.netlify.com/integrations/frameworks/sveltekit/"
-				name="SvelteKit on Netlify"
+				name="SvelteKit on netlify"
 			/>.
 		</Content>
 		<Split />
@@ -304,7 +304,7 @@
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>Deploy error</Subtitle>
 		<Content>
-			I thought Netlify settings were all configured. However all deploys were failed because the
+			I thought netlify settings were all configured. However all deploys were failed because the
 			svelte could not import some svelte files. Most of the cases, the problem is file name. In
 			deploy steps, check the file name with case sensitive. I checked my file names several times,
 			but I could not find the problem.
@@ -321,7 +321,7 @@
 			I did googling many times. Finally the mystery was revealed from
 			<Href
 				href="https://github.com/sveltejs/kit/issues/5337"
-				name="Module Not Found in Build Production w/ Netlify"
+				name="Module Not Found in Build Production w/ netlify"
 			/>. The config of git was the issue. Maybe the git is not case sensitive. When I rename my
 			files only first word to uppercase, the git wouldn't know the changing. To solve this problem,
 			enter below command.
@@ -346,7 +346,7 @@
 			/>
 		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
-		<Subtitle>Lovely Netlify</Subtitle>
+		<Subtitle>Lovely netlify</Subtitle>
 		<Content>
 			The migration is ended successfully. I am delighted to deploy my blog with fully functional. I
 			would like to keep going this blog development. Keep following me 😆

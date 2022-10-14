@@ -8,10 +8,10 @@
 	// Props/Contents/Center
 	import Title from '$lib/layout/posts/props/contents/center/title.svelte';
 	import Href from '$lib/layout/posts/props/contents/center/href.svelte';
-	// import Icon from '$lib/layout/posts/props/contents/center/icon.svelte';
+	import Icon from '$lib/layout/posts/props/contents/center/icon.svelte';
 	import Information from '$lib/layout/posts/props/contents/center/information.svelte';
 	import Color from '$lib/layout/posts/props/contents/center/color.svelte';
-	// import Button from '$lib/layout/posts/props/contents/center/button.svelte';
+	import Button from '$lib/layout/posts/props/contents/center/button.svelte';
 	import AWS_Button from '$lib/layout/posts/props/contents/center/aws/button.svelte';
 
 	// Slots/Contents/Center

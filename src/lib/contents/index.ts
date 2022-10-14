@@ -42,11 +42,11 @@ export const index = {
 		},
 		_10: {
 			_03: {
-				tag: ['Github', 'Netlify', 'SSR', 'SSG'],
+				tag: ['Github', 'netlify', 'SSR', 'SSG'],
 				title: capitalize('Move from Github Pages to netlify for SSR'),
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/194698349-eac36581-3b71-494c-978a-0f0e4509a050.png',
-					alt: 'Netlify'
+					alt: 'netlify'
 				}
 			},
 			_09: {
@@ -55,6 +55,14 @@ export const index = {
 				image: {
 					src: 'https://user-images.githubusercontent.com/52372569/194717181-f69dbf9d-152b-490e-adb3-79e79fc3cde2.png',
 					alt: 'Hadoop'
+				}
+			},
+			_14: {
+				tag: ['Slack', 'netlify', 'zapier', 'Notification'],
+				title: capitalize('Receive Slack channel messages on netlify deploys'),
+				image: {
+					src: 'https://user-images.githubusercontent.com/52372569/195852393-6f0931f7-0302-4ba4-aa5e-72247f2220b0.png',
+					alt: 'zapier'
 				}
 			}
 		}
