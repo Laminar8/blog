@@ -52,18 +52,16 @@
 </div>
 
 <style lang="scss">
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 0px) {
 		.header {
-			// Split sections
-			display: grid;
-			grid-template-columns: 1fr 50rem 1fr;
+			display: flex;
 
 			.left {
-				display: none;
+				display: block;
 			}
 
 			.center {
-				grid-column-start: 2;
+				display: none;
 			}
 
 			.right {
@@ -77,6 +75,18 @@
 			// Split sections
 			display: grid;
 			grid-template-columns: 1fr 70rem 1fr;
+
+			.left {
+				display: block;
+			}
+
+			.center {
+				display: inline-block;
+			}
+
+			.right {
+				display: block;
+			}
 		}
 	}
 
@@ -92,11 +102,13 @@
 			}
 
 			.center {
+				display: inline-block;
 				grid-column-start: 3;
 			}
 
 			.right {
 				display: block;
+				grid-column-start: 4;
 			}
 		}
 	}
@@ -143,7 +155,6 @@
 			align-self: center;
 
 			// Word Break
-			display: inline-block;
 			overflow: hidden;
 			white-space: nowrap;
 			word-break: break-all;
@@ -154,18 +165,16 @@
 		}
 	}
 
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 0px) {
 		.content {
-			// Split sections
-			display: grid;
-			grid-template-columns: 1fr 50rem 1fr;
+			display: flex;
 
 			.left {
 				display: none;
 			}
 
 			.center {
-				grid-column-start: 2;
+				display: block;
 			}
 
 			.right {
@@ -179,6 +188,18 @@
 			// Split sections
 			display: grid;
 			grid-template-columns: 1fr 70rem 1fr;
+
+			.left {
+				display: none;
+			}
+
+			.center {
+				grid-column-start: 2;
+			}
+
+			.right {
+				display: none;
+			}
 		}
 	}
 
@@ -194,11 +215,13 @@
 			}
 
 			.center {
+				display: block;
 				grid-column-start: 3;
 			}
 
 			.right {
 				display: block;
+				grid-column-start: 4;
 			}
 		}
 	}
