@@ -2,11 +2,11 @@
 	// Layout
 	import Index from '$lib/layout/index/Index.svelte';
 
-	// Slots/Contents/Center
+	// Props/Contents/Center
 	import Posts from '$lib/layout/index/props/contents/center/Posts.svelte';
 
 	// Public/Props/Contents/Center
-	import Footer from '$lib/layout/public/props/contents/center/footer.svelte';
+	import Footer from '$lib/layout/public/props/contents/center/Footer.svelte';
 
 	// Module
 	import { index } from '$lib/contents/index';

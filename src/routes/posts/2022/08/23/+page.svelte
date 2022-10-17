@@ -3,29 +3,29 @@
 	import Posts from '$lib/layout/posts/Posts.svelte';
 
 	// Props/Header
-	import Header from '$lib/layout/posts/props/header/header.svelte';
+	import Header from '$lib/layout/posts/props/header/Header.svelte';
 
 	// Props/Contents/Center
-	import Title from '$lib/layout/posts/props/contents/center/title.svelte';
-	import Href from '$lib/layout/posts/props/contents/center/href.svelte';
-	import Information from '$lib/layout/posts/props/contents/center/information.svelte';
-	import Color from '$lib/layout/posts/props/contents/center/color.svelte';
+	import Title from '$lib/layout/posts/props/contents/center/Title.svelte';
+	import Href from '$lib/layout/posts/props/contents/center/Href.svelte';
+	import Information from '$lib/layout/posts/props/contents/center/Information.svelte';
+	import Color from '$lib/layout/posts/props/contents/center/Color.svelte';
 
 	// Slots/Contents/Center
-	import Annotation from '$lib/layout/posts/slots/contents/center/annotation.svelte';
-	import Subtitle from '$lib/layout/posts/slots/contents/center/subtitle.svelte';
-	import Content from '$lib/layout/posts/slots/contents/center/content.svelte';
-	import Image from '$lib/layout/posts/slots/contents/center/image_v1.svelte';
-	import Code from '$lib/layout/posts/slots/contents/center/code.svelte';
-	import Split from '$lib/layout/posts/slots/contents/center/split.svelte';
+	import Annotation from '$lib/layout/posts/slots/contents/center/Annotation.svelte';
+	import Subtitle from '$lib/layout/posts/slots/contents/center/Subtitle.svelte';
+	import Content from '$lib/layout/posts/slots/contents/center/Content.svelte';
+	import Image from '$lib/layout/posts/slots/contents/center/Image_v1.svelte';
+	import Code from '$lib/layout/posts/slots/contents/center/Code.svelte';
+	import Split from '$lib/layout/posts/slots/contents/center/Split.svelte';
 
 	// Slots/Contents/Right
-	import Date from '$lib/layout/posts/slots/contents/right/date.svelte';
-	import Status from '$lib/layout/posts/slots/contents/right/status.svelte';
-	import Tag from '$lib/layout/posts/slots/contents/right/tag.svelte';
+	import Date from '$lib/layout/posts/slots/contents/right/Date.svelte';
+	import Status from '$lib/layout/posts/slots/contents/right/Status.svelte';
+	import Tag from '$lib/layout/posts/slots/contents/right/Tag.svelte';
 
 	// Public/Props/Contents/Center
-	import Footer from '$lib/layout/public/props/contents/center/footer.svelte';
+	import Footer from '$lib/layout/public/props/contents/center/Footer.svelte';
 
 	// Module
 	import { index } from '$lib/contents/index';

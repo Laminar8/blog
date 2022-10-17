@@ -1,24 +1,42 @@
-<script lang="ts">
-	const dots = ['#DF7861', '#FFB562', '#ADCF9F'];
+<script context="module" lang="ts">
+	// Apps
+	import { goto } from '$app/navigation';
 
+	// Props/Contents/Fix
+	import Navigation from '$lib/layout/public/props/contents/fix/Navigation.svelte';
+</script>
+
+<script lang="ts">
 	// Init
 	let height: number;
+	let visible = 'hidden';
 
 	// Assign
 	$: width = height;
+
+	const setVisibleNav = (event: any) => {
+		if (event.target) {
+			visible = visible != 'hidden' ? 'hidden' : 'visible';
+		}
+	};
+
+	const goMain = (event: any) => goto('/');
 </script>
 
+<Navigation {visible} />
 <div class="header">
 	<div class="left" bind:offsetHeight={height}>
-		{#each dots as dot, index}
-			{#if index == 0}
-				<a href="/">
-					<div class="dot" style="width: {width}px; background-color: {dot};" />
-				</a>
-			{:else}
-				<div class="dot" style="width: {width}px; background-color: {dot};" />
-			{/if}
-		{/each}
+		<div
+			class="dot"
+			style="width: {width}px; background-color: #DF7861;"
+			on:click={(event) => goMain(event)}
+		/>
+		<div class="dot" style="width: {width}px; background-color: #FFB562;" />
+		<div
+			class="dot"
+			style="width: {width}px; background-color: #ADCF9F;"
+			on:click={(event) => setVisibleNav(event)}
+		/>
 	</div>
 	<div class="center">
 		<!-- To be defined -->
@@ -115,6 +133,9 @@
 				display: inline-flex;
 				margin-left: 1rem;
 				border-radius: 1.5rem;
+
+				// Mouse
+				cursor: pointer;
 			}
 		}
 
