@@ -4,8 +4,8 @@ export const prerender = true;
 
 export function load() {
 	return {
-		publish: '2022/10/10',
-		lastUpdate: '2022/10/10',
+		publish: '2022/10/23',
+		lastUpdate: '2022/10/23',
 		status: ['In progress'],
 		codeHighlight: {
 			bash: [
@@ -34,6 +34,26 @@ export function load() {
 				{
 					fileName: 'bash',
 					body: codeIndent(`export HADOOP_ROOT_LOGGER=DEBUG,console`, 6)
+				},
+				{
+					fileName: 'bash',
+					body: codeIndent(`aws configure`, 6)
+				},
+				{
+					fileName: 'bash',
+					body: codeIndent(`hdfs dfs -copyToLocal sourcePath targetPath`, 6)
+				},
+				{
+					fileName: 'bash',
+					body: codeIndent(`aws s3 cp sourcePath s3://targetBucket --recursive`, 6)
+				},
+				{
+					fileName: 'bash',
+					body: codeIndent(
+						`aws configure set default.s3.max_concurrent_requests 20
+						aws configure set default.s3.max_queue_size 10000`,
+						6
+					)
 				}
 			]
 		}

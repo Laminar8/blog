@@ -406,6 +406,28 @@
 			mechanism version is v2. From released version after June, 2016, the default version is v4. I
 			have a plan to upgrade aws-java-sdk version(next 1.11.x) to transfer the data by DistCp.
 		</Content>
+		<Step />
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/197349304-8564709b-1abf-47f7-b1a3-b5da3d4fb5e1.png"
+				alt="AWS Docs"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingAWSSDK.html#UsingAWSSDK-move-to-Sig4"
+					name="AWS Docs"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			AWS Docs says that the AWS SDK for Java v1 must be upgraded to Java 1.11.201+ when you want to
+			use Signature Version 4 for Amazon S3 API request authentication. The above table lists the
+			SDKs with the necessary minimum version to use Signature Version 4 (SigV4).
+		</Content>
 		<Split />
 
 		<!-- Chapter 4 -->
@@ -440,6 +462,108 @@
 				<Highlight language={bash} code={codeHighlight.bash[2].body} />
 			</div>
 		</Code>
+		<Split />
+
+		<!-- Chapter 5 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/197351598-700b2953-2412-4f4f-89e7-186e6306afbd.png"
+				alt="AWS Docs"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/setup-aws-cli.html"
+					name="AWS Docs"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>AWS CLI</Subtitle>
+		<Content>
+			If you are not available to use DistCp for moving data from on-premise hadoop cluster, you can
+			still use <Color color="purple" content="AWS CLI" number="-1" /> to transfer the data to Amazon
+			S3. Install the latest AWS CLI from
+			<Href
+				href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html"
+				name="Installing or updating the latest version of the AWS CLI"
+			/> on your local machine.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[3].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[3].body} />
+			</div>
+		</Code>
+		<Content>
+			Prove your permission to be allowed to upload the data to Amazon S3. Running the above command
+			for saving your credential on the local.
+		</Content>
+		<Information color={color.purple} name={name.purple} content={content.image.purple._01} />
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[4].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[4].body} />
+			</div>
+		</Code>
+		<Content>
+			Unfortunately I couldn't find the way to transfer data from hadoop cluster to Amazon S3
+			straightly with AWS CLI. AWS CLI could move local data to Amazon S3. If you run the above file
+			system command, you can download the data from source path to target path.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[5].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[5].body} />
+			</div>
+		</Code>
+		<Content>
+			You are ready to move data to Amazon S3. Try to running AWS CLI command to copy your hadoop
+			data on your local path to your target bucket. If you cannot copy the data, check your VPC
+			endpoint and security groups. The network environment is probably not configured to connect
+			between on-premise and VPC which has your VPC endpoint.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[6].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[6].body} />
+			</div>
+		</Code>
+		<Content>
+			If you have copied your data successfully, you would also consider additional AWS CLI S3
+			configurations to improve your transfer performance. As known from official
+			<Href
+				href="https://aws.amazon.com/premiumsupport/knowledge-center/s3-improve-transfer-sync-command/?nc1=h_ls"
+				name="AWS docs"
+			/>
+			and
+			<Href
+				href="https://awscli.amazonaws.com/v2/documentation/api/latest/topic/s3-config.html"
+				name="CLI documentation"
+			/>, <Color color="purple" content="max concurrent requests" number="-1" /> and
+			<Color color="purple" content="max queue size" number="-1" /> could be helpful to accelerate your
+			move.
+		</Content>
+		<Content>
+			The value of the previous configurations is adjustable and depends on your machine. Applying
+			the value higher, your machine could be slow and the performance would be worse. Find your
+			best value by changing the value when keeping to run a command which transfers the same data
+			to Amazon S3.
+		</Content>
 
 		<!-- Footer -->
 		<Footer />

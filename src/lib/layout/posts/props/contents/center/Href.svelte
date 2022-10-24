@@ -4,7 +4,7 @@
 </script>
 
 <div class="href">
-	<a {href}>{name}</a>
+	<a {href} target="_blank" rel="noopener noreferrer">{name}</a>
 </div>
 
 <style lang="scss">
