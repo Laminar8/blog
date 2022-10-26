@@ -13,7 +13,7 @@
 		margin-top: 2.5rem;
 
 		// Font
-		font-size: 1rem;
+		font-size: 1.5rem;
 		line-height: 3rem;
 
 		.number {

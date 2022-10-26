@@ -69,9 +69,9 @@
 		<Title {title} />
 
 		<!-- Chapter 1 -->
-		<Image_v2>
+		<Image_v1>
 			<img src={image.src} alt={image.alt} style="max-width: 100%;" slot="image" />
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>New SvelteKit</Subtitle>
 		<Content>
@@ -209,14 +209,14 @@
 		<Split />
 
 		<!-- Chapter 3 -->
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/193591958-9ef1edcb-67f8-4f82-9e77-bba2045f10c6.png"
 				alt="Git branch"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>Advanced routing</Subtitle>
 		<Content>
@@ -238,14 +238,14 @@
 		<Split />
 
 		<!-- Chapter 4 -->
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194696342-dfe08a7c-9ae9-4920-9e89-d32e18833fb6.png"
 				alt="Sveltekit"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>Migrating from Sapper</Subtitle>
 		<Content>

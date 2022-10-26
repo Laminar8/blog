@@ -150,27 +150,27 @@
 			and click <AWS_Button type="service" content="IAM" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194824733-299fb72f-fed5-4b12-8e5c-03965e3e6d82.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			Open left side bar if it is closed, and click <AWS_Button type="input" content="Users" /> under
 			Access management. In Users page, click <AWS_Button type="buttonOld" content="Add users" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194826518-7a56a8ec-0cab-425f-805b-d3bf310dc880.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			Enter your user name as <AWS_Button type="input" content="s3" /> or your preffered name. You cannot
 			edit your name. Then goto Select AWS access type section. Check
@@ -179,14 +179,14 @@
 			<AWS_Button type="buttonOld" content="Next: Permissions" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194830072-3c16eb7b-89d3-4dec-9a89-2e3833c16ab0.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			Click <AWS_Button type="input" content="Attach existing policies directly" /> first. Search policies
 			by filtering only <AWS_Button type="input" content="s3" /> included from policies name. Check
@@ -194,38 +194,38 @@
 			<AWS_Button type="buttonOld" content="Next: Tags" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194830967-6862372c-1814-4475-bde5-cba79f06fe06.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			If you need tags, enter it. Click <AWS_Button type="buttonOld" content="Next: Review" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194832374-640c3e5c-365f-40fd-8262-027a67c08ef2.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			Click <AWS_Button type="buttonOld" content="Create user" />.
 		</Content>
 		<Step />
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194833378-f61d38b4-2705-4765-937e-80d524d79322.png"
 				alt="AWS Console"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			To get your credential, click <AWS_Button type="input" content="Download .csv" />. In the csv
 			file, there are your access key and secret key.

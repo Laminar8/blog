@@ -151,14 +151,14 @@
 			of your pages has to be prerenderable. I couldn't catch the error when I develop the functions
 			in dev mode.
 		</Content>
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194707679-6c43db02-210f-4f9f-b274-294319860223.png"
 				alt="url"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Content>
 			On a post page, you can select a tag from post tags. After selecting it, you go to the index
@@ -172,14 +172,14 @@
 			could have to be rendered from server side. We call the technology
 			<Color color="purple" content="SSR" number="-1" />.
 		</Content>
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194708621-d53fce44-642d-4e6b-ae1d-d31dd40dc3a7.png"
 				alt="url"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Content>
 			For your information, url.searchparams could be processed on
@@ -219,14 +219,14 @@
 		<Split />
 
 		<!-- Chapter 3 -->
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194712433-e9316463-fcf8-4494-9503-e6533fbfc6d9.png"
 				alt="API Endpoints"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
 		<Subtitle>Migrate to netlify</Subtitle>
 		<Content>
@@ -309,14 +309,14 @@
 			deploy steps, check the file name with case sensitive. I checked my file names several times,
 			but I could not find the problem.
 		</Content>
-		<Image_v2>
+		<Image_v1>
 			<img
 				src="https://user-images.githubusercontent.com/52372569/194716171-e50b830e-442f-4daa-98f0-3b0ff70e8b5d.png"
 				alt="Deploy error"
 				style="max-width: 100%;"
 				slot="image"
 			/>
-		</Image_v2>
+		</Image_v1>
 		<Content>
 			I did googling many times. Finally the mystery was revealed from
 			<Href

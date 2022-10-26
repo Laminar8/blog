@@ -40,9 +40,17 @@
 	const setTags = new Set(tags);
 	const randomTags = [...setTags].sort(() => Math.random() - 0.5).slice(0, 6);
 
-	const reTagging = (event: any) => {
+	const reTagging = async (event: any) => {
 		if (event.target) {
 			tag = tag != event.target.outerText ? event.target.outerText : '';
+
+			await fetch('/api/tag/set', {
+				method: 'POST',
+				body: JSON.stringify({ tag: tag }),
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
 		}
 	};
 </script>
@@ -206,6 +214,7 @@
 		margin: 0.5rem;
 		padding: 1rem;
 		border-radius: 1rem;
+		font-size: 1.25rem;
 
 		// Word Break
 		overflow: hidden;

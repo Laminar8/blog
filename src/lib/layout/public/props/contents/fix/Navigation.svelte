@@ -23,8 +23,8 @@
 			name: 'Settings',
 			bodies: [
 				{
-					href: '/posts',
-					context: 'TBD'
+					href: '/setting/general',
+					context: 'General'
 				}
 			]
 		}

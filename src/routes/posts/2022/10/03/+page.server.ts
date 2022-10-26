@@ -4,8 +4,8 @@ export const prerender = true;
 export function load() {
 	return {
 		publish: '2022/10/09',
-		lastUpdate: '2022/10/09',
-		status: ['Published'],
+		lastUpdate: '2022/10/26',
+		status: ['Published', 'Edited'],
 		codeHighlight: {
 			css: [
 				{

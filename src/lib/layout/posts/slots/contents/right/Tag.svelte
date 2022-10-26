@@ -49,7 +49,7 @@
 		.tag {
 			// Font
 			margin-top: 1rem;
-			font-size: 1rem;
+			font-size: 1.25rem;
 			width: 100%;
 
 			.content {

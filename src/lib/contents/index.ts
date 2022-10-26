@@ -64,6 +64,16 @@ export const index = {
 					src: 'https://user-images.githubusercontent.com/52372569/195852393-6f0931f7-0302-4ba4-aa5e-72247f2220b0.png',
 					alt: 'zapier'
 				}
+			},
+			_26: {
+				tag: ['Client VPN', 'OpenVPN'],
+				title: capitalize(
+					'The most important things you need to know if you are using the AWS Client VPN'
+				),
+				image: {
+					src: 'https://user-images.githubusercontent.com/52372569/198049837-315a4157-bbac-4631-853d-62be66baff2c.png',
+					alt: 'OpenVPN'
+				}
 			}
 		}
 	}
