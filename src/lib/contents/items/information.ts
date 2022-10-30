@@ -20,7 +20,8 @@ export const information = {
 				_01: `This blog owner has a copyright of this image. If you don't think so, please contact me.`
 			},
 			purple: {
-				_01: `Please don't share your credential to others. Rotate your keys regularly in 90 days.`
+				_01: `Please don't share your credential to others. Rotate your keys regularly in 90 days.`,
+				_02: 'This is shown for illustration only. Please do not follow the step.'
 			}
 		}
 	}

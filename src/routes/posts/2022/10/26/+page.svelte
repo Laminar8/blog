@@ -45,6 +45,7 @@
 	import css from 'svelte-highlight/languages/css';
 	import json from 'svelte-highlight/languages/json';
 	import yaml from 'svelte-highlight/languages/yaml';
+	import python from 'svelte-highlight/languages/python';
 	import javascript from 'svelte-highlight/languages/javascript';
 	import typescript from 'svelte-highlight/languages/typescript';
 
@@ -170,6 +171,170 @@
 			Comparing the AWS Client VPN pricing to OpenVPN, the AWS is too much expensive. OpenVPN
 			charges the licenses and the access servers. However AWS Client VPN charges the number of
 			associations and connections per hour. Increasing your users, you could be charged a high fee.
+		</Content>
+		<Content>
+			One more disadvantage of AWS Client VPN is that it is difficult to create new clients for the
+			VPN. In general, You should have a ovpn file to connect the VPN. The ovpn file has a
+			certificate authority, a client certificate and a client key. If you have a license for access
+			server, you could create new ovpn profile for new clients with one click. On the other hand,
+			AWS Client VPN has a several step to create new ovpn profile.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/198869270-0ed0655e-da9c-40dd-8a94-cf9b45a9cdb0.png"
+				alt="AWS Client VPN"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			From
+			<Href
+				href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#mutual"
+				name="AWS docs"
+			/>
+			, you could create a new AWS Client VPN endpoint. I think you already created an VPN endpoint following
+			the above guide. As mentioned from the guide, you could repeat step 5 to create a new client certificate
+			and key.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/198869866-ace890d5-70e1-4781-91c5-9667f800d224.png"
+				alt="AWS Client VPN"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Content>
+			If you try to repeat step 5, you must ensure that you have the correct certificate authority
+			key and certificate which you used when you created the VPC endpoint. When uploading CA
+			certificate, server key and certificate for Amazon ACM, the guide says you have to back up
+			these files to an other directory. The docs dosen't mention the
+			<Color color="purple" content="CA key" number="-1" />. It makes me confused.
+		</Content>
+		<Split />
+
+		<!-- Chapter 3 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/198073249-1ddf52bd-ba2b-4b74-a30b-a391ff1b6d6d.png"
+				alt="AWS Client VPN architecture"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href
+					href="https://aws.amazon.com/ko/blogs/networking-and-content-delivery/using-aws-client-vpn-to-scale-your-work-from-home-capacity/"
+					name="AWS Blogs"
+				/>
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>New Clients for Client VPN</Subtitle>
+		<Content>
+			With mutual authentication, Client VPN uses certificates to perform authentication between the
+			client and the server. The server certificates and clients certificates are generated from
+			certificate authority (CA). You must keep the
+			<Color color="purple" content="CA certificate" number="-1" /> and
+			<Color color="purple" content="CA key" number="-1" /> to create new clients after initializing
+			a new PKI environment for new Client VPN endpoint.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[0].body} />
+			</div>
+		</Code>
+		<Content>
+			With bash commands, you should copy the certificates and keys to your backup directory. If you
+			want to create new clients, restore your files to original path.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[1].body} />
+			</div>
+		</Code>
+		<Information color={color.purple} name={name.purple} content={content.image.purple._02} />
+		<Content>
+			Skip initializing a new PKI environment. If you performed the step, build a new certificate
+			authority and overwrite your certificate authority to old one.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[2].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[2].body} />
+			</div>
+		</Code>
+		<Content>
+			Generate your new clients certificate and key for Client VPN. Replace
+			<Color color="purple" content="client1.domain.tld" number="-1" /> to
+			<Color color="purple" content="your clients name" number="-1" />. Add a client certificate and
+			a client key to the ovpn profile which downloaded from AWS Client VPN console.
+		</Content>
+		<Split />
+
+		<!-- Chapter 4 -->
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/198876160-4f161740-32cd-4704-9521-827c7b9a527e.png"
+				alt="OpenVPN/easy-rsa"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+			<div slot="caption">
+				@Image from
+				<Href href="https://github.com/OpenVPN/easy-rsa/tree/master/easyrsa3" name="Github" />
+			</div>
+		</Image_v1>
+		<Information color={color.yellow} name={name.yellow} content={content.image.yellow} />
+		<Subtitle>Automation</Subtitle>
+		<Content>
+			After cloning from
+			<Href href="https://github.com/OpenVPN/easy-rsa" name="OpenVPN/easy-rsa" /> github, go to
+			<Color color="black" content="easy-rsa/easyrsa3" number="-1" />
+			directory. You couldn't <Color color="purple" content="vars" number="-1" /> file because you didn't
+			initializing the PKI environment.
+		</Content>
+		<Code>
+			<div slot="file">
+				{codeHighlight.bash[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={bash} code={codeHighlight.bash[1].body} />
+			</div>
+		</Code>
+		<Information color={color.purple} name={name.purple} content={content.image.purple._02} />
+		<Content>
+			The <Color color="purple" content="init-pki" number="-1" /> command creates PKI directory and some
+			configuration files under <Color color="black" content="easy-rsa/easyrsa3" number="-1" /> directory.
+			You don't have to run this command directly. I'm going to create a python file which runs commands
+			to initiate and generate certificates.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.python[0].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={python} code={codeHighlight.python[0].body} />
+			</div>
+		</Code>
+		<Content>
+			Before running the <Color color="purple" content="init-pki" number="-1" /> command, python checks
+			that you had the pki directory. If the directory exists, delete with
+			<Color color="purple" content="shutil" number="-1" /> module. The module delete the directory even
+			it has files and directories.
 		</Content>
 
 		<!-- Footer -->
