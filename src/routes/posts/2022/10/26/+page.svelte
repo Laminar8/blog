@@ -336,6 +336,42 @@
 			<Color color="purple" content="shutil" number="-1" /> module. The module delete the directory even
 			it has files and directories.
 		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.python[1].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={python} code={codeHighlight.python[1].body} />
+			</div>
+		</Code>
+		<Content>
+			The easyrsa application runs in interactive mode by default. If you would like to automate to
+			create the new clients with batch like python, shell script and etc., you have to enable
+			<Color color="purple" content="batch" number="-1" /> mode by editing the configuration file. Uncomment
+			the line and write anything in the quotes.
+		</Content>
+		<Step />
+		<Code>
+			<div slot="file">
+				{codeHighlight.python[2].fileName}
+			</div>
+			<div slot="code">
+				<Highlight language={python} code={codeHighlight.python[2].body} />
+			</div>
+		</Code>
+		<Content>
+			The above code shows that the client keys certificate for users would be generated in batch
+			mode previous configured. You make sure you should download
+			<Color color="black" content="downloaded-client-config.ovpn" number="-1" /> file from AWS Client
+			VPN console. If you haven't the file yet, the python couldn't run.
+		</Content>
+		<Content>
+			After script run to create the ovpn files for clients, check the files on your
+			<Color color="black" content="pki/ovpn" number="-1" />
+			directory if the ovpn files are generated from the key and certificate they assigned.
+		</Content>
+		<Content>It's done. Go to share their ovpn files.</Content>
 
 		<!-- Footer -->
 		<Footer />
