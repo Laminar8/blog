@@ -76,5 +76,17 @@ export const index = {
 				}
 			}
 		}
+	},
+	_2023: {
+		_02: {
+			_06: {
+				tag: ['SAM', 'Jenkins', 'Serverless', 'Lambda'],
+				title: capitalize('Deploy lambda function from a CI/CD Pipeline'),
+				image: {
+					src: 'https://user-images.githubusercontent.com/52372569/216973781-c11ef78b-6b8c-443c-a327-bcdc303022d3.png',
+					alt: 'SAM'
+				}
+			}
+		}
 	}
 };
