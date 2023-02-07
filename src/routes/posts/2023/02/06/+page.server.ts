@@ -4,9 +4,9 @@ export const prerender = true;
 
 export function load() {
 	return {
-		publish: '2023/02/06',
-		lastUpdate: '2023/02/06',
-		status: ['In progress'],
+		publish: '2023/02/07',
+		lastUpdate: '2023/02/07',
+		status: ['Published'],
 		codeHighlight: {
 			bash: [
 				{
@@ -18,38 +18,23 @@ export function load() {
 				},
 				{
 					fileName: 'Bash',
-					body: codeIndent(
-						`unzip aws-sam-cli-linux-x86_64.zip -d sam-installation`,
-						6
-					)
+					body: codeIndent(`unzip aws-sam-cli-linux-x86_64.zip -d sam-installation`, 6)
 				},
 				{
 					fileName: 'Bash',
-					body: codeIndent(
-						`sudo apt-get install unzip`,
-						6
-					)
+					body: codeIndent(`sudo apt-get install unzip`, 6)
 				},
 				{
 					fileName: 'Bash',
-					body: codeIndent(
-						`sudo ./sam-installation/install`,
-						6
-					)
+					body: codeIndent(`sudo ./sam-installation/install`, 6)
 				},
 				{
 					fileName: 'Bash',
-					body: codeIndent(
-						`sam --version`,
-						6
-					)
+					body: codeIndent(`sam --version`, 6)
 				},
 				{
 					fileName: 'Bash',
-					body: codeIndent(
-						`sam init`,
-						6
-					)
+					body: codeIndent(`sam init`, 6)
 				},
 				{
 					fileName: 'Bash',
@@ -177,10 +162,14 @@ export function load() {
 				{
 					fileName: 'Bash',
 					body: codeIndent(
-						`sudo docker run -p 8080:8080 jenkins/jenkins`,
+						`# Create Docker volume
+						sudo docker volume create apps
+
+						# Run container
+						sudo docker run -v apps:/var/jenkins_home -p 8080:8080 jenkins/jenkins`,
 						6
 					)
-				},
+				}
 			],
 			yaml: [
 				{
@@ -372,7 +361,7 @@ export function load() {
 									RestApiId: !Ref HelloWorldApi`,
 						6
 					)
-				},
+				}
 			],
 			python: [
 				{
@@ -402,7 +391,7 @@ export function load() {
 						`,
 						6
 					)
-				},
+				}
 			]
 		}
 	};

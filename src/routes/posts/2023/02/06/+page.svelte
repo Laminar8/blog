@@ -234,7 +234,7 @@
 		<Content>
 			SAM has a lot of AWS quick start application template. According to your application type
 			including a language, package type, you can choose the template. If you want to start from the
-			template, initialize the sam.
+			template, initialize the sam. In my case, I ran the code in my cloud9.
 			<Code>
 				<div slot="file">
 					{codeHighlight.bash[5].fileName}
@@ -287,8 +287,8 @@
 		</Content>
 		<Content>
 			If you would like to add a vpc configuration, the lambda resource should have
-			<AWS_Button type="service" content="SecurityGroupIds" />
-			and <AWS_Button type="service" content="SubnetIds" />.
+			<Color color="purple" content="SecurityGroupIds" number="-1" />
+			and <Color color="purple" content="SubnetIds" number="-1" />.
 			<Code>
 				<div slot="file">
 					{codeHighlight.yaml[1].fileName}
@@ -301,7 +301,7 @@
 		<Content>
 			You can define your own <AWS_Button type="service" content="IAM role" /> to your lambda. If you
 			don't declare the role, a role would be created with a logical ID of
-			<AWS_Button type="service" content="<function-logical-id>" /> Role.
+			<Color color="purple" content="<function-logical-id>" number="-1" /> Role.
 			<Code>
 				<div slot="file">
 					{codeHighlight.yaml[2].fileName}
@@ -316,8 +316,9 @@
 			by adding to resources section. You don't have to add explicitly to a AWS Serverless Application
 			Definition template. From official AWS SAM developer guide, a resource of this type is implicitly
 			created from the union of Api events defined on
-			<AWS_Button type="service" content="AWS::Serverless::Function" /> resources defined in the template
-			that do not refer to an <AWS_Button type="service" content="AWS::Serverless::Api" /> resource.
+			<Color color="purple" content="AWS::Serverless::Function" number="-1" /> resources defined in the
+			template that do not refer to an
+			<Color color="purple" content="AWS::Serverless::Api" number="-1" /> resource.
 			<Code>
 				<div slot="file">
 					{codeHighlight.yaml[3].fileName}
@@ -330,7 +331,7 @@
 		<Content>
 			When you want to add a API Gateway resource from serverless template, you have to match your
 			lambda function event and your api gateway by adding the
-			<AWS_Button type="service" content="RestApiId" />.
+			<Color color="purple" content="RestApiId" number="-1" />.
 			<Code>
 				<div slot="file">
 					{codeHighlight.yaml[4].fileName}
@@ -343,7 +344,7 @@
 		<Content>
 			The default value of api gateway resource endpoint type is edge. If you want to change from
 			egde to regional or private, add a
-			<AWS_Button type="service" content="EndpointConfiguration" /> to your resource.
+			<Color color="purple" content="EndpointConfiguration" number="-1" /> to your resource.
 			<Code>
 				<div slot="file">
 					{codeHighlight.yaml[5].fileName}
@@ -359,8 +360,8 @@
 		<Subtitle>Add a resource</Subtitle>
 		<Content>
 			I will create a new python file that returns a current date by
-			<AWS_Button type="service" content="datetime" /> library. The return value will be forwarded to
-			main python file. Finally the main python file
+			<Color color="purple" content="datetime" number="-1" /> library. The return value will be forwarded
+			to main python file. Finally the main python file
 			<Color color="black" content="app.py" number="-1" /> returns a json formatted strings.
 		</Content>
 		<Content>
@@ -394,7 +395,7 @@
 		<Content>
 			In main handler, import the previous function from
 			<Color color="black" content="get_time.py" number="-1" /> python file. Edit return value of the
-			<AWS_Button type="service" content="lambda_handler" /> function.
+			<Color color="purple" content="lambda_handler" number="-1" /> function.
 			<Code>
 				<div slot="file">
 					{codeHighlight.python[1].fileName}
@@ -490,12 +491,12 @@
 		<Split />
 
 		<!-- Chapter 9 -->
-		<Subtitle>Run a jenkins</Subtitle>
+		<Subtitle>Run jenkins server</Subtitle>
 		<Content>
 			From official jenkins image
 			<Href href="https://hub.docker.com/r/jenkins/jenkins" name="jenkins/jenkins" />, you can
-			create a container based on the image. The current version is 2.375.2 on Feb, 2023. No
-			additional volume attatched.
+			create a container based on the image. The current version is 2.375.2 on Feb, 2023. A docker
+			volume is mounted to the jenkins container.
 			<Code>
 				<div slot="file">
 					{codeHighlight.bash[12].fileName}
@@ -505,16 +506,18 @@
 				</div>
 			</Code>
 		</Content>
-		<Step />
+		<Split />
 
+		<!-- Chapter 10 -->
+		<Subtitle>Jenkins configure</Subtitle>
 		<Content>
 			If you want to change your default language, you can install plugin
-			<AWS_Button type="service" content="locale" />. The locale plugin can support several language
-			options.
+			<Color color="purple" content="locale" number="-1" />. The locale plugin can support several
+			language options.
 		</Content>
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/217182607-b9c2d8d7-472c-4045-b098-ba2e4b7a97df.png"
+				src="https://user-images.githubusercontent.com/52372569/217234555-f2332cba-bfb5-4d7e-8dc9-83cdd8276870.png"
 				alt="Jenkins locale"
 				style="max-width: 100%;"
 				slot="image"
@@ -525,12 +528,12 @@
 		<Content>
 			Go to <Button service="jenkins" type="buttonGray" content="Manage Jenkins" />. Then click the
 			<Button service="jenkins" type="buttonGray" content="Configure System" />. Change your default
-			language to <AWS_Button type="service" content="en_US" />. Check
-			<AWS_Button type="service" content="ignore browser preference" /> option.
+			language to <Color color="purple" content="en_US" number="-1" />. Check
+			<Color color="purple" content="Ignore browser preference" number="-1" /> option.
 		</Content>
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/217191374-d40dcbbf-c154-42c6-8526-cbff8f18d051.png"
+				src="https://user-images.githubusercontent.com/52372569/217234345-393eeb37-eb22-402a-aa21-2513db45bd0e.png"
 				alt="Jenkins locale"
 				style="max-width: 100%;"
 				slot="image"
@@ -539,14 +542,88 @@
 		<Step />
 
 		<Content>
-			In your credentials, you could create new credential for github. Choose
-			<AWS_Button type="service" content="Username with password" />
-			type. You can get your <AWS_Button type="service" content="Github Token" /> from github and input
-			your token to Password box.
+			To call the apis for github, you should add your token. Enter your token in
+			<Color color="purple" content="Configure system" number="-1" />.
 		</Content>
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/217191603-fa8ebb27-0082-4138-b95c-4737dd397c19.png"
+				src="https://user-images.githubusercontent.com/52372569/217262352-71965fbc-ed0c-4235-abd6-d2a49086b1b5.png"
+				alt="Github server"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Content>
+			Add your credentials for the <Color color="purple" content="Github server" number="-1" />. It
+			is not equal to credential for the source code management when creating a job.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217260879-e0a0d9fb-ae59-4b78-806e-6727424bcca7.png"
+				alt="Github server"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+
+		<Split />
+
+		<!-- Chapter 10 -->
+		<Subtitle>AWS SAM Plugin</Subtitle>
+		<Content>
+			You can go plugins menu and install the plugin. If you already install the plugin, skip this
+			step.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217195417-33d2cd29-9b5a-46c2-a3da-b36e9c0748a9.png"
+				alt="Jenkins github"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Content>
+			You also install the plugin by CLI and manual install through uploading the install file. You
+			can download the file from this link
+			<Href href="https://plugins.jenkins.io/aws-sam/#releases" name="AWS SAM" />. After download
+			the file, go to <Color color="purple" content="Plugin Manager" number="-1" /> then
+			<Color color="purple" content="Advanced settings" number="-1" />. Upload the plugin file to
+			deploy it.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217243447-5ba11846-5623-4199-855b-84fe22288103.png"
+				alt="Jenkins github"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Content>
+			To enable the plugin, you have to create new credential for AWS. Enter the
+			<Color color="purple" content="Access Key" number="-1" /> and
+			<Color color="purple" content="Secret Access Key" number="-1" /> for an user.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217246990-6e92bc61-de82-49bb-a8c6-04bea7ac2e5b.png"
+				alt="Jenkins credentials"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Split />
+
+		<!-- Chapter 11 -->
+		<Subtitle>Create a job</Subtitle>
+		<Content>
+			In your credentials, you could create new credential for github. Choose
+			<Color color="purple" content="Username with password" number="-1" />
+			type. You can get your <Color color="purple" content="Github Token" number="-1" /> from github
+			and input your token to Password box.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217233501-6da5cf10-d07e-4670-a618-ee762bb29113.png"
 				alt="Jenkins credentials"
 				style="max-width: 100%;"
 				slot="image"
@@ -556,8 +633,8 @@
 
 		<Content>
 			Add an item. The item is an project which runs a pipeline. Enter your item
-			<AWS_Button type="service" content="name" /> and choose project type to
-			<AWS_Button type="service" content="Freestyle project" />.
+			<Color color="purple" content="name" number="-1" /> and choose project type to
+			<Color color="purple" content="Freestyle project" number="-1" />.
 		</Content>
 		<Image_v1>
 			<img
@@ -570,12 +647,12 @@
 		<Step />
 
 		<Content>
-			Connect to your private github repository with your own credentials which was previous
-			created.
+			Connect to your <Color color="purple" content="Private github repository" number="-1" /> with your
+			own credentials which was previous created.
 		</Content>
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/217194336-6c0913a6-b004-4e4c-b45b-bed8b7c19039.png"
+				src="https://user-images.githubusercontent.com/52372569/217236320-a6b050be-d851-4856-a444-ebe55801ceb9.png"
 				alt="Jenkins github"
 				style="max-width: 100%;"
 				slot="image"
@@ -584,7 +661,7 @@
 		<Step />
 
 		<Content>
-			Check <AWS_Button type="service" content="Github hook trigger" /> option on the Build Triggers.
+			Check <Color color="purple" content="Github hook trigger" number="-1" /> option on the Build Triggers.
 		</Content>
 		<Image_v1>
 			<img
@@ -597,18 +674,58 @@
 		<Step />
 
 		<Content>
-			To build and deploy SAM in jenkins, install <AWS_Button type="service" content="AWS-SAM" /> plugin.
+			In this item, you can build by
+			<Color color="purple" content="AWS SAM deploy application" number="-1" /> which is supported from
+			<Color color="purple" content="AWS-SAM" number="-1" />
+			plugins. If you don't have the plugin, you sholud install first.
 		</Content>
 		<Image_v1>
 			<img
-				src="https://user-images.githubusercontent.com/52372569/217195417-33d2cd29-9b5a-46c2-a3da-b36e9c0748a9.png"
+				src="https://user-images.githubusercontent.com/52372569/217237848-c3ebd982-97f3-4cf9-89e1-cbc4ee325f44.png"
 				alt="Jenkins github"
 				style="max-width: 100%;"
 				slot="image"
 			/>
 		</Image_v1>
+		<Step />
 
+		<Content>
+			Define your build step. Choose your own
+			<Color color="purple" content="Credential" number="-1" /> for AWS. Find your
+			<Color color="purple" content="Region" number="-1" /> which you want to create the app. Enter the
+			<Color color="purple" content="Stack" number="-1" /> name,
+			<Color color="purple" content="S3 Bucket" number="-1" /> name and
+			<Color color="purple" content="SAM template file" number="-1" /> name.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217257083-3bd3dbc5-412b-406d-be6f-4d60d22987c4.png"
+				alt="AWS SAM Plugin"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
 		<Split />
+
+		<!-- Chapter 12 -->
+		<Subtitle>Verify the goal</Subtitle>
+		<Content>
+			In your cloud9, commit and push your code to remote code repository like github. The jenkins
+			receives the webhook from github. Jenkins runs a job which builds and deploys our app to AWS
+			environment with <Color color="purple" content="SAM" number="-1" /> CLI.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217267764-c1aff7c0-71cf-458a-bd08-68e9ef35144b.png"
+				alt="Cloudformation result"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Content>
+			The CI/CD pipeline is created successfully. Manage your github token and IAM user access key
+			securely. Rotate keys regulary to your account safety.
+		</Content>
 
 		<!-- Footer -->
 		<Footer />
