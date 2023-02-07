@@ -34,6 +34,12 @@
 				{content}
 			</div>
 		</div>
+	{:else if service === 'jenkins'}
+		<div class={service}>
+			<div class="standard {type}">
+				{content}
+			</div>
+		</div>
 	{:else}
 		<div />
 	{/if}
@@ -116,6 +122,14 @@
 				border-radius: 0.375rem;
 				color: #054861;
 				background-color: #5cebdf;
+			}
+		}
+
+		.jenkins {
+			.buttonGray {
+				border-radius: 0.375rem;
+				color: #14141f;
+				background-color: #9ba7af;
 			}
 		}
 	}

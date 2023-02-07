@@ -489,6 +489,127 @@
 		</Content>
 		<Split />
 
+		<!-- Chapter 9 -->
+		<Subtitle>Run a jenkins</Subtitle>
+		<Content>
+			From official jenkins image
+			<Href href="https://hub.docker.com/r/jenkins/jenkins" name="jenkins/jenkins" />, you can
+			create a container based on the image. The current version is 2.375.2 on Feb, 2023. No
+			additional volume attatched.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[12].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[12].body} />
+				</div>
+			</Code>
+		</Content>
+		<Step />
+
+		<Content>
+			If you want to change your default language, you can install plugin
+			<AWS_Button type="service" content="locale" />. The locale plugin can support several language
+			options.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217182607-b9c2d8d7-472c-4045-b098-ba2e4b7a97df.png"
+				alt="Jenkins locale"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			Go to <Button service="jenkins" type="buttonGray" content="Manage Jenkins" />. Then click the
+			<Button service="jenkins" type="buttonGray" content="Configure System" />. Change your default
+			language to <AWS_Button type="service" content="en_US" />. Check
+			<AWS_Button type="service" content="ignore browser preference" /> option.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217191374-d40dcbbf-c154-42c6-8526-cbff8f18d051.png"
+				alt="Jenkins locale"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			In your credentials, you could create new credential for github. Choose
+			<AWS_Button type="service" content="Username with password" />
+			type. You can get your <AWS_Button type="service" content="Github Token" /> from github and input
+			your token to Password box.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217191603-fa8ebb27-0082-4138-b95c-4737dd397c19.png"
+				alt="Jenkins credentials"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			Add an item. The item is an project which runs a pipeline. Enter your item
+			<AWS_Button type="service" content="name" /> and choose project type to
+			<AWS_Button type="service" content="Freestyle project" />.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217192781-4cae680c-5e74-47c1-b36a-11232e8199fb.png"
+				alt="Jenkins item"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			Connect to your private github repository with your own credentials which was previous
+			created.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217194336-6c0913a6-b004-4e4c-b45b-bed8b7c19039.png"
+				alt="Jenkins github"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			Check <AWS_Button type="service" content="Github hook trigger" /> option on the Build Triggers.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217194923-d246d48a-33aa-4247-a379-8141d6f661af.png"
+				alt="Jenkins github"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+		<Step />
+
+		<Content>
+			To build and deploy SAM in jenkins, install <AWS_Button type="service" content="AWS-SAM" /> plugin.
+		</Content>
+		<Image_v1>
+			<img
+				src="https://user-images.githubusercontent.com/52372569/217195417-33d2cd29-9b5a-46c2-a3da-b36e9c0748a9.png"
+				alt="Jenkins github"
+				style="max-width: 100%;"
+				slot="image"
+			/>
+		</Image_v1>
+
+		<Split />
+
 		<!-- Footer -->
 		<Footer />
 	</div>

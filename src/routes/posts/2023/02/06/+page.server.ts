@@ -174,6 +174,13 @@ export function load() {
 						6
 					)
 				},
+				{
+					fileName: 'Bash',
+					body: codeIndent(
+						`sudo docker run -p 8080:8080 jenkins/jenkins`,
+						6
+					)
+				},
 			],
 			yaml: [
 				{
