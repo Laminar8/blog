@@ -178,7 +178,316 @@
 			</Code>
 		</Content>
 		<Step />
-		<Content>The downloa</Content>
+		<Content>
+			The downloaded file format is zip type. To install the SAM cli, you should upzip the file
+			first.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[1].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[1].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			If you cannot unzip the file because the command could not find, you can install the unzip
+			library.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[2].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[2].body} />
+				</div>
+			</Code>
+		</Content>
+		<Step />
+		<Content>
+			To execute the installer, put the below command on your bash shell.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[3].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[3].body} />
+				</div>
+			</Code>
+		</Content>
+		<Step />
+		<Content>
+			Verify your install success. If you cannot install it, try to follow another installation
+			guide.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[4].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[4].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
+
+		<!-- Chapter 4 -->
+		<Subtitle>SAM Bootstrap</Subtitle>
+		<Content>
+			SAM has a lot of AWS quick start application template. According to your application type
+			including a language, package type, you can choose the template. If you want to start from the
+			template, initialize the sam.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[5].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[5].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			Follow instructions from SAM, and input your number or parameters. The below command is an
+			example for my current development environment.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[6].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[6].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			The bootstrapped sam template is downloaded on my working directory. The sample template
+			includes events, sample app, test folder and template.yaml
+			<Color color="black" content="template.yaml" number="-1" /> file.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[7].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[7].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
+
+		<!-- Chapter 5 -->
+		<Subtitle>Detailed template</Subtitle>
+		<Content>
+			The <Color color="black" content="template.yaml" number="-1" /> file is the template for the cloudformation.
+			The template has a resource section and an output section.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[0].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[0].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			If you would like to add a vpc configuration, the lambda resource should have
+			<AWS_Button type="service" content="SecurityGroupIds" />
+			and <AWS_Button type="service" content="SubnetIds" />.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[1].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[1].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			You can define your own <AWS_Button type="service" content="IAM role" /> to your lambda. If you
+			don't declare the role, a role would be created with a logical ID of
+			<AWS_Button type="service" content="<function-logical-id>" /> Role.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[2].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[2].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			You can create a <AWS_Button type="service" content="Amazon API Gateway" /> resources and methods
+			by adding to resources section. You don't have to add explicitly to a AWS Serverless Application
+			Definition template. From official AWS SAM developer guide, a resource of this type is implicitly
+			created from the union of Api events defined on
+			<AWS_Button type="service" content="AWS::Serverless::Function" /> resources defined in the template
+			that do not refer to an <AWS_Button type="service" content="AWS::Serverless::Api" /> resource.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[3].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[3].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			When you want to add a API Gateway resource from serverless template, you have to match your
+			lambda function event and your api gateway by adding the
+			<AWS_Button type="service" content="RestApiId" />.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[4].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[4].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			The default value of api gateway resource endpoint type is edge. If you want to change from
+			egde to regional or private, add a
+			<AWS_Button type="service" content="EndpointConfiguration" /> to your resource.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[5].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[5].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
+
+		<!-- Chapter 6 -->
+		<Subtitle>Add a resource</Subtitle>
+		<Content>
+			I will create a new python file that returns a current date by
+			<AWS_Button type="service" content="datetime" /> library. The return value will be forwarded to
+			main python file. Finally the main python file
+			<Color color="black" content="app.py" number="-1" /> returns a json formatted strings.
+		</Content>
+		<Content>
+			When you have a lambda function and many python file is in there, how can I create the
+			function by SAM? First let's make a python file which returns a date.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[8].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[8].body} />
+				</div>
+			</Code>
+		</Content>
+		<Step />
+
+		<Content>
+			A new python file imports datetime library. Create a function that returns a current date. The
+			file name is <Color color="black" content="get_time.py" number="-1" />.
+			<Code>
+				<div slot="file">
+					{codeHighlight.python[0].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={python} code={codeHighlight.python[0].body} />
+				</div>
+			</Code>
+		</Content>
+		<Step />
+
+		<Content>
+			In main handler, import the previous function from
+			<Color color="black" content="get_time.py" number="-1" /> python file. Edit return value of the
+			<AWS_Button type="service" content="lambda_handler" /> function.
+			<Code>
+				<div slot="file">
+					{codeHighlight.python[1].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={python} code={codeHighlight.python[1].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			No additional template changes are there. If a new file is created succesfully and your last
+			edit work done, go to build it.
+		</Content>
+		<Split />
+
+		<!-- Chapter 7 -->
+		<Subtitle>Build an app</Subtitle>
+		<Content>
+			It's time to build the app using <Color color="black" content="template.yaml" number="-1" />.
+			When you send a command to build the app, SAM builds your app in a container.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[9].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[9].body} />
+				</div>
+			</Code>
+		</Content>
+		<Content>
+			Using container, you don't have same runtime on your local. Base images have the runtime. Most
+			of the environment, it is easy to build your app with container.
+		</Content>
+		<Content>
+			You don't have to add a docker image parameter if you can connect with the internet. Because
+			the SAM pull the images from Amazon ECR Public or DockerHub. However if you cannot pull the
+			images, you have to push your private image on your own private repository. When you need the
+			base images, find the images from this link
+			<Href
+				href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-image-repositories.html"
+				name="Image repositories"
+			/>.
+		</Content>
+		<Split />
+
+		<!-- Chapter 8 -->
+		<Subtitle>Deploy an app</Subtitle>
+		<Content>
+			The last step is the deployment. With pre-defined parameters, you can deploy with SAM CLI.
+			Pre-defined parameters could be diffrent by your environment.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[10].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[10].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
+
+		<!-- Chapter 8 -->
+		<Subtitle>Latest template</Subtitle>
+		<Content>
+			In cloud9, our application test was done. I would like to share my template
+			<Color color="black" content="template.yaml" number="-1" /> for you. You can add a resource and
+			python files to this template.
+			<Code>
+				<div slot="file">
+					{codeHighlight.yaml[6].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={yaml} code={codeHighlight.yaml[6].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
+
+		<!-- Chapter 8 -->
+		<Subtitle>Delete stack</Subtitle>
+		<Content>
+			Sometimes you have to delete your resources because the resource dosen't need anymore or you
+			have to save your costs. I want to show you how to remove your stack.
+			<Code>
+				<div slot="file">
+					{codeHighlight.bash[11].fileName}
+				</div>
+				<div slot="code">
+					<Highlight language={bash} code={codeHighlight.bash[11].body} />
+				</div>
+			</Code>
+		</Content>
+		<Split />
 
 		<!-- Footer -->
 		<Footer />
